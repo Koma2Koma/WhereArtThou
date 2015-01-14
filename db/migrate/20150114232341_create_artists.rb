@@ -5,7 +5,7 @@ class CreateArtists < ActiveRecord::Migration
       t.string :facebook
       t.string :instagram
       t.string :website
-      t.array :tags
+      t.string :tags, array: true
       t.text :about
       t.string :location
 
