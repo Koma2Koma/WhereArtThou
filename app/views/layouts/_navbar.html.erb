@@ -1,0 +1,11 @@
+
+
+<h4><%= link_to 'WAT Logo', static_pages_home_path %></h4>
+<h4><%= link_to 'Mission', static_pages_about_path %></h4>
+
+<% if !current_user %>
+  <h4><%= link_to 'Sign Up', new_user_registration_path %></h4>
+  <h4><%= link_to 'Log In', new_user_session_path %></h4>
+<% else %>
+  <h4><%= link_to 'Log Out', destroy_user_session_path, method: :destroy %></h4>
+<% end %>
