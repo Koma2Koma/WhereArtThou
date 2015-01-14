@@ -1,0 +1,21 @@
+
+
+<h4><%= link_to 'WAT Logo', static_pages_home_path %></h4>
+<h4><%= link_to 'Mission', static_pages_about_path %></h4>
+
+<% if !current_user %>
+  <h4 id='sign-up'><%= link_to 'Sign Up', new_user_registration_path %></h4>
+  <h4><%= link_to 'Log In', new_user_session_path %></h4>
+<% else %>
+  <h4><%= link_to 'Log Out', destroy_user_session_path, method: :destroy %></h4>
+<% end %>
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<script>
+  $('#sign-up').click(function() {
+    alert('Are you really an artist? I mean really? Or do you just glue macaroni to construction paper and try to sell it on etsy?');
+  });
+  
+
+</script>
