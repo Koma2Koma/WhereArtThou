@@ -1,16 +1,23 @@
 
-<header class="navbar navbar-fixed-top navbar-inverse">
-	<%= link_to 'WAT Logo', static_pages_home_path %>
+<nav class="navbar-fixed-top navbar-inverse">
+	<div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+		<%= link_to (image_tag "logo.png", class: "img img-responsive logo"), static_pages_home_path %>
+  </div>
 
-	<nav>
-		<ul class="nav navbar-nav pull-right">
-			<li><%= link_to 'Mission', static_pages_about_path %></li>
-			<% if !current_user %>
-				<li><%= render 'layouts/signup_modal' %></li>
-			  <li><%= link_to 'Log In', new_user_session_path %></li>
-			<% else %>
-			  <li><%= link_to 'Log Out', destroy_user_session_path, method: :destroy %></li>
-			<% end %>
-		</ul>
-	</nav>
-</header>
+	<ul class="nav navbar-nav pull-right">
+		<li><%= link_to 'HOME', static_pages_home_path %></li>
+		<li><%= link_to 'MISSION', static_pages_about_path %></li>
+		<% if !current_user %>
+			<li><%= render 'layouts/signup_modal' %></li>
+		  <li><%= link_to 'LOG IN', new_user_session_path %></li>
+		<% else %>
+		  <li><%= link_to 'LOG OUT', destroy_user_session_path, method: :destroy %></li>
+		<% end %>
+	</ul>
+</nav>

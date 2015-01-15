@@ -1,0 +1,15 @@
+<div class="row">
+  <aside class="col-md-4">
+    <section class="userinfo">
+      <h2>
+        <%= gravatar_for @user %>
+        <%= @user.username %>
+      </h2>
+      <h3>
+        <%= @user.email %>
+      </h3>
+      <h4><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button" %></h4>
+    </section>
+  </aside>
+</div>
+  
