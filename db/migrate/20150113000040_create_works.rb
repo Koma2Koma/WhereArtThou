@@ -7,6 +7,7 @@ class CreateWorks < ActiveRecord::Migration
     	t.text :description
     	t.text :medium
     	t.text :works, :style
+      t.references :artist
 
       t.timestamps
     end
