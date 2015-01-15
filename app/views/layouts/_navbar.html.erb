@@ -1,21 +1,23 @@
 
+<nav class="navbar-fixed-top navbar-inverse">
+	<div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+		<%= link_to (image_tag "logo.png", class: "img img-responsive logo"), static_pages_home_path %>
+  </div>
 
-<h4><%= link_to 'WAT Logo', static_pages_home_path %></h4>
-<h4><%= link_to 'Mission', static_pages_about_path %></h4>
-
-<% if !current_user %>
-  <h4 id='sign-up'><%= link_to 'Sign Up', new_user_registration_path %></h4>
-  <h4><%= link_to 'Log In', new_user_session_path %></h4>
-<% else %>
-  <h4><%= link_to 'Log Out', destroy_user_session_path, method: :destroy %></h4>
-<% end %>
-
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-
-<script>
-  $('#sign-up').click(function() {
-    alert('Are you really an artist? I mean really? Or do you just glue macaroni to construction paper and try to sell it on etsy?');
-  });
-  
-
-</script>
+	<ul class="nav navbar-nav pull-right">
+		<li><%= link_to 'HOME', static_pages_home_path %></li>
+		<li><%= link_to 'MISSION', static_pages_about_path %></li>
+		<% if !current_user %>
+			<li><%= render 'layouts/signup_modal' %></li>
+		  <li><%= link_to 'LOG IN', new_user_session_path %></li>
+		<% else %>
+		  <li><%= link_to 'LOG OUT', destroy_user_session_path, method: :destroy %></li>
+		<% end %>
+	</ul>
+</nav>
