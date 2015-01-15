@@ -4,8 +4,18 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+one:
+  title: 'Fruit on Glass Table'
+  year: '1952'
+  price:  3599.49
+  description: 'Dumb fuit on a stupid table.'
+  medium: 'Mostly colors, also sand.'
+  style: 'Realistic Surrealism'
+
+two:
+  title: 'Money in a Jar'
+  year: '2002'
+  price: 12.50
+  description: 'A jar with some money in it.'
+  medium: 'A clear glass jar with some currency in it.'
+  style: 'Last minute'

@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  twitter: MyString
-  facebook: MyString
-  instagram: MyString
-  website: MyString
-  tags: 
-  about: MyText
-  location: MyString
+  twitter: 'twitter.com/nitwit'
+  facebook: 'facebook.com/nitwit'
+  instagram: 'instagram.com/nitwit'
+  website: 'google.com'
+  tags: ['old', 'young', 'grumpy']
+  about: 'I am a struggling alchoholic with aspirations of rainy day streaking down a busy street in Paris.'
+  location: 'Nunya, NJ'
 
 two:
-  twitter: MyString
-  facebook: MyString
-  instagram: MyString
-  website: MyString
-  tags: 
-  about: MyText
-  location: MyString
+  twitter: 'twitter.com/nutbutt'
+  facebook: 'facebook.com/nutbutt'
+  instagram: 'instagram.com/nutbutt'
+  website: 'bing.com'
+  tags: ['great', 'not so great', 'so so']
+  about: 'I desperately wish I was an oscar meyer wiener. Desperately.'
+  location: 'Cairo, WI'
