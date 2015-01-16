@@ -10,6 +10,11 @@
 		<%= link_to (image_tag "logo.png", class: "img img-responsive logo"), static_pages_home_path %>
   </div>
 
+  <ul class="nav navbar-nav">
+    <li class="notice navbar-text"><%= notice if notice %></li>
+    <li class="alert "><%= notice if alert %></li>
+  </ul>
+
 	<ul class="nav navbar-nav pull-right">
 		<li><%= link_to 'HOME', static_pages_home_path %></li>
 		<li><%= link_to 'MISSION', static_pages_about_path %></li>
@@ -17,7 +22,7 @@
 			<li><%= render 'layouts/signup_modal' %></li>
 		  <li><%= link_to 'LOG IN', new_user_session_path %></li>
 		<% else %>
-		  <li><%= link_to 'LOG OUT', destroy_user_session_path, method: :destroy %></li>
+		  <li><%= link_to 'LOG OUT', destroy_user_session_path, method: :delete %></li>
 		<% end %>
 	</ul>
 </nav>
