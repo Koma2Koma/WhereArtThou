@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'artists/index'
+
+  get 'artists/show'
+
   root 'static_pages#home'
 
   get 'about' => 'static_pages#about'
