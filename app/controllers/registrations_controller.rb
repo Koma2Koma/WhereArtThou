@@ -19,10 +19,10 @@ class RegistrationsController < Devise::RegistrationsController
 
 	def after_sign_up_path_for(user)
     if user.is_artist
-    	Artist.create!(user_id: user.id)
-    	user_path(user)
+    	new_artist = Artist.create!(user_id: user.id)
+    	artist_path(new_artist)
     else
-    	root_path
+    	user_path(user)
     end
   end  
 
