@@ -1,13 +1,7 @@
 
-<nav class="navbar-fixed-top navbar-inverse">
+<nav class="navbar-fixed-top navbar">
 	<div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-		<%= link_to (image_tag "logo.png", class: "img img-responsive logo"), static_pages_home_path %>
+		<%= link_to (image_tag "logo.png", class: "img img-responsive logo"), root_path %>
   </div>
 
   <ul class="nav navbar-nav">
@@ -16,11 +10,11 @@
   </ul>
 
 	<ul class="nav navbar-nav pull-right">
-		<li><%= link_to 'HOME', static_pages_home_path %></li>
-		<li><%= link_to 'MISSION', static_pages_about_path %></li>
+		<li><%= link_to 'home', root_path %></li>
+		<li><%= link_to 'mission', about_path %></li>
 		<% if !current_user %>
 			<li><%= render 'layouts/signup_modal' %></li>
-		  <li><%= link_to 'LOG IN', new_user_session_path %></li>
+		  <li><%= link_to 'log in', new_user_session_path %></li>
 		<% else %>
 		  <li><%= link_to 'LOG OUT', destroy_user_session_path, method: :delete %></li>
 		<% end %>
