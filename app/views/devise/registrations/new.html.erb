@@ -25,9 +25,10 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-<%= params[:artist] %>
+
   <%= f.hidden_field :is_artist, value: params[:artist] %>
 
+  
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
