@@ -6,7 +6,7 @@ class CreateWorks < ActiveRecord::Migration
     	t.decimal :price, precision: 10, scale: 2
     	t.text :description
     	t.text :medium
-    	t.text :works, :style
+    	t.text :style
       t.references :artist
 
       t.timestamps
