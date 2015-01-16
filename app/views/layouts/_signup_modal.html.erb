@@ -10,8 +10,8 @@
       </div>
       <div class="modal-body">
         <h3>What type of account would you like?</h3>
-        <%= link_to 'Artist', new_user_registration_path, class: "btn btn-default" %>
-        <%= link_to 'User', new_user_registration_path, class: "btn btn-default" %>
+        <%= link_to 'Artist', new_user_registration_path(:artist => true), class: "btn btn-default" %>
+        <%= link_to 'User', new_user_registration_path(:artist => false), class: "btn btn-default" %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
