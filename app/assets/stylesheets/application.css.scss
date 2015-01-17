@@ -1,6 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display);
+
 body{
   padding-top: 145px;
   background-color: #4A4847;
@@ -28,9 +31,10 @@ img.logo {
 }
 
 .nav-links {
-	font-size: 1.5em;
+	font-size: 2em;
 	margin-right: 50px;
 	padding-top: 80px;
+	font-family: "Open Sans Condensed"
 }
 
 .carousel {
@@ -49,15 +53,18 @@ img.logo {
 	margin-bottom: 32px;
 	h2{
 		text-align: right;
+		font-family: "Open Sans Condensed"
 	}
 	p {
-	text-align: justify;
+		text-align: justify;
+		font-family: "Playfair Display";
 	}
 }
 
 .action-header {
 	width: 100%;
 	padding-bottom: 5px;
+	font-family: "Open Sans Condensed"
 }
 
 .home-page-background {
@@ -75,6 +82,9 @@ img.logo {
 	background-color: #412F4A;
 	border: none;
 	border-radius: 0;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-family: "Open Sans Condensed";
 	&:hover { 
 		background-color: #72557D;
 	}
