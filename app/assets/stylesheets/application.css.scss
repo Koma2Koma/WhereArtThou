@@ -1,21 +1,83 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+  padding-top: 145px;
+  background-color: #4A4847;
+}
+
+a {
+	color: #4A4847;
+	&:hover { 
+	color: #412F4A;
+	}
+}
+
 img.logo {
-  margin-top: 20px;
-  margin-left: 30px;
+  margin-top: 30px;
+  margin-left: 50px;
 }
 
 .logo{
-  width: 150px;
+  width: 175px;
+}
+
+.navbar {
+	background-color: white;
+	height: 145px;
+}
+
+.nav-links {
+	font-size: 1.5em;
+	margin-right: 50px;
+	padding-top: 80px;
+}
+
+.carousel {
+	width: 633px;
+	float: right;
+	margin-top: 40px;
+	margin-right: 20px;
+	margin-bottom: 25px;
+}
+
+.side-text {
+	float: left;
+	width: 460px;
+	padding-top: 30px;
+	padding-left: 20px;
+	margin-bottom: 32px;
+	h2{
+		text-align: right;
+	}
+	p {
+	text-align: justify;
+	}
+}
+
+.action-header {
+	width: 100%;
+	padding-bottom: 5px;
+}
+
+.home-page-background {
+	background-color: white;
+	height: 545px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.jumbo-header {
+	padding-top: 10px;
 }
 
 .hpbutton{
-  margin: 0em 3em 1em  3em;
-}
-
-body{
-  padding-top: 70px;
+	background-color: #412F4A;
+	border: none;
+	border-radius: 0;
+	&:hover { 
+		background-color: #72557D;
+	}
 }
 
 .modal-body {

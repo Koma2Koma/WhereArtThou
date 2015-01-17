@@ -9,14 +9,14 @@
     <li class="alert "><%= notice if alert %></li>
   </ul>
 
-	<ul class="nav navbar-nav pull-right">
+	<ul class="nav navbar-nav pull-right nav-links">
 		<li><%= link_to 'home', root_path %></li>
 		<li><%= link_to 'mission', about_path %></li>
 		<% if !current_user %>
 			<li><%= render 'layouts/signup_modal' %></li>
 		  <li><%= link_to 'log in', new_user_session_path %></li>
 		<% else %>
-		  <li><%= link_to 'LOG OUT', destroy_user_session_path, method: :delete %></li>
+		  <li><%= link_to 'log out', destroy_user_session_path, method: :delete %></li>
 		<% end %>
 	</ul>
 </nav>
