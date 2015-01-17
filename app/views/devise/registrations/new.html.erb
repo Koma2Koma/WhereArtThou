@@ -1,4 +1,10 @@
-<h2>Sign up</h2>
+
+<% if params[:artist] == 'true' %>
+  <h2>Artist Sign Up</h2>
+<% else %>
+  <h2>User Sign up</h2>
+<% end %>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -25,9 +31,10 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-<%= params[:artist] %>
+
   <%= f.hidden_field :is_artist, value: params[:artist] %>
 
+  
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
