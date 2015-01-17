@@ -80,6 +80,7 @@ img.logo {
 
 .hpbutton{
 	background-color: #412F4A;
+	color: white;
 	border: none;
 	border-radius: 0;
 	margin-right: 5px;
@@ -87,9 +88,20 @@ img.logo {
 	font-family: "Open Sans Condensed";
 	&:hover { 
 		background-color: #72557D;
+		color: white;
 	}
 }
 
 .modal-body {
 	text-align: center;
+	padding-top: 50px;
+	height: 250px;
+}
+
+.modal-head {
+	padding-bottom: 25px;
+}
+
+.modal-button {
+	width: 100px;
 }
