@@ -11,13 +11,13 @@
 
   <%= form_tag works_path, class: "navbar-form navbar-left", role: "search", method: "get" do %>
     <div class="form-group">
-      <%= text_field_tag :search,"", class: "form-control", placeholder: "Fuck you" %>
+      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search by artist name or name of work." %>
     </div>
    <%= submit_tag "Search", class: "btn btn-default" %>
   <% end %>
 
 	<ul class="nav navbar-nav pull-right nav-links">
-		<li><%= link_to 'HOME', root_path %></li>
+		<li><%= link_to 'home', root_path %></li>
 		<li><%= link_to 'MISSION', about_path %></li>
 		<% if !current_user %>
 			<li><%= render 'layouts/signup_modal' %></li>

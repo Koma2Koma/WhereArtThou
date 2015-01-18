@@ -3,3 +3,16 @@
 
   <%= work.title %>
 <% end %>
+
+<h1>Artists</h1>
+<% @artists.each do |artist| %>
+
+  <%= artist.username %>
+<% end %>
+
+<h1>Users</h1>
+<% @users.each do |user| %>
+
+  <%= user.username %>
+  <br>
+<% end %>
