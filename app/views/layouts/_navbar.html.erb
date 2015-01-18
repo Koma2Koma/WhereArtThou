@@ -15,7 +15,8 @@
    <%= submit_tag "Search", class: "btn btn-default" %>
   <% end %>
 
-	<ul class="nav navbar-nav pull-right">
+	<ul class="nav navbar-nav pull-right nav-links">
+
 		<li><%= link_to 'home', root_path %></li>
 		<li><%= link_to 'mission', about_path %></li>
 		<% if !current_user %>
