@@ -1,4 +1,4 @@
-<nav class="navbar-fixed-top navbar-inverse">
+<nav class="navbar-fixed-top navbar">
 	<div class="navbar-header">
 		<%= link_to (image_tag "logo.png", class: "img img-responsive logo"), root_path %>
   </div>
@@ -8,12 +8,14 @@
     <li class="alert "><%= notice if alert %></li>
   </ul>
 
-  <%= form_tag works_path, class: "navbar-form navbar-left", role: "search", method: "get" do %>
-    <div class="form-group">
-      <%= text_field_tag :search,"", class: "form-control", placeholder: "Fuck you" %>
-    </div>
-   <%= submit_tag "Search", class: "btn btn-default" %>
-  <% end %>
+  <%#= form_tag works_path, class: "navbar-form navbar-left", role: "search", method: "get" do %>
+    <!-- <div class="form-group"> -->
+      <%#= text_field_tag :search,"", class: "form-control", placeholder: "Fuck you" %>
+    <!-- </div> -->
+   <%#= submit_tag "Search", class: "btn btn-default" %>
+  <%# end %>
+
+	<ul class="nav navbar-nav pull-right nav-links">
 
 	<ul class="nav navbar-nav pull-right nav-links">
 		<li><%= link_to 'HOME', root_path %></li>
