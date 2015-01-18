@@ -8,6 +8,6 @@ class WorksController < ApplicationController
       @works = Work.all
     end
 
-    redirect_to about_path
+    
   end
 end
