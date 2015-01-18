@@ -1,4 +1,4 @@
-<%= link_to 'sign up', '#', data: {toggle: 'modal', target: '#myModal'} %>
+<%= link_to 'SIGN UP', '#', data: {toggle: 'modal', target: '#myModal'} %>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -6,15 +6,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Sign up</h4>
+        <h3 class="modal-title" id="myModalLabel">SIGN UP</h3>
       </div>
       <div class="modal-body">
-        <h3>What type of account would you like?</h3>
-        <%= link_to 'Artist', new_user_registration_path(:artist => true), class: "btn btn-default" %>
-        <%= link_to 'User', new_user_registration_path(:artist => false), class: "btn btn-default" %>
+        <h2 class="modal-head">What type of account would you like?</h2>
+        <%= link_to 'ARTIST', new_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton modal-button" %>
+        <%= link_to 'USER', new_user_registration_path(:artist => false), class: "btn btn-success btn-lg hpbutton modal-button" %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default hpbutton" data-dismiss="modal">CLOSE</button>
       </div>
     </div>
   </div>
