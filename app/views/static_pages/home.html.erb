@@ -1,3 +1,12 @@
+<div class="side-text">
+  <h2>Art. Accessible.</h2>
+  <p>Bespoke aesthetic Vice, artisan sartorial Blue Bottle seitan gastropub 8-bit messenger bag selvage. Deep v tousled freegan, farm-to-table listicle vinyl sriracha pickled Pitchfork. Odd Future semiotics Echo Park ethical, tofu kale chips Pitchfork.</p>
+
+  <p>Biodiesel sustainable polaroid, Shoreditch XOXO Blue Bottle American Apparel hashtag shabby chic. Blue Bottle lo-fi taxidermy, YOLO umami you probably haven't heard of them ugh single-origin coffee Austin hella Thundercats seitan four dollar toast pop-up.</p>
+
+  <p>Fixie YOLO High Life beard deep v. Dreamcatcher whatever heirloom scenester gentrify. Irony taxidermy Kickstarter American Apparel, 90's master cleanse salvia cliche Brooklyn kitsch meggings Thundercats. Flexitarian artisan Truffaut Pinterest, Schlitz jean shorts master cleanse.</p>
+</div>  
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -10,23 +19,23 @@
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <%= image_tag "hpimage1_where.jpg", class: "img img-responsive my-image" %>
-      <div class="carousel-caption">
-        <h1>Where Where Where Where Where Where<h1>
-      </div>
+<!--       <div class="carousel-caption">
+        <h3>Where Where Where Where Where Where</h3>
+      </div> -->
     
     </div>
     <div class="item">
     <%= image_tag "hpimage2_art.jpg", class: "img img-responsive my-image" %>
-      <div class="carousel-caption">
-        <h1>Art Art Art Art Art Art Art.<h1>
-      </div>
+<!--       <div class="carousel-caption">
+        <h3>Art Art Art Art Art Art Art.</h3>
+      </div> -->
     
     </div>
     <div class="item">
       <%= image_tag "hpimage3_thou.jpg", class: "img img-responsive my-image" %>
-      <div class="carousel-caption">
-              <h1>Thou Thou Thou Thou Thou Thou Thou.<h1>       
-      </div>
+<!--       <div class="carousel-caption">
+              <h3>Thou Thou Thou Thou Thou Thou Thou.</h3>       
+      </div> -->
     </div>
   </div>
 
@@ -41,12 +50,10 @@
   </a>
 </div>
 
-<div class="jumbotron">
-  <h3><center>Click here to get started.<center></h3>
-  <div>
-    <p><center>
-      <%= link_to "Discover", new_user_registration_path, class: "btn btn-success btn-lg hpbutton"%>
-      <%= link_to 'Sign Up', '#', data: {toggle: 'modal', target: '#myModal'}, class: "btn btn-success btn-lg hpbutton" %>
-    </center></p>
-  </div>  
+<div class="home-page-background">
+  <div class="container action-header">
+    <h3>Get started now.</h3>
+  </div>
+  <%= link_to "Discover", new_user_registration_path, class: "btn btn-success btn-lg hpbutton"%>
+  <%= link_to 'Sign Up', '#', data: {toggle: 'modal', target: '#myModal'}, class: "btn btn-success btn-lg hpbutton" %>
 </div>
