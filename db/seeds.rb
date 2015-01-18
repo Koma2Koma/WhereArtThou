@@ -7,6 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Artist.create! :name => 'John Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+Artist.create! :name => 'Fancy Lassiter', :email => 'fancy@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+Artist.create! :name => 'Alice Jimson', :email => 'jimso@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+Artist.create! :name => 'Alex Fredette', :email => 'afredette@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+Artist.create! :name => 'Fred Baz', :email => 'Bazzer@aol.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+Artist.create! :name => 'Cheryston Hall', :email => 'friendshipgoddess@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+Artist.create! :name => 'Babs Ficklemore', :email => 'bficklemore@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+Artist.create! :name => 'Sydney Rammelstein-Hall', :email => 'SRammels@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+Artist.create! :name => 'Peter Frampston', :email => 'Peter@arthouse.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+Artist.create! :name => 'Lissy Johnson', :email => 'ljohnson@artdepot.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+Artist.create! :name => 'Sassy Rassmore', :email => 'SRassmore@artdepot.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+
+
 Work.create! :title =>'The best nude ever', :description => 'This is a fine period piece from 1974', :price: 100.00, :medium => 'Interprative Dance', :style => 'Romantic', :year => '1974' => artist_id: 4)
 
 
