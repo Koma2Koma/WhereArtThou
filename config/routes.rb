@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {registrations: 'registrations'}
 
   resources :users, only: [:show, :index] do
-    resources :works
+    resources :works, except: :index
   end
+
+  resources :works, only: :index
 
 
 end
