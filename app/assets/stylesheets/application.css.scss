@@ -147,3 +147,31 @@ img.logo {
 	margin-top: 20px;
 	font-size: 1.75em;
 }
+
+.gravatar {
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.user-page-background {
+	background-color: white;
+	height: 545px;
+	padding: 25px;
+	font-family: "Open Sans Condensed";
+	color: #4A4847;
+	font-size: 2.5em;
+	.user-button {
+		background-color: #412F4A;
+		color: white;
+		border: none;
+		border-radius: 0;
+		font-family: "Open Sans Condensed";
+		&:hover { 
+			background-color: #72557D;
+			color: white;
+		}
+		&:visited {
+			background-color: #412F4A;
+		}
+	}
+}
