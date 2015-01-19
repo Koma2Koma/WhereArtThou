@@ -9,6 +9,8 @@ class WorksController < ApplicationController
       
     else
       @works = Work.all
+      @artists = User.where(is_artist: true)
+      @users = User.all
     end
 
 
