@@ -9,13 +9,6 @@ body{
   background-color: #4A4847;
 }
 
-.flash {
-	font-family: "Open Sans Condensed";
-	font-size: 2em;
-	color: white;
-	padding-left: 100px; 
-}
-
 a {
 	color: #4A4847;
 	&:hover { 
@@ -23,25 +16,36 @@ a {
 	}
 }
 
+.flash {
+	font-family: "Open Sans Condensed";
+	font-size: 2em;
+	color: white;
+	padding-left: 100px; 
+}
+
 img.logo {
   margin-top: 30px;
   margin-left: 50px;
-}
-
-.logo{
-  width: 175px;
+  width: 160px;
 }
 
 .navbar {
 	background-color: white;
 	height: 145px;
-}
-
-.nav-links {
-	font-size: 1.5em;
-	margin-right: 50px;
-	padding-top: 80px;
-	font-family: "Open Sans Condensed"
+	.nav-links {
+		font-size: 1.5em;
+		padding-top: 80px;
+		font-family: "Open Sans Condensed";
+	}
+	.search-bar {
+		padding-top: 80px;
+		margin-right: 30px;
+		.form-control {
+			width: 200px;
+			font-family: "Open Sans Condensed";
+			font-size: 1.5em;
+		}
+	}
 }
 
 .carousel {
@@ -49,7 +53,7 @@ img.logo {
 	float: right;
 	margin-top: 40px;
 	margin-right: 20px;
-	margin-bottom: 25px;
+	margin-bottom: 30px;
 }
 
 .side-text {
@@ -57,7 +61,7 @@ img.logo {
 	width: 460px;
 	padding-top: 30px;
 	padding-left: 20px;
-	margin-bottom: 32px;
+	margin-bottom: 27px;
 	h2{
 		text-align: right;
 		font-family: "Open Sans Condensed"
@@ -65,6 +69,8 @@ img.logo {
 	p {
 		text-align: justify;
 		font-family: "Playfair Display";
+		letter-spacing: 0.5px;
+		padding-bottom: 10px;
 	}
 }
 
@@ -79,10 +85,6 @@ img.logo {
 	height: 545px;
 	text-align: center;
 	margin: 0 auto;
-}
-
-.jumbo-header {
-	padding-top: 10px;
 }
 
 .hpbutton{
@@ -106,14 +108,12 @@ img.logo {
 	text-align: center;
 	padding-top: 50px;
 	height: 250px;
-}
-
-.modal-head {
-	padding-bottom: 25px;
-}
-
-.modal-button {
-	width: 100px;
+	.modal-head {
+		padding-bottom: 25px;
+	}
+	.modal-button {
+		width: 100px;
+	}
 }
 
 .form-container {
@@ -146,8 +146,4 @@ img.logo {
 .form-submit {
 	margin-top: 20px;
 	font-size: 1.75em;
-}
-
-.form-container {
-	margin-left: 150px;
 }
