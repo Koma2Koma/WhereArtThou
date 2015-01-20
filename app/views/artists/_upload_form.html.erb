@@ -1,0 +1,39 @@
+<% form_for @work, :html => { :multipart => true } do |f| %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :year_created %><br />
+    <%= f.text_field :year %>
+  </p>
+
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :medium %><br />
+    <%= f.text_field :medium %>
+  </p>
+
+  <p>
+    <%= f.label :style %><br />
+    <%= f.text_field :style %>
+  </p>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.file_field :image %>
+  </p>
+
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+  <% end%>
