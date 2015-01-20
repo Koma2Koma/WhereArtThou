@@ -2,10 +2,12 @@ class WorksController < ApplicationController
 
   def index
 
-    if params[:search]
-      @works = Work.where('title LIKE ?', "%#{params[:search]}%")
-      @artists = User.where('username LIKE ? AND is_artist = ?', "%#{params[:search]}%", true)
-      @users = User.where('username LIKE ? AND is_artist = ?', "%#{params[:search]}%", false)
+    search_params = params[:search].downcase
+
+    if search_params
+      @works = Work.where('lower(title) LIKE ?', "%#{search_params}%")
+      @artists = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", true)
+      @users = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", false)
       
     else
       @works = Work.all
