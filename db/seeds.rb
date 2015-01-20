@@ -6,40 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Artist.create! :name => 'John Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-Artist.create! :name => 'Fancy Lassiter', :email => 'fancy@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-Artist.create! :name => 'Alice Jimson', :email => 'jimso@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-Artist.create! :name => 'Alex Fredette', :email => 'afredette@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-Artist.create! :name => 'Fred Baz', :email => 'Bazzer@aol.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-Artist.create! :name => 'Cheryston Hall', :email => 'friendshipgoddess@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-Artist.create! :name => 'Babs Ficklemore', :email => 'bficklemore@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-Artist.create! :name => 'Sydney Rammelstein-Hall', :email => 'SRammels@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-Artist.create! :name => 'Peter Frampston', :email => 'Peter@arthouse.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-Artist.create! :name => 'Lissy Johnson', :email => 'ljohnson@artdepot.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-Artist.create! :name => 'Sassy Rassmore', :email => 'SRassmore@artdepot.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+User.create! :username => 'John Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
+User.create! :username => 'Fancy Lassiter', :email => 'fancy@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
+User.create! :username => 'Alice Jimson', :email => 'jimso@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
+User.create! :username => 'Alex Fredette', :email => 'afredette@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
+User.create! :username => 'Fred Baz', :email => 'Bazzer@aol.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
+User.create! :username => 'Cheryston Hall', :email => 'friendshipgoddess@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
+User.create! :username => 'Babs Ficklemore', :email => 'bficklemore@yahoo.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
+User.create! :username => 'Sydney Rammelstein-Hall', :email => 'SRammels@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
+User.create! :username => 'Peter Frampston', :email => 'Peter@arthouse.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
+User.create! :username => 'Lissy Johnson', :email => 'ljohnson@artdepot.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
+User.create! :username => 'Sassy Rassmore', :email => 'SRassmore@artdepot.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
 
 
-Work.create! :title =>'The best nude ever', :description => 'This is a fine period piece from 1974', :price: 100.00, :medium => 'Interprative Dance', :style => 'Romantic', :year => '1974' => artist_id: 4)
+Work.create! :title =>'June Nude', :year => '1974', :price => '$2000', :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
+Work.create! :title =>'July Nude', :year => '1974', :price => '$2000', :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
+Work.create! :title =>'August Nude', :year => '1974', :price => '$2000', :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
+Work.create! :title =>'September Nude', :year => '1974', :price => '$2000', :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
 
 
 
 
-
-t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.string   "username"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.boolean  "is_artist",              default: false
