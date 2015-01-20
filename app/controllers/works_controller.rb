@@ -1,5 +1,12 @@
 class WorksController < ApplicationController
 
+	def new
+		@work = Work.new
+	end
+
+	def show
+	end
+
   def index
 
     search_params = params[:search].downcase

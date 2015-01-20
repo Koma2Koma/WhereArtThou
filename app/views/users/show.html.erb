@@ -5,7 +5,8 @@
   </div>
   <% if @user == current_user %>
     <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button col-md-1" %>
-  <% end %>
+  <% end %> <br/>
+  <%= link_to 'View profile', [@user,@artist], class: "btn btn-success btn-lg user-button col-md-1" %>
 </div>
 
   
