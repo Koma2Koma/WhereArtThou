@@ -1,4 +1,16 @@
-<%= form_for([@artist, @work], :html => { :multipart => true }) do |f| %>
+<%= form_for([@artist, @work], url: artist_works_path(@artist), :html => { :multipart => true }) do |f| %>
+  <% if @work.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@work.errors.count, "error") %> prohibited this image from being saved:</h2>
+      <ul>
+      <% @work.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
   <div class="form-group">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -36,4 +48,4 @@
   <p>
     <%= f.submit "Submit" %>
   </p>
-  <% end%>
+<% end%>

@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :set_artist
+  before_action :set_artist, except: :index
   before_action :set_work, only: [:show, :edit, :update, :destroy]
 
   def new
