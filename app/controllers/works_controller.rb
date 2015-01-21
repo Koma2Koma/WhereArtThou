@@ -2,7 +2,7 @@ class WorksController < ApplicationController
 
   def index
 
-    search_params = params[:search].downcase
+    search_params = params[:search].downcase if params[:search] != nil
 
     if search_params
       @works = Work.where('lower(title) LIKE ?', "%#{search_params}%")

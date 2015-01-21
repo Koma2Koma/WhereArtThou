@@ -1,0 +1,26 @@
+<%= link_to "DISCOVER", '#', data: {toggle: 'modal', target: '#discoverModal'}, class: "btn btn-success btn-lg hpbutton" %>
+
+<!-- Modal -->
+<div class="modal fade" id="discoverModal" tabindex="-1" role="dialog" aria-labelledby="discoverModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="discoverModalLabel">DISCOVER ARTISTS AND WORKS</h3>
+      </div>
+      <div class="modal-body discover-modal">
+        <h2 class="modal-head">You can search for artists and works without registering for an account. However, there are advantages to signing up for a Where Art Thou account:</h2>
+        <ul>
+          <li>Create your own user page</li>
+          <li>Add favorite works of art to your 'Mosaic'</li>
+          <li>Follow your favorite artists</li>
+        </ul>
+        <%= link_to 'SEARCH', works_path, class: "btn btn-success btn-lg hpbutton modal-button" %>
+        <%= link_to 'SIGN UP', new_user_registration_path(:artist => false), class: "btn btn-success btn-lg hpbutton modal-button" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default hpbutton" data-dismiss="modal">CLOSE</button>
+      </div>
+    </div>
+  </div>
+</div>
