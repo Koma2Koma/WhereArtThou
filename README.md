@@ -1,3 +1,5 @@
-== Where Art Thou
+#Where Art Thou
 
-See it on [Heroku](whereartthou.herokuapp.com)
+Art. Accessible.
+
+See it on [Heroku](http://whereartthou.herokuapp.com/)
