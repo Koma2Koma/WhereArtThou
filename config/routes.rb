@@ -6,11 +6,12 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {registrations: 'registrations'}
 
-  resources :users, only: [:show, :index] do
-  	resources :artists, only: [:show, :edit] do
-    	resources :works, except: :index
-  	end
+
+  resources :artists, only: [:show, :edit] do
+    resources :works, except: :index
   end
+
+  resources :users, only: [:show, :index]
 
   resources :works, only: :index
 end

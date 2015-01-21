@@ -1,3 +1,6 @@
-<h1>Artist Home</h1>
-
-<%= link_to 'Upload new image', new_user_artist_work_path(@user,@artist) %>
+<div class="home-page-background">
+  <div class="container action-header">
+    <h2>Artist Home</h2>
+  </div>
+  <%= link_to 'Upload new image', new_artist_work_path(@artist), class: "btn btn-success btn-lg hpbutton" %>
+</div>
