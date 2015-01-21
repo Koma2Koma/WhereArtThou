@@ -8,7 +8,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h3 class="modal-title" id="myModalLabel">SIGN UP</h3>
       </div>
-      <div class="modal-body">
+      <div class="modal-body signup-modal">
         <h2 class="modal-head">What type of account would you like?</h2>
         <%= link_to 'ARTIST', new_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton modal-button" %>
         <%= link_to 'USER', new_user_registration_path(:artist => false), class: "btn btn-success btn-lg hpbutton modal-button" %>
