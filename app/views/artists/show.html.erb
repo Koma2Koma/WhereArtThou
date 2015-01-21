@@ -1,29 +1,6 @@
-<%= stylesheet_link_tag 'application', media: 'all',
-                                           'data-turbolinks-track' => true %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-		<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
-		<script src="/js/jquery.tilesgallery.js"  type="text/javascript"></script>
-		<link href="/css/jquery-tilesgallery.css" rel="Stylesheet" />
-
-<body>
-	<div class="upload-option">
-	 <!-- Upload button for images, btyb paperclip -->
-	</div>
-	
-	<div id="gallery">
-			<%= image_tag "image-001.jpg" %>
-			<%= image_tag "image-002.jpg" %>
-			<%= image_tag "image-003.jpg" %>
-			<%= image_tag "image-004.jpg" %>
-			<%= image_tag "image-005.jpg" %>
-			<%= image_tag "image-006.jpg" %>
-			<%= image_tag "image-007.jpg" %>
-
-
-	</div>
-	<script type="text/javascript">
-	$(function () {
-		$(".tiles").tilesGallery();
-	})
-	</script>
-</body>
+<div class="home-page-background">
+  <div class="container action-header">
+    <h2>Artist Home</h2>
+  </div>
+  <%= link_to 'Upload new image', new_artist_work_path(@artist), class: "btn btn-success btn-lg hpbutton" %>
+</div>
