@@ -4,3 +4,7 @@
   </div>
   <%= link_to 'Upload new image', new_artist_work_path(@artist), class: "btn btn-success btn-lg hpbutton" %>
 </div>
+
+<% @artist.works.each do |work| %>
+  <%= image_tag work.image.url %>
+<%end%>

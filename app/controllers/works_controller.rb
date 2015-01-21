@@ -51,6 +51,5 @@ class WorksController < ApplicationController
 
   def work_params
     params.require(:work).permit(:image, :style, :year, :title, :description, :price, :medium)
->>>>>>> Upload form operational!
   end
 end
