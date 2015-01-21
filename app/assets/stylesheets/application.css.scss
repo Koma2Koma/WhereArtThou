@@ -7,6 +7,7 @@
 body{
   padding-top: 145px;
   background-color: #4A4847;
+  font-family: "Playfair Display";
 }
 
 a {
@@ -86,6 +87,17 @@ img.logo {
 	margin: 0 auto;
 }
 
+.about-page-background {
+	background-color: white;
+	/*height: 545px;*/
+	text-align: center;
+	margin: 0 auto;
+}
+
+.lead {
+	padding-left: 15;
+}
+
 .hpbutton{
 	background-color: #412F4A;
 	color: white;
@@ -149,6 +161,12 @@ img.logo {
 	font-size: 2.5em;
 }
 
+.heading-font-dark {
+	font-family: "Open Sans Condensed";
+	color: black;
+	font-size: 2.5em;
+}
+
 .form-label {
 	font-family: "Playfair Display";
 	font-size: 1.5em;
@@ -193,3 +211,24 @@ img.logo {
 		}
 	}
 }
+/* Padding for About Page */
+.img-about-top{
+	padding-top: 1.25em;
+	padding-right: 1.25em;
+}
+
+.img-about-middle {
+	padding-left: 1.25em;
+}
+
+.img-about-bottom {
+	padding-right: 1.25em;
+	padding-bottom: 1.25em;
+}
+
+.about-paragraph {
+	padding-right: 2em;
+	padding-left: 2em;
+	text-align: justify;
+}
+
