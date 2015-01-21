@@ -18,9 +18,9 @@ User.create! :username => 'Peter Frampston', :email => 'Peter@arthouse.com', :pa
 User.create! :username => 'Lissy Johnson', :email => 'ljohnson@artdepot.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
 User.create! :username => 'Sassy Rassmore', :email => 'SRassmore@artdepot.com', :password => 'topsecret', :password_confirmation => 'topsecret', is_artist: true
 
-Work.create! :title =>'June Nude', :year => '1974', :price => '$2000', :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
-Work.create! :title =>'July Nude', :year => '1974', :price => '$2000', :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
-Work.create! :title =>'August Nude', :year => '1974', :price => '$2000', :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
-Work.create! :title =>'September Nude', :year => '1974', :price => '$2000', :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
+Work.create! :title =>'June Nude', :year => '1974', :price => 2000, :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
+Work.create! :title =>'July Nude', :year => '1974', :price => 2000, :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
+Work.create! :title =>'August Nude', :year => '1974', :price => 2000, :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
+Work.create! :title =>'September Nude', :year => '1974', :price => 2000, :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
 
 
