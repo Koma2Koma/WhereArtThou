@@ -24,6 +24,7 @@ class RegistrationsController < Devise::RegistrationsController
     else
     	user_path(user)
     end
-  end  
+  end
+
 
 end
