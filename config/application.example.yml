@@ -1,4 +1,0 @@
-development:
-  AWS_ACCESS_KEY_ID: <S3 Access Key>
-  AWS_SECRET_ACCESS_KEY: <S3 Secret Key>
-  AWS_BUCKET_NAME: <S3 Bucket Name>
