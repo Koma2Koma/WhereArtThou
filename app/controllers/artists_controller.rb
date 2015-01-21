@@ -4,19 +4,13 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @artist = Artist.find_by(user_id: params[:id])
   end
 
   def new
   end
 
   def create
-  	@artist = Artist.new(artist_params)
-  	@artist.user_id = current_user.user_id
-  	if @artist.save
-  		redirect
-  	else
-  		render :new
-  	end
   end
 
 end
