@@ -22,5 +22,3 @@ Work.create! :title =>'June Nude', :year => '1974', :price => '$2000', :descript
 Work.create! :title =>'July Nude', :year => '1974', :price => '$2000', :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
 Work.create! :title =>'August Nude', :year => '1974', :price => '$2000', :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
 Work.create! :title =>'September Nude', :year => '1974', :price => '$2000', :description => 'This is a nice example of my early work', :medium => 'oil on canvas', :style => 'Modern'
-
-
