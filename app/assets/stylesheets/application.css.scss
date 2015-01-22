@@ -4,6 +4,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display);
 
+
 body{
   padding-top: 145px;
   background-color: #4A4847;
@@ -238,4 +239,9 @@ strong {
 	.work-thumbnail {
 		margin: 5px;
 	}
+
+#tag_cloud {
+  .s { font-size: 0.8em;}
+  .m { font-size: 1.2em;}
+  .l { font-size: 1.8em;}
 }
