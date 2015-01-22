@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_one :artist
   belongs_to :category
 
- devise :database_authenticatable, :registerable,
+  acts_as_liker
+
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end
