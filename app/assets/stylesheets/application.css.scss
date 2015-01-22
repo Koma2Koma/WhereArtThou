@@ -49,7 +49,7 @@ img.logo {
 	}
 }
 
-.carousel {
+.carousel-home {
 	width: 633px;
 	float: right;
 	margin-top: 40px;
@@ -213,4 +213,29 @@ strong {
 .search-page-background {
 	background-color: white;
 	padding: 20px;
+}
+
+.carousel-gallery {
+	width: 633px;
+	height: 450px;
+	margin-top: 40px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+	margin: 0 auto;
+	img {
+		text-align: center;
+		margin: auto;
+	}
+}
+
+.artist-gallery {
+	padding: 25px;
+}
+
+.lower-artist-show {
+	padding-top: 25px;
+	.work-thumbnail {
+		margin: 5px;
+	}
 }
