@@ -1,0 +1,18 @@
+<div class="works-page-background">
+	<div class="col-md-6">
+  	<%= image_tag @work.image.url(:large) %>
+  </div>
+  <div class="col-md-6">
+  	<h3><strong>Title: </strong><%= @work.title %></h3>
+  	<h3><strong>Year Created:</strong> <%= @work.year %></h3>
+  	<h3><strong>Price: </strong>$<%= @work.price.to_i %></h3>
+  	<h3><strong>Description: </strong><%= @work.description %></h3>
+  	<h3><strong>Medium: </strong><%= @work.medium %></h3>
+  	<h3><strong>Style: </strong><%= @work.style %></h3>
+  </div>
+  <%= link_to 'Artist Gallery', artist_path(@work.artist), class: "btn btn-success btn-lg hpbutton" %>
+  <% if user_signed_in? %>
+  	<%= link_to 'Edit', artist_path(@work.artist), class: "btn btn-success btn-lg hpbutton" %>
+  	<%= link_to 'Delete', artist_work_path(@artist, @work), method: :delete, class: "btn btn-success btn-lg hpbutton" %>
+  <% end %>
+</div>

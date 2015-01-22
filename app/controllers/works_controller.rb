@@ -39,6 +39,23 @@ class WorksController < ApplicationController
     end
   end
 
+  def update
+    if user_signed_in?
+      if @work.update(work_params)
+        redirect_to artist_path(@artist)
+      else
+        render :edit
+      end
+    end
+  end
+
+  def destroy
+    if user_signed_in?    
+     @work.destroy
+     redirect_to artist_path(@artist)    
+    end
+  end
+
   private
 
   def set_artist
