@@ -1,12 +1,13 @@
 <div class="user-page-background">
-  <div class="col-md-11">
-    <%= gravatar_for @user, class:"gravatar" %>
-    <%= @user.username %>
-  </div>
-  <% if @user == current_user %>
-    <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button col-md-1" %>
-  <% end %> <br/>
- 
+	<div class="container">
+	  <div class="col-md-11">
+	    <%= gravatar_for @user, class:"gravatar" %>
+	    <%= @user.username %>
+	  </div>
+	  <% if @user == current_user %>
+	    <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button col-md-1" %>
+	  <% end %>
+	</div>
 </div>
 
   
