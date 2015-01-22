@@ -50,7 +50,7 @@ img.logo {
 	}
 }
 
-.carousel {
+.carousel-home {
 	width: 633px;
 	float: right;
 	margin-top: 40px;
@@ -216,7 +216,29 @@ strong {
 	padding: 20px;
 }
 
-///// search page tag cloud /////
+.carousel-gallery {
+	width: 633px;
+	height: 450px;
+	margin-top: 40px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+	margin: 0 auto;
+	img {
+		text-align: center;
+		margin: auto;
+	}
+}
+
+.artist-gallery {
+	padding: 25px;
+}
+
+.lower-artist-show {
+	padding-top: 25px;
+	.work-thumbnail {
+		margin: 5px;
+	}
 
 #tag_cloud {
   .s { font-size: 0.8em;}
