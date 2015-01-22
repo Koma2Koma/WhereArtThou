@@ -50,10 +50,18 @@
   </a>
 </div>
 
-<div class="home-page-background">
-  <div class="container action-header">
-    <h2>Get started now.</h2>
+<% if !user_signed_in? %>
+  <div class="home-page-background">
+    <div class="container action-header">
+      <h2>Get started now.</h2>
+    </div>
+    <%= render 'layouts/discover_modal' %>
+    <%= link_to 'SIGN UP', '#', data: {toggle: 'modal', target: '#myModal'}, class: "btn btn-success btn-lg hpbutton" %>
   </div>
-  <%= render 'layouts/discover_modal' %>
-  <%= link_to 'SIGN UP', '#', data: {toggle: 'modal', target: '#myModal'}, class: "btn btn-success btn-lg hpbutton" %>
-</div>
+<% else %>
+  <div class="home-page-background">
+    <div class="container action-header">
+    </div>
+  </div>
+<% end %>
+
