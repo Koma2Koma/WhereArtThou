@@ -1,3 +1,13 @@
+
+<h1>Tags</h1>
+
+<div id='tag_cloud'>
+  <% tag_cloud Work.tag_counts, %[s m l] do |tag, css_class|   %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+
+</div>
+
 <h1>Works</h1>
 <% @works.each do |work| %>
 
