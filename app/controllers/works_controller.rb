@@ -70,6 +70,6 @@ class WorksController < ApplicationController
   end
 
   def work_params
-    params.require(:work).permit(:image, :style, :year, :title, :description, :price, :medium, :tag_list)
+    params.require(:work).permit(:image, :style, :year, :title, :description, :price, :medium, :tag_list, :image_file_name)
   end
 end
