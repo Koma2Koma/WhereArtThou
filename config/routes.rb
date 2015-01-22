@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {registrations: 'registrations'}
 
+  get 'tags/:tag', to: 'works#index', as: :tag
 
   resources :artists, only: [:show, :edit] do
     resources :works, except: :index

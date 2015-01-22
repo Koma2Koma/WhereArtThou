@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'aws-sdk'
 gem 'socialization'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development do
 	gem 'spring'
