@@ -82,20 +82,13 @@ img.logo {
 
 .home-page-background {
 	background-color: white;
-	height: 545px;
 	text-align: center;
 	margin: 0 auto;
-}
-
-.about-page-background {
-	background-color: white;
-	/*height: 545px;*/
-	text-align: center;
-	margin: 0 auto;
+	padding: 30px;
 }
 
 .lead {
-	padding-left: 15;
+	padding-left: 15px;
 }
 
 .hpbutton{
@@ -211,24 +204,13 @@ img.logo {
 		}
 	}
 }
-/* Padding for About Page */
-.img-about-top{
-	padding-top: 1.25em;
-	padding-right: 1.25em;
+
+strong {
+	font-family: "Open Sans Condensed";
 }
 
-.img-about-middle {
-	padding-left: 1.25em;
+.works-page-background {
+	background-color: white;
+	padding: 20px;
+	height: 545px;
 }
-
-.img-about-bottom {
-	padding-right: 1.25em;
-	padding-bottom: 1.25em;
-}
-
-.about-paragraph {
-	padding-right: 2em;
-	padding-left: 2em;
-	text-align: justify;
-}
-
