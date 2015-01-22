@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 20150119065302) do
     t.text     "description"
     t.text     "medium"
     t.text     "style"
-    t.integer  "artist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
