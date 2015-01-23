@@ -4,6 +4,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display);
 
+
 body{
   padding-top: 145px;
   background-color: #4A4847;
@@ -49,7 +50,7 @@ img.logo {
 	}
 }
 
-.carousel {
+.carousel-home {
 	width: 633px;
 	float: right;
 	margin-top: 40px;
@@ -213,4 +214,35 @@ strong {
 .search-page-background {
 	background-color: white;
 	padding: 20px;
+}
+
+.carousel-gallery {
+	width: 633px;
+	height: 450px;
+	margin-top: 40px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+	margin: 0 auto;
+	img {
+		text-align: center;
+		margin: auto;
+	}
+}
+
+.artist-gallery {
+	padding: 25px;
+}
+
+.lower-artist-show {
+	padding-top: 25px;
+	.work-thumbnail {
+		margin: 5px;
+	}
+}
+
+#tag_cloud {
+  .s { font-size: 0.8em;}
+  .m { font-size: 1.2em;}
+  .l { font-size: 1.8em;}
 }
