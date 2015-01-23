@@ -32,6 +32,14 @@
     </div>
 
     <%= f.hidden_field :is_artist, value: params[:artist] %>
+    <% if params[:artist] == 'true' %>
+    <% @user.build_artist %>
+      <%= f.fields_for :artist do |artist_fields| %>
+        <%= render partial: 'artist_fields', locals: { f: artist_fields} %>
+      <% end %>
+    <% else %>
+      <!-- You are going to be an user -->
+    <% end %>
 
     
     <div class="actions">

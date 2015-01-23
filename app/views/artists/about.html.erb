@@ -1,0 +1,11 @@
+<div class="user-page-background">
+  <div class="col-md-11">
+    <%= "paperclip to go here" %>
+
+  </div>
+  <% if @artist == current_user %>
+    <%= link_to 'Edit My Info', edit_user_registration_path, class: "btn btn-success btn-lg user-button col-md-1" %>
+  <% end %>
+</div>
+
+
