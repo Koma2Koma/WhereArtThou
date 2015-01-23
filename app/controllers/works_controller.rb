@@ -34,11 +34,11 @@ class WorksController < ApplicationController
     elsif params[:tag]
       @works = Work.tagged_with(params[:tag])
       @artists = User.where(is_artist: true)
-      @users = User.all
+      @users = User.where(is_artist: false)
     else
       @works = Work.all
       @artists = User.where(is_artist: true)
-      @users = User.all
+      @users = User.where(is_artist: false)
     end
   end
 
@@ -70,6 +70,6 @@ class WorksController < ApplicationController
   end
 
   def work_params
-    params.require(:work).permit(:image, :style, :year, :title, :description, :price, :medium, :tag_list)
+    params.require(:work).permit(:image, :style, :year, :title, :description, :price, :medium, :tag_list, :image_file_name)
   end
 end

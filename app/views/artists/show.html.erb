@@ -1,8 +1,48 @@
-    <h2>Artist Home</h2>
-  <div>
-  <%= link_to 'Upload new image', new_artist_work_path(@artist), class: "btn btn-success btn-lg hpbutton" %>
-</div>
+<div class='works-page-background'>
+	<h2><%= @artist.user.username %>'s Gallery</h2>
+	<% if current_user && @artist == current_user.artist %>
+		<%= link_to 'Upload new image', new_artist_work_path(@artist), class: "btn btn-success btn-lg hpbutton" %>
+	<% end %>
 
-<% @artist.works.each do |work| %>
-  <%= link_to (image_tag work.image.url(:small)), artist_work_path(@artist, work.id) %>
-<%end%>
+	<div class = "container artist-gallery">
+		<div id="carousel-example-generic" class="carousel slide carousel-gallery" data-ride="carousel">
+
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+
+		  	<% @artist.works.each_with_index do |work, index| %>
+		  		<li data-target="#carousel-example-generic" data-slide-to="<%= index %>" class="<%= "active" if work == @artist.works.first %>"></li>
+		  	<% end %>
+		  </ol>
+
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+
+		  	<% @artist.works.each do |work| %>
+			    <div class="item <%= "active" if work == @artist.works.first %> ">
+			      <%= link_to (image_tag work.image.url(:large)), artist_work_path(@artist, work.id), class: "img img-responsive my-image" %>
+			    </div>
+		    <% end %>
+		  </div>
+
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+	</div>
+
+	<h2><%= @artist.user.username %>'s Works</h2>
+
+	<div class = "lower-artist-show container">
+
+		<% @artist.works.each do |work| %>
+		  <%= link_to (image_tag work.image.url(:small)), artist_work_path(@artist, work.id), class:"work-thumbnail" %>
+		<%end%>
+	</div>
+</div>
