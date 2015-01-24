@@ -6,6 +6,10 @@
   <% if @user == current_user %>
     <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button col-md-1" %>
   <% end %>
+  <% if @mosaic %>
+    <% @mosaic.each do |tile| %>
+      <%= tile.
+  <% end %>
 </div>
 
   

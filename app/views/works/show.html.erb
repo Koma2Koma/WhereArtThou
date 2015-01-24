@@ -20,6 +20,7 @@
       <% if current_user && current_user.is_artist == false %>
         <button id='add_tile' class='btn btn-success btn-lg hpbutton'>Add Tile</button>
       <% end %>
+      <div class="likes"><%= pluralize(@work.likers(User).count, 'like')%></div>
     <% end %>
   </div>
 </div>
