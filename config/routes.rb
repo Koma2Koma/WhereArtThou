@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'about' => 'static_pages#about'
-
+  get 'discover' => 'static_pages#discover'
 
   devise_for :users, :controllers => {registrations: 'registrations',
   																		:omniauth_callbacks => "users/omniauth_callbacks"}
