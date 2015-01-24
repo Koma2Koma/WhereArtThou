@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :index]
+  resources :venues, only: [:show, :index]
   resources :works, only: :index
 
   get 'artist_about/:id', to: 'artists#about', as: :artist_about
