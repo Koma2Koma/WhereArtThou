@@ -21,6 +21,7 @@ gem 'omniauth-facebook'
 gem 'geocoder'
 
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'gmaps4rails'
 
 group :development do
 	gem 'spring'

@@ -41,6 +41,14 @@
       <% end %>
     <% end %>
 
+    <%= f.hidden_field :is_venue, value: params[:venue] %>
+    <% if params[:venue] == 'true' %>
+      <% @user.build_venue %>
+      <%= f.fields_for :venue do |venue_fields| %>
+        <%= render partial: 'venue_fields', locals: { f: venue_fields} %>
+      <% end %>
+    <% end %>
+
     <div class="col-md-4">
       <div class="signup-button">
         <%= f.submit "SIGN UP", class: "btn btn-success btn-lg hpbutton form-submit" %><br><br>

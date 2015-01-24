@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150124173858) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -136,7 +137,10 @@ ActiveRecord::Schema.define(version: 20150124173858) do
     t.string   "contact"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "user_id"
   end
+
+  add_index "venues", ["user_id"], name: "index_venues_on_user_id", using: :btree
 
   create_table "works", force: true do |t|
     t.text     "title"

@@ -1,4 +1,7 @@
 class Venue < ActiveRecord::Base
+  has_many :events, dependent: :destroy
+  belongs_to :user
+  
   validates :address, :city, :state, presence: true
 
   geocoded_by :full_street_address
