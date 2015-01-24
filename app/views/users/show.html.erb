@@ -7,9 +7,10 @@
 </script>
 
 <div class="user-page-background">
-  <div class="col-md-11">
+  <div class="col-sm-6 col-md-11 col-lg-12">
     <%= gravatar_for @user, class: "gravatar" %>
     <%= @user.username %>
+    
   </div>
   <% if @user == current_user %>
     <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button col-md-1" %>

@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "final-tiles-gallery";
+@import "font-awesome";
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display);
@@ -16,6 +17,11 @@ a {
 	&:hover { 
 	color: #412F4A;
 	}
+}
+.artist-about-page-about-string{
+	font-family: "Playfair Display";
+	font-size: .75em;
+	color: black;
 }
 
 .flash {
