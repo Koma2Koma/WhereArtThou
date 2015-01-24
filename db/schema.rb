@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123224601) do
+ActiveRecord::Schema.define(version: 20150124171418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,25 @@ ActiveRecord::Schema.define(version: 20150123224601) do
   end
 
   add_index "artists", ["user_id"], name: "index_artists_on_user_id", using: :btree
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.string   "start_date"
+    t.string   "end_date"
+    t.string   "time"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.text     "description"
+    t.string   "contact"
+    t.string   "facebook"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "venue_id"
+  end
+
+  add_index "events", ["venue_id"], name: "index_events_on_venue_id", using: :btree
 
   create_table "follows", force: true do |t|
     t.string   "follower_type"
@@ -98,6 +117,23 @@ ActiveRecord::Schema.define(version: 20150123224601) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "venues", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "phone"
+    t.text     "description"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "instagram"
+    t.string   "website"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "contact"
+  end
 
   create_table "works", force: true do |t|
     t.text     "title"
