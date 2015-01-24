@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <%= form_for([@artist, @work], url: artist_works_path(@artist), :html => { :multipart => true }) do |f| %>
   <% if @work.errors.any? %>
     <div id="error_explanation">
@@ -11,46 +10,56 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <div class="form-container">
+    <div class="col-md-4">
+
+      <div class="field">
+        <%= f.label :title, class: "form-label" %><br />
+        <%= f.text_field :title, autofocus: true, class: "form-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :year_created, class: "form-label" %><br />
+        <%= f.text_field :year, class: "form-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :price, class: "form-label" %><br />
+        <%= f.text_field :price, class: "form-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :medium, class: "form-label" %><br />
+        <%= f.text_field :medium, class: "form-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :style, class: "form-label" %><br />
+        <%= f.text_field :style, class: "form-input" %>
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div class="field">
+        <%= f.label :tag_list, 'Tags (seperated by commas)', class: "form-label" %><br />
+        <%= f.text_field :tag_list, class: "form-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description, class: "form-label" %><br />
+        <%= f.text_area :description, class: "form-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.file_field :image, class: "form-label" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Submit", class: "btn btn-success btn-lg hpbutton form-submit" %>
+      </div>
+
+    </div>
   </div>
-
-  <div class="form-group">
-    <%= f.label :year_created %><br />
-    <%= f.text_field :year %>
-  </div>
-
-  <p>
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </p>
-
-  <p>
-    <%= f.label :medium %><br />
-    <%= f.text_field :medium %>
-  </p>
-
-  <p>
-    <%= f.label :style %><br />
-    <%= f.text_field :style %>
-  </p>
-
-  <p>
-    <%= f.label :tag_list, 'Tags (seperated by commas)' %><br />
-    <%= f.text_field :tag_list %>
-  </p>
-
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-
-  <p>
-    <%= f.file_field :image %>
-  </p>
-
-  <p>
-    <%= f.submit "Submit" %>
-  </p>
 <% end%>

@@ -218,7 +218,6 @@ strong {
 
 .carousel-gallery {
 	width: 633px;
-	height: 450px;
 	margin-top: 40px;
 	margin-right: 20px;
 	margin-bottom: 30px;
@@ -245,4 +244,12 @@ strong {
   .s { font-size: 0.8em;}
   .m { font-size: 1.2em;}
   .l { font-size: 1.8em;}
+}
+
+textarea {
+	resize: none;
+}
+
+.signup-button {
+	margin-top: 30px;
 }
