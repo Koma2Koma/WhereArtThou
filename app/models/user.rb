@@ -23,4 +23,11 @@ class User < ActiveRecord::Base
 	  end
   end
 
+  has_attached_file :image, :styles => { :avatar => "200x200>", :coverphoto => "925x340" }, :default_url => "/images/:style/missing.png"
+  validates_attachment :image, :presence => true,
+    :content_type => { :content_type => /\Aimage\/.*\Z/ },
+    :size => { :in => 0..4.megabytes },
+    :file_name => { :matches => [/png\Z/, /jpe?g\Z/]}
+  do_not_validate_attachment_file_type :image
+
 end

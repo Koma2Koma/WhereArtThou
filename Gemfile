@@ -19,8 +19,10 @@ gem 'socialization'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'omniauth-facebook'
 gem "font-awesome-rails"
+gem 'geocoder'
 
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'gmaps4rails'
 
 group :development do
 	gem 'spring'
