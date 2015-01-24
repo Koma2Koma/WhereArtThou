@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   get 'about' => 'static_pages#about'
 
-  # get 'artists'
 
-  devise_for :users, :controllers => {registrations: 'registrations'}
+  devise_for :users, :controllers => {registrations: 'registrations',
+  																		:omniauth_callbacks => "users/omniauth_callbacks"}
 
   get 'tags/:tag', to: 'works#index', as: :tag
 
@@ -18,6 +18,5 @@ Rails.application.routes.draw do
   resources :works, only: :index
 
   get 'artist_about/:id', to: 'artists#about', as: :artist_about
-
 
 end
