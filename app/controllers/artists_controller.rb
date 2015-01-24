@@ -13,4 +13,8 @@ class ArtistsController < ApplicationController
   def create
   end
 
+  def about
+    
+  end
+    
 end
