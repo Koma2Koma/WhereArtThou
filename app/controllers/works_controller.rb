@@ -14,7 +14,7 @@ class WorksController < ApplicationController
 
     respond_to do |format|
       if @work.save
-        format.html { redirect_to @artist, notice: 'Lesson was successfully created.' }
+        format.html { redirect_to @artist, notice: 'Image was successfully created.' }
         format.json { render :show, status: :created, location: @artist }
       else
         format.html { render :new }
