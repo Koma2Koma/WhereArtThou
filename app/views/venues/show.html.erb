@@ -6,15 +6,20 @@
     <form>
       Full Address: <br>
       <input type='text' name='full-address'>
+      <input type='submit' value="SubmitAddress" id='submitAddress'>
     </form>
     <h4>Lat and Long:</h4> <br>
     <h5 id='geo-output'></h5>
   </div>
 
-
-
-
-
-
-
 </div>
+
+<script type="text/javascript">
+
+$( '#submitAddress' ).click( function() {
+  <% result = request.location %>
+  
+  $( '#geo-output' ).html( <%= result %> );
+});
+
+</script>
