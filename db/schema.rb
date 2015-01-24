@@ -134,6 +134,8 @@ ActiveRecord::Schema.define(version: 20150124200949) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "contact"
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "user_id"
   end
 

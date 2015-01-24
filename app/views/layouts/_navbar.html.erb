@@ -13,6 +13,7 @@
 	<ul class="nav navbar-nav pull-right nav-links">
 		<li><%= link_to 'HOME', root_path %></li>
 		<li><%= link_to 'MISSION', about_path %></li>
+		<li><%= link_to 'DISCOVER', discover_path %></li>
 		<% if !current_user %>
 			<li><%= render 'layouts/signup_modal' %></li>
 		  <li><%= link_to 'LOG IN', new_user_session_path %></li>

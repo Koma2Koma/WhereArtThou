@@ -14,8 +14,12 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require_tree .
-//= require jquery-1.10.1.min
 //= require jquery.finalTilesGallery
 //= require modernizr-2.6.2.min
 //= require plugins
+//= require artists
+//= require events
+//= require users
+//= require works
+
+
