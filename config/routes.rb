@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'about' => 'static_pages#about'
 
+  # get 'artists'
+
   devise_for :users, :controllers => {registrations: 'registrations'}
 
   get 'tags/:tag', to: 'works#index', as: :tag
@@ -13,6 +15,9 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :index]
-
   resources :works, only: :index
+
+  get 'artist_about/:id', to: 'artists#about', as: :artist_about
+
+
 end
