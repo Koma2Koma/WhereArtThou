@@ -6,9 +6,9 @@ class RegistrationsController < Devise::RegistrationsController
 
 	def sign_up_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation, :current_password, :is_artist, :is_venue, 
-                                     artist_attributes: [:id, :twitter, :facebook, :instagram, :website, :tags, :about, :location, :user_id],
+                                     artist_attributes: [:id, :twitter, :facebook, :instagram, :website, :tags, :about, :location, :user_id, :image],
                                      venue_attributes: [:id, :name, :address, :city, :state, :phone, :description, :twitter, :facebook, :instagram, :website, :email, :contact])
-	end                                                   
+  end                                                   
 
 
 	def account_update_params
