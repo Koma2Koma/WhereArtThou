@@ -18,9 +18,11 @@ gem 'aws-sdk'
 gem 'socialization'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'omniauth-facebook'
+gem 'geocoder'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'gmaps4rails'
+
 group :development do
 	gem 'spring'
 	gem 'better_errors'
