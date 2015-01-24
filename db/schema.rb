@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124182034) do
+ActiveRecord::Schema.define(version: 20150124200949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20150124182034) do
     t.string   "name"
     t.string   "start_date"
     t.string   "end_date"
-    t.string   "time"
     t.string   "address"
     t.string   "city"
     t.string   "state"
@@ -46,6 +45,8 @@ ActiveRecord::Schema.define(version: 20150124182034) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "venue_id"
+    t.string   "start_time"
+    t.string   "end_time"
   end
 
   add_index "events", ["venue_id"], name: "index_events_on_venue_id", using: :btree
@@ -130,7 +131,6 @@ ActiveRecord::Schema.define(version: 20150124182034) do
     t.string   "facebook"
     t.string   "instagram"
     t.string   "website"
-    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "contact"

@@ -42,7 +42,8 @@ class RegistrationsController < Devise::RegistrationsController
                                    :instagram,
                                    :website,
                                    :email,
-                                   :contact])
+                                   :contact,
+                                   :user_id])
 
   end
 
@@ -53,8 +54,8 @@ class RegistrationsController < Devise::RegistrationsController
     	user.artist.update_attributes(user_id: user.id)
     	artist_path(user.artist)
     elsif user.is_venue
-      venue = Venue.find_by(user_id: user.id)
-      venue_path(venue)  
+      user.venue.update_attributes(user_id: user.id)
+      venue_path(user.venue) 
     else
     	user_path(user)
     end
