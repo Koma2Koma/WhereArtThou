@@ -17,6 +17,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'aws-sdk'
 gem 'socialization'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'omniauth-facebook'
+
+gem 'dotenv-rails', :groups => [:development, :test]
 
 group :development do
 	gem 'spring'
