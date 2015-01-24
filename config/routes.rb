@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'events/show'
-
   root 'static_pages#home'
 
   get 'about' => 'static_pages#about'
@@ -21,5 +19,9 @@ Rails.application.routes.draw do
   resources :works, only: :index
 
   get 'artist_about/:id', to: 'artists#about', as: :artist_about
+
+  resources :venues, only: [:show, :index, :edit] do
+    resources :events
+  end
 
 end
