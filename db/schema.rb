@@ -134,9 +134,9 @@ ActiveRecord::Schema.define(version: 20150124200949) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "contact"
+    t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "user_id"
   end
 
   add_index "venues", ["user_id"], name: "index_venues_on_user_id", using: :btree
