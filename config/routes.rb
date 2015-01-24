@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'events/show'
+
+  get 'venues/index'
+
+  get 'venues/show'
+
   root 'static_pages#home'
 
   get 'about' => 'static_pages#about'
