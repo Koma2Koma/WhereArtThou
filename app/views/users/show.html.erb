@@ -1,11 +1,40 @@
+
+<script type="text/javascript" charset="utf-8">
+	$(window).load(function() {
+        $('#gallery').finalTilesGallery({
+            //eventually add options here
+        });
+    });
+</script>
+
 <div class="user-page-background">
   <div class="col-md-11">
-    <%= gravatar_for @user, class:"gravatar" %>
+    <%= gravatar_for @user, class: "gravatar" %>
     <%= @user.username %>
   </div>
   <% if @user == current_user %>
     <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button col-md-1" %>
-  <% end %>
+  <% end %> <br/>
+	<div id="gallery">
+		<div class="ftg-items">
+			<div class="tile">
+			  <%= image_tag "image-004.jpg", class: "item" %>
+			</div>
+			<div class="tile">
+			  <%= image_tag "image-004.jpg", class: "item" %>
+			</div>
+			<div class="tile">
+			  <%= image_tag "image-004.jpg", class: "item" %>
+			</div>
+			<div class="tile">
+			  <%= image_tag "image-004.jpg", class: "item" %>
+			</div>
+			<div class="tile">
+			    <%= image_tag "image-004.jpg", class: "item" %>
+			</div>
+		</div>
+	</div> 
 </div>
+
 
   

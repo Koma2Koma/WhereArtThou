@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_one :artist
   belongs_to :category
+  accepts_nested_attributes_for :artist
+
 
   acts_as_liker
 
