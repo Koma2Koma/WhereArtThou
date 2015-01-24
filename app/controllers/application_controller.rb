@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
     if user.is_artist
       artist = Artist.find_by(user_id: user.id)
       artist_path(artist)
+    elsif user.is_venue
+      venue = Venue.find_by(user_id: user.id)
+      venue_path(venue)
     else
       user_path(user)
     end

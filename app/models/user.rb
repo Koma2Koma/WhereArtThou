@@ -2,9 +2,10 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_one :artist
+  has_one :venue
   belongs_to :category
   accepts_nested_attributes_for :artist
-
+  accepts_nested_attributes_for :venue
 
   acts_as_liker
 
