@@ -1,6 +1,5 @@
-
 <script type="text/javascript" charset="utf-8">
-	$(window).load(function() {
+  $(window).load(function() {
         $('#gallery').finalTilesGallery({
             //eventually add options here
         });
@@ -15,25 +14,17 @@
   <% if @user == current_user %>
     <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button col-md-1" %>
   <% end %> <br/>
-	<div id="gallery">
-		<div class="ftg-items">
-			<div class="tile">
-			  <%= image_tag "image-004.jpg", class: "item" %>
-			</div>
-			<div class="tile">
-			  <%= image_tag "image-004.jpg", class: "item" %>
-			</div>
-			<div class="tile">
-			  <%= image_tag "image-004.jpg", class: "item" %>
-			</div>
-			<div class="tile">
-			  <%= image_tag "image-004.jpg", class: "item" %>
-			</div>
-			<div class="tile">
-			    <%= image_tag "image-004.jpg", class: "item" %>
-			</div>
-		</div>
-	</div> 
+  <div id="gallery">
+    <div class="ftg-items">
+      <% if @mosaic %>
+        <% @mosaic.each do |tile| %>
+          <div class="tile">
+            <%= image_tag tile.image.url(:small), class: "item" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div> 
 </div>
 
 
