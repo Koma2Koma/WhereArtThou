@@ -1,49 +1,57 @@
+var lat,
+    lon,
+    latLon = [],
+    lAndl,
+    map;
+
+
 $(function(){
+  getLocation();  
+});
 
-    var lat = 0;
-    var lon = 0;
-    var latLon = [];
+function callMap() {
 
-   function showPosition(position) {
+
+    map = new GMaps({
+      div: '#map',
+      zoom: 12,
+      minZoom: 8,
+      maxZoom: 16,
+      lat: latLon[0],
+      lng: latLon[1]
+    });
+
+    $.getJSON('/venues.json', function(venues) {
+      $(venues).each(function(index, venue) {
+        if(venue.latitude != null) {
+          console.log('adding venue', venue);
+        
+          window.map.addMarker({
+            lat: venue.latitude,
+            lng: venue.longitude
+          });
+        }
+      });
+    });
+
+  }
+
+
+function showPosition(position) {
+      lat = position.coords.latitude;
       lon = position.coords.longitude;
-      latLon = [lat, lon]
+      latLon = [lat, lon];
       console.log( latLon );
       callMap();
-  };
-  // var x = document.getElementById("demo");
+}
   function getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, error);
       } else {
         $( '#demo').html( "Geolocation is not supported by this browser." );
-      };
-  };
+      }
+  }
 
   function error(err) {
     console.warn('ERROR(' + err.code + '): ' + err.message);
-  };
-
-  getLocation();
-  var lAndl;
-
-  function callMap() {
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers([
-        {
-          "lat": latLon[0],
-          "lng": latLon[1],
-          "picture": {
-            "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-            "width":  36,
-            "height": 36
-          },
-          "infowindow": "hello!"
-        }
-      ]);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-    });
-  };
-  
-});
+  }

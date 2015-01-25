@@ -1,0 +1,1 @@
+json.array! @venues, :name, :latitude, :longitude
