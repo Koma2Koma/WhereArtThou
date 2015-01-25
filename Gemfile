@@ -18,6 +18,7 @@ gem 'aws-sdk'
 gem 'socialization'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'omniauth-facebook'
+gem "font-awesome-rails"
 gem 'geocoder'
 gem 'font-awesome-rails'
 

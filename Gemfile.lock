@@ -215,9 +215,16 @@ DEPENDENCIES
   devise
   dotenv-rails
   figaro
+<<<<<<< HEAD
   font-awesome-rails
+=======
+<<<<<<< HEAD
+  font-awesome-rails
+=======
+>>>>>>> master
   geocoder
   gmaps4rails
+>>>>>>> 52cd119dd4603f195ebad533bed731eefff9d9f0
   gravtastic
   jbuilder (~> 2.0)
   jquery-rails
