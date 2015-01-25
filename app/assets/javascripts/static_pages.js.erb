@@ -11,30 +11,22 @@ $(function(){
 
 function callMap() {
 
-
-    map = new GMaps({
-      div: '#map',
-      zoom: 12,
-      minZoom: 8,
-      maxZoom: 16,
-      lat: latLon[0],
-      lng: latLon[1]
-    });
-
-    $.getJSON('/venues.json', function(venues) {
-      $(venues).each(function(index, venue) {
-        if(venue.latitude != null) {
-          console.log('adding venue', venue);
-        
-          window.map.addMarker({
-            lat: venue.latitude,
-            lng: venue.longitude
-          });
-        }
-      });
-    });
-
-  }
+  map = new GMaps({
+    div: '#map',
+    zoom: 12,
+    minZoom: 8,
+    maxZoom: 16,
+    lat: latLon[0],
+    lng: latLon[1]
+  });
+  
+  map.addMarker({
+    lat: latLon[0],
+    lng: latLon[1],
+    icon: 'http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-f70015/shapecolor-no/shadow-0/border-no/symbolstyle-color/symbolshadowstyle-white/gradient-no/star-3.png'
+  })
+};
+  
 
 
 function showPosition(position) {

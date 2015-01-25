@@ -3,8 +3,6 @@
 <h1>Find Art around you</h1>
 
 
-<h2 id='demo'></h2>
-
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
@@ -12,3 +10,20 @@
 
 
 </div>
+
+<script type="text/javascript">
+$(document).ready( function () {
+  setTimeout(function () {
+    <% @venues.each do |venue| %>
+      <% if !venue.latitude.nil? %>
+      window.map.addMarker({
+            lat: <%= venue.latitude %>,
+            lng: <%= venue.longitude %>,
+            icon: 'http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-0049c7/shapecolor-no/shadow-0/border-no/symbolstyle-color/symbolshadowstyle-white/gradient-no/art-museum-2.png'
+          });
+      <% end %>
+    <% end %>
+  }, 5000);
+});
+
+</script>
