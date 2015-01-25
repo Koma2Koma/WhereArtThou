@@ -81,13 +81,10 @@ GEM
       multipart-post (>= 1.2, < 3)
     figaro (1.0.0)
       thor (~> 0.14)
-<<<<<<< HEAD
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
-=======
     geocoder (1.2.7)
     gmaps4rails (2.1.2)
->>>>>>> 52cd119dd4603f195ebad533bed731eefff9d9f0
     gravtastic (3.2.6)
     hashie (3.3.2)
     hike (1.2.3)
@@ -218,12 +215,9 @@ DEPENDENCIES
   devise
   dotenv-rails
   figaro
-<<<<<<< HEAD
   font-awesome-rails
-=======
   geocoder
   gmaps4rails
->>>>>>> 52cd119dd4603f195ebad533bed731eefff9d9f0
   gravtastic
   jbuilder (~> 2.0)
   jquery-rails
