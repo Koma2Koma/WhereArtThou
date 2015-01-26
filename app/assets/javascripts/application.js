@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require jquery.finalTilesGallery
 //= require modernizr-2.6.2.min
 //= require plugins
