@@ -21,5 +21,6 @@
 //= require events
 //= require users
 //= require works
+//= require gmaps
 
 

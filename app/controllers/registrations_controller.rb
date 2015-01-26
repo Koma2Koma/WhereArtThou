@@ -91,6 +91,16 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def after_update_path_for(user)
+    if user.is_artist
+      artist_path(user.artist)
+    elsif user.is_venue
+      venue_path(user.venue) 
+    else
+      user_path(user)
+    end
+  end
+
 
 end
 

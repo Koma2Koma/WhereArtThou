@@ -34,16 +34,14 @@
           <%= f.password_field :current_password, autocomplete: "off", class: "form-input" %>
         </div>
 
-      <%= f.hidden_field :is_artist, value: params[:artist] %>
-      <% if params[:artist] == 'true' %>
+      <% if resource.is_artist %>
         <%# @user.build_artist %>
         <%= f.fields_for :artist do |artist_fields| %>
           <%= render partial: 'artist_fields', locals: { f: artist_fields} %>
         <% end %>
       <% end %>
 
-      <%= f.hidden_field :is_venue, value: params[:venue] %>
-      <% if params[:venue] == 'true' %>
+      <% if resource.is_venue %>
         <%# @user.build_venue %>
         <%= f.fields_for :venue do |venue_fields| %>
           <%= render partial: 'venue_fields', locals: { f: venue_fields} %>
