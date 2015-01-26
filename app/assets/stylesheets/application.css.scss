@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "final-tiles-gallery";
+@import "font-awesome";
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display);
@@ -257,4 +258,19 @@ textarea {
 
 .signup-button {
 	margin-top: 30px;
+}
+
+.venue-coverphoto {
+	text-align: center;
+	margin: 0 auto;
+	width: 80%;
+}
+
+.venue-name {
+	text-align: center;
+}
+
+.venue-show {
+	width: 60%;
+	margin: 0 auto;
 }

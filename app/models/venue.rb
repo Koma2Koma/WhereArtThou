@@ -17,7 +17,6 @@ class Venue < ActiveRecord::Base
   has_attached_file :picture, :styles => { :thumb => "200x200>", :coverphoto => "925x340#" }, :default_url => "/images/:style/missing.png"
   validates_attachment :picture, :presence => true,
     :content_type => { :content_type => /\Aimage\/.*\Z/ },
-    :size => { :in => 0..4.megabytes },
-    :file_name => { :matches => [/png\Z/, /jpe?g\Z/]}
+    :size => { :in => 0..4.megabytes }
   do_not_validate_attachment_file_type :picture
 end
