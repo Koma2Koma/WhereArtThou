@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   end
 
   def discover
+    @venues = Venue.all
   end
   
   def about

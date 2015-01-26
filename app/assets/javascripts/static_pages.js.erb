@@ -1,20 +1,49 @@
+var lat,
+    lon,
+    latLon = [],
+    lAndl,
+    map;
+
+
 $(function(){
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers([
-      {
-        "lat": 40.7648919,
-        "lng": -111.8853819,
-        "picture": {
-          "url": "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|7690cf",
-          "width":  36,
-          "height": 36
-        },
-        "infowindow": "Hello!"
-      }
-    ]);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
+  getLocation();  
+});
+
+function callMap() {
+
+  map = new GMaps({
+    div: '#map',
+    zoom: 14,
+    minZoom: 8,
+    maxZoom: 16,
+    lat: latLon[0],
+    lng: latLon[1],
   });
   
-});
+  map.addMarker({
+    lat: latLon[0],
+    lng: latLon[1],
+  });
+};
+  
+
+
+function showPosition(position) {
+      lat = position.coords.latitude;
+      lon = position.coords.longitude;
+      latLon = [lat, lon];
+      console.log( latLon );
+      callMap();
+}
+  function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, error);
+      } else {
+        $( '#demo').html( "Geolocation is not supported by this browser." );
+      }
+  }
+
+  function error(err) {
+    console.warn('ERROR(' + err.code + '): ' + err.message);
+  }
+

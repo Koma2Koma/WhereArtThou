@@ -1,4 +1,4 @@
-handler = Gmaps.build('Google');
+// handler = Gmaps.build('Google');
 // handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 //   markers = handler.addMarkers([
 //     {
