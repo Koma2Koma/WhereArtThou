@@ -1,2 +1,6 @@
-<h1>Venues#show</h1>
-<%= @venue.name %>
+<div class='works-page-background'>
+	<h2><%= @venue.name %></h2>
+	<% if current_user && @venue == current_user.venue %>
+		<%= link_to 'Edit Profile', edit_user_registration_path(:venue => true), class: "btn btn-success btn-lg hpbutton" %>
+	<% end %>
+</div>

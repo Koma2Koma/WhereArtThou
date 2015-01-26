@@ -1,5 +1,7 @@
 <% if params[:artist] == 'true' %>
   <h2 class="heading-font form-container">ARTIST SIGN-UP</h2>
+<% elsif params[:venue] == 'true' %>
+  <h2 class="heading-font form-container">VENUE SIGN-UP</h2>
 <% else %>
   <h2 class="heading-font form-container">USER SIGN-UP</h2>
 <% end %>
@@ -31,7 +33,6 @@
         <%= f.label :password_confirmation, class: "form-label" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-input" %>
       </div>
-    </div>
 
     <%= f.hidden_field :is_artist, value: params[:artist] %>
     <% if params[:artist] == 'true' %>
@@ -49,7 +50,6 @@
       <% end %>
     <% end %>
 
-    <div class="col-md-4">
       <div class="signup-button">
         <%= f.submit "SIGN UP", class: "btn btn-success btn-lg hpbutton form-submit" %><br><br>
       </div>

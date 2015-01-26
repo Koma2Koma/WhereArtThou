@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124173858) do
-
+ActiveRecord::Schema.define(version: 20150126013205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +35,6 @@ ActiveRecord::Schema.define(version: 20150124173858) do
     t.string   "name"
     t.string   "start_date"
     t.string   "end_date"
-    t.string   "time"
     t.string   "address"
     t.string   "city"
     t.string   "state"
@@ -47,6 +45,8 @@ ActiveRecord::Schema.define(version: 20150124173858) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "venue_id"
+    t.string   "start_time"
+    t.string   "end_time"
   end
 
   add_index "events", ["venue_id"], name: "index_events_on_venue_id", using: :btree
@@ -131,13 +131,16 @@ ActiveRecord::Schema.define(version: 20150124173858) do
     t.string   "facebook"
     t.string   "instagram"
     t.string   "website"
-    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "contact"
+    t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "user_id"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "venues", ["user_id"], name: "index_venues_on_user_id", using: :btree

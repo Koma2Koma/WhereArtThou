@@ -14,10 +14,13 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
 .DS_Store
 *.swp
+coverage
+
+#Ignore files with sensitive information
 config/application.yml
+
 
 # Ignore schema.rb
 /db/schema.rb

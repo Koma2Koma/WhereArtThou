@@ -18,10 +18,17 @@ gem 'aws-sdk'
 gem 'socialization'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'omniauth-facebook'
+gem "font-awesome-rails"
 gem 'geocoder'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'gmaps4rails'
+
+group :test do
+	gem 'rspec-rails'
+	gem 'simplecov', :require => false
+	gem 'shoulda-matchers'
+end
 
 group :development do
 	gem 'spring'
@@ -29,6 +36,7 @@ group :development do
 	gem 'binding_of_caller'
 	gem 'pry-byebug'
 	gem 'figaro'
+	
 end
 
 group :production do
