@@ -5,9 +5,38 @@ class RegistrationsController < Devise::RegistrationsController
 	private
 
 	def sign_up_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, :current_password, :is_artist, :is_venue, 
-                                     artist_attributes: [:id, :twitter, :facebook, :instagram, :website, :tags, :about, :location, :user_id, :image],
-                                     venue_attributes: [:id, :name, :address, :city, :state, :phone, :description, :twitter, :facebook, :instagram, :website, :email, :contact])
+    params.require(:user).permit(:username,
+                                 :email,
+                                 :password,
+                                 :password_confirmation,
+                                 :current_password, 
+                                 :is_artist, 
+                                 :is_venue, 
+                                artist_attributes: 
+                                [:id, 
+                                  :twitter, 
+                                  :facebook, 
+                                  :instagram, 
+                                  :website, 
+                                  :tags, 
+                                  :about, 
+                                  :location, 
+                                  :user_id,],
+                                venue_attributes: 
+                                  [:id, 
+                                    :name, 
+                                    :address, 
+                                    :city, 
+                                    :state, 
+                                    :phone, 
+                                    :description, 
+                                    :twitter, 
+                                    :facebook, 
+                                    :instagram, 
+                                    :website, 
+                                    :picture, 
+                                    :email, 
+                                    :contact])
   end                                                   
 
 
@@ -41,6 +70,7 @@ class RegistrationsController < Devise::RegistrationsController
                                    :facebook,
                                    :instagram,
                                    :website,
+                                   :picture,
                                    :email,
                                    :contact,
                                    :user_id])
