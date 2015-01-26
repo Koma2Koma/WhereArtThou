@@ -1,12 +1,12 @@
 <div class='user-page-background'>
 
-<h1>Find Art around you</h1>
+<h1>Art Venues Near You</h1>
 
+<div id='venue-details'></div>
 
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
-
 
 
 </div>
@@ -19,7 +19,10 @@ $(document).ready( function () {
       window.map.addMarker({
             lat: <%= venue.latitude %>,
             lng: <%= venue.longitude %>,
-            icon: 'http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-0049c7/shapecolor-no/shadow-0/border-no/symbolstyle-color/symbolshadowstyle-white/gradient-no/art-museum-2.png'
+            icon: 'http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-0049c7/shapecolor-no/shadow-0/border-no/symbolstyle-color/symbolshadowstyle-white/gradient-no/art-museum-2.png',
+            click: function(e) {
+              $( '#venue-details' ).html( "<h5><%= venue.name.capitalize unless venue.name.nil? %></h5><h5><%= venue.address %><br><%= venue.city %>, <%= venue.state %> </h5>" );
+            }
           });
       <% end %>
     <% end %>

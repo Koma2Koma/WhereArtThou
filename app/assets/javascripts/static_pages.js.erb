@@ -13,18 +13,18 @@ function callMap() {
 
   map = new GMaps({
     div: '#map',
-    zoom: 12,
+    zoom: 14,
     minZoom: 8,
     maxZoom: 16,
     lat: latLon[0],
-    lng: latLon[1]
+    lng: latLon[1],
   });
   
   map.addMarker({
     lat: latLon[0],
     lng: latLon[1],
-    icon: 'http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-f70015/shapecolor-no/shadow-0/border-no/symbolstyle-color/symbolshadowstyle-white/gradient-no/star-3.png'
-  })
+    icon: 'http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-f70015/shapecolor-no/shadow-0/border-no/symbolstyle-color/symbolshadowstyle-white/gradient-no/star-3.png' 
+  });
 };
   
 
