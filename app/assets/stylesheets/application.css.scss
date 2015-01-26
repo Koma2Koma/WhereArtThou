@@ -260,8 +260,19 @@ textarea {
 	margin-top: 30px;
 }
 
-//////  Discover Page ///////
+.venue-coverphoto {
+	text-align: center;
+	margin: 0 auto;
+	width: 80%;
+}
 
+.venue-name {
+	text-align: center;
+}
+
+.venue-show {
+	width: 60%;
+	margin: 0 auto;
 
 #venue-details {
   display: inline-block;
@@ -272,9 +283,7 @@ textarea {
   height: 70%;
 }
 
-
 #map {
   display: inline-block;
   width: 50%;
   height: 100%;
-}

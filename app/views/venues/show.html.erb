@@ -1,6 +1,27 @@
 <div class='works-page-background'>
-	<h2><%= @venue.name %></h2>
-	<% if current_user && @venue == current_user.venue %>
-		<%= link_to 'Edit Profile', edit_user_registration_path(:venue => true), class: "btn btn-success btn-lg hpbutton" %>
-	<% end %>
+	<div class="container">
+		<div class="venue-coverphoto">
+			<%= image_tag @venue.picture %>
+		</div>
+		<h2 class="venue-name"><%= @venue.name %></h2><br>
+		<div class="venue-show">
+			<div class="col-md-6">
+				<h3 class="venue-header">Information</h3>
+				<%= link_to (fa_icon "facebook 2x"), @venue.facebook if @venue.facebook %>
+		    <%= link_to (fa_icon "twitter 2x"), @venue.twitter if @venue.twitter %> 
+		    <%= link_to (fa_icon "instagram 2x"), @venue.instagram if @venue.instagram %>
+		    <%= link_to (fa_icon "globe 2x"), "http://#{@venue.website}" if @venue.instagram %>
+				<h4><%= @venue.address %></h4>
+				<h4><%= @venue.city %>, <%= @venue.state %></h4>
+				<h4><%= @venue.phone %></h4>
+			</div>
+			<div class="col-md-6">
+				<h3 class="venue-header">About</h3>
+				<h4><%= @venue.description %></h4>
+			</div>
+		</div>
+		<% if current_user && @venue == current_user.venue %>
+			<%= link_to 'Edit Profile', edit_user_registration_path(:venue => true), class: "btn btn-success btn-lg hpbutton" %><br>
+		<% end %>
+	</div>
 </div>
