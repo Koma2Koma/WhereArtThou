@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   has_one :artist
   has_one :venue
   belongs_to :category
-  accepts_nested_attributes_for :artist
-  accepts_nested_attributes_for :venue
+  accepts_nested_attributes_for :artist, reject_if: :all_blank
+  accepts_nested_attributes_for :venue, reject_if: :all_blank
 
   acts_as_liker
 

@@ -11,7 +11,7 @@
       <%= link_to 'View Artist Info', artist_about_path, class: "btn btn-success btn-lg hpbutton", style: "margin-bottom: 5px;" %>
     <br />
     <% if @artist.user == current_user %>
-      <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg hpbutton" %>
+      <%= link_to 'Edit Profile', edit_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton" %>
     <% end %> <br/>
     </div>
   </div>
