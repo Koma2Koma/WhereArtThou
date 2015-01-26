@@ -14,7 +14,7 @@
       <%= link_to 'View Gallery', artist_path, class: "btn btn-success btn-lg user-button" %>
     <br />
     <% if @artist.user == current_user %>
-      <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button" %>
+      <%= link_to 'Edit Profile', edit_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton" %>
     <% end %> <br/>
     <user-page
   </div>
