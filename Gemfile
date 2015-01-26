@@ -23,12 +23,19 @@ gem 'geocoder'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'gmaps4rails'
 
+group :test do
+	gem 'rspec-rails'
+	gem 'simplecov', :require => false
+	gem 'shoulda-matchers'
+end
+
 group :development do
 	gem 'spring'
 	gem 'better_errors'
 	gem 'binding_of_caller'
 	gem 'pry-byebug'
 	gem 'figaro'
+	
 end
 
 group :production do
