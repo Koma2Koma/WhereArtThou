@@ -1,0 +1,20 @@
+$(function(){
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
+        "lat": 40.7648919,
+        "lng": -111.8853819,
+        "picture": {
+          "url": "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|7690cf",
+          "width":  36,
+          "height": 36
+        },
+        "infowindow": "Hello!"
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+  
+});
