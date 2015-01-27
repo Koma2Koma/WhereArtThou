@@ -6,10 +6,11 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display);
 
-body{
-  padding-top: 145px;
+body {
+  padding-top: 140px;
   background-color: #4A4847;
   font-family: "Playfair Display";
+  padding-bottom: 50px;
 }
 
 a {
@@ -28,30 +29,33 @@ a {
 	font-family: "Open Sans Condensed";
 	font-size: 2em;
 	color: white;
-	padding-left: 100px; 
+	padding-left: 70px; 
 }
 
 img.logo {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 50px;
-  width: 160px;
+  width: 110px;
 }
 
 .navbar {
-	background-color: white;
-	height: 145px;
+	background: linear-gradient(white,
+															white 75%,
+															#4A4847 75%);
+	border: none;
+	height: 140px;
 	.nav-links {
 		font-size: 1.5em;
-		padding-top: 80px;
+		padding-top: 50px;
 		font-family: "Open Sans Condensed";
 	}
 	.search-bar {
-		padding-top: 80px;
+		padding-top: 50px;
 		margin-right: 30px;
 		.form-control {
 			width: 200px;
 			font-family: "Open Sans Condensed";
-			font-size: 1.5em;
+			font-size: 1.25em;
 		}
 	}
 }
@@ -117,7 +121,6 @@ img.logo {
 
 .modal-title {
 	font-family: "Open Sans Condensed";
-	text-align: left;
 }
 
 .modal-body {
@@ -260,10 +263,14 @@ textarea {
 	margin-top: 30px;
 }
 
+.venue-page {
+	padding-right: 8%;
+}
+
 .venue-coverphoto {
 	text-align: center;
 	margin: 0 auto;
-	width: 80%;
+	width: 100%;
 }
 
 .venue-name {
@@ -271,8 +278,32 @@ textarea {
 }
 
 .venue-show {
-	width: 60%;
 	margin: 0 auto;
+	width: 80%;
+}
+
+.venue-about {
+	font-size: 1.5em;
+	text-align: justify;
+}
+
+.venue-buttons {
+	text-align: right;
+}
+
+.event-box {
+	border: 2px solid #4A4847;
+	padding: 10px;
+	margin-left: 10px;
+	.event-list-header {
+		font-size: 2em;
+	}
+	.event-list {
+		font-size: 1.25em;
+	}
+	&:hover {
+		background-color: lightgrey;
+	}
 }
 
 #venue-details {
