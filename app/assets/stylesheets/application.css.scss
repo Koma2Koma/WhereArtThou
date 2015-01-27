@@ -6,10 +6,11 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display);
 
-body{
-  padding-top: 115px;
+body {
+  padding-top: 105px;
   background-color: #4A4847;
   font-family: "Playfair Display";
+  padding-bottom: 50px;
 }
 
 a {
@@ -120,7 +121,6 @@ img.logo {
 
 .modal-title {
 	font-family: "Open Sans Condensed";
-	text-align: left;
 }
 
 .modal-body {
@@ -263,10 +263,14 @@ textarea {
 	margin-top: 30px;
 }
 
+.venue-page {
+	padding-right: 8%;
+}
+
 .venue-coverphoto {
 	text-align: center;
 	margin: 0 auto;
-	width: 80%;
+	width: 100%;
 }
 
 .venue-name {
@@ -274,8 +278,32 @@ textarea {
 }
 
 .venue-show {
-	width: 60%;
 	margin: 0 auto;
+	width: 80%;
+}
+
+.venue-about {
+	font-size: 1.5em;
+	text-align: justify;
+}
+
+.venue-buttons {
+	text-align: right;
+}
+
+.event-box {
+	border: 2px solid #4A4847;
+	padding: 10px;
+	margin-left: 10px;
+	.event-list-header {
+		font-size: 2em;
+	}
+	.event-list {
+		font-size: 1.25em;
+	}
+	&:hover {
+		background-color: lightgrey;
+	}
 }
 
 #venue-details {
