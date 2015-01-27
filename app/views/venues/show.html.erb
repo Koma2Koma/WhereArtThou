@@ -31,13 +31,15 @@
 					<h4>No events.</h4>
 				<% else %>
 					<% @venue.events.each do |event| %>
-						<div class="event-box">
-							<%= link_to event.name, venue_event_path(@venue, event), class:"modal-title event-list-header" %><br>
-							<div class="event-list">
-								<%= event.start_date %> to <%= event.end_date %><br>
-								<%= event.city %>, <%= event.state %><br>
-							</div>
-						</div><br>
+						<%= link_to venue_event_path(@venue, event) do %>
+							<div class="event-box">
+								<div class="modal-title event-list-header"><%= event.name %></div>
+								<div class="event-list">
+									<%= event.start_date %> to <%= event.end_date %><br>
+									<%= event.city %>, <%= event.state %><br>
+								</div>
+							</div><br>
+						<% end %>
 					<% end %>
 				<% end %>
 			</div>
