@@ -1,14 +1,35 @@
 <div class='works-page-background'>
-  <h2><%= @event.name %>
-  <% if current_user && @venue == current_user.venue %>
-      <%= link_to 'Edit', edit_venue_event_path(@venue, @event), class: "btn btn-success btn-lg hpbutton" %>
-  <% end %>
-</h2>
-
-  <h4><strong>Date: </strong><%= @event.start_date %> to <%= @event.end_date %></h4>
-  <h4><strong>Time: </strong><%= @event.start_time %> to <%= @event.end_time %></h4>
-  <h4><strong>Location: </strong><%= @event.address %> <%= @event.city %>, <%= @event.state %> <%= @event.zip %></h4>
-  <h4><strong>Details: </strong><%= @event.description %></h4>
-  <h4><strong>Contact Name: </strong><%= @event.contact %></h4>
-  <%= link_to 'Facebook Page', @event.facebook %>
+  <div class="venue-name">
+    <h2><%= @event.name %></h2> <%= link_to (fa_icon "facebook 2x"), "http://#{@event.facebook}" if @event.facebook %><br>
+  </div>
+  <table>
+    <tbody class="container">
+      <tr>
+        <td class="event-input">Date: </h4></td>
+        <td class="event-details"><%= @event.start_date %> to <%= @event.end_date %></h4></td>
+      </tr>
+      <tr>
+        <td class="event-input">Time: </h4></td>
+        <td class="event-details"><%= @event.start_time %> to <%= @event.end_time %></h4></td>
+      </tr>
+      <tr>
+        <td class="event-input">Location: </h4></td>
+        <td class="event-details"><%= @event.address %> <%= @event.city %>, <%= @event.state %> <%= @event.zip %></h4></td>
+      </tr>
+      <tr>
+        <td class="event-input">Details: </h4></td>
+        <td class="event-details"><%= @event.description %></h4></td>
+      </tr>
+      <tr>
+        <td class="event-input">Contact Name: </h4></td>
+        <td class="event-details"><%= @event.contact %></h4></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="venue-name">
+    <% if current_user && @venue == current_user.venue %>
+      <%= link_to 'Edit', edit_venue_event_path(@venue, @event), class: "btn btn-success btn-lg hpbutton event-page-buttons" %>
+    <%= link_to 'Delete', venue_event_path(@venue, @event), method: :delete, class: "btn btn-success btn-lg hpbutton event-page-buttons" %>
+    <% end %>
+  </div>
 </div>

@@ -179,7 +179,31 @@ img.logo {
 
 .form-input {
 	font-family: "Open Sans Condensed";
-	font-size: 1.75em;
+}
+
+table {
+	width: 80%;
+	td {
+		padding-top: 10px;
+	}
+}
+
+.event-input {
+	font-size: 1.5em;
+	text-align: right;
+	vertical-align: top;
+	width: 50%;
+}
+
+.event-details {
+	font-family: "Open Sans Condensed";
+	vertical-align: top;
+	font-size: 1.5em;
+	padding-left: 15px;
+}
+
+.event-page-buttons {
+	margin-top: 25px;
 }
 
 .form-submit {
