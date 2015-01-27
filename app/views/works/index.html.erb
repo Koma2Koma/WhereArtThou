@@ -21,10 +21,10 @@
 
 		<div class="col-md-6">
 			<h1>Artists</h1>
-			<% @artists.each do |artist| %>
+			<% @user_artists.each do |user_artist| %>
 
-			  <p><%= link_to (gravatar_for artist), artist_path(artist), class:"gravatar" %>
-					 <%= link_to artist.username, artist_path(artist) %></p>
+			  <p><%= link_to (gravatar_for user_artist), artist_path(user_artist.artist), class:"gravatar" %>
+					 <%= link_to user_artist.username, artist_path(user_artist.artist) %></p>
 			  <br>
 			<% end %>
 
