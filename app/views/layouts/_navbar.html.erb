@@ -1,6 +1,6 @@
 <nav class="navbar-fixed-top navbar">
 	<div class="navbar-header">
-		<%= link_to (image_tag "WATlogo.jpg", class: "img img-responsive logo"), root_path %>
+		<%= link_to (image_tag "WATlogo.jpg", class: "img img-responsive logo"), root_path %>   
   </div>
 
   <%= form_tag works_path, class: "navbar-form navbar-right search-bar", role: "search", method: "get" do %>
@@ -9,7 +9,6 @@
     </div>
    <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
   <% end %>
-
 	<ul class="nav navbar-nav pull-right nav-links">
 		<li><%= link_to 'HOME', root_path %></li>
 		<li><%= link_to 'MISSION', about_path %></li>
