@@ -29,7 +29,14 @@
   <div class="venue-name">
     <% if current_user && @venue == current_user.venue %>
       <%= link_to 'Edit', edit_venue_event_path(@venue, @event), class: "btn btn-success btn-lg hpbutton event-page-buttons" %>
-    <%= link_to 'Delete', venue_event_path(@venue, @event), method: :delete, class: "btn btn-success btn-lg hpbutton event-page-buttons" %>
+      <%= link_to 'Delete', venue_event_path(@venue, @event), method: :delete, class: "btn btn-success btn-lg hpbutton event-page-buttons" %>
     <% end %>
+    <button id='go_back' class='btn btn-success btn-lg hpbutton event-page-buttons'>Go Back</button>
   </div>
 </div>
+
+<script>
+$( '#go_back' ).click( function() {
+  window.history.back()
+});
+</script>

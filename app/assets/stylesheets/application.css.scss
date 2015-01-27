@@ -15,9 +15,14 @@ body {
 
 a {
 	color: #4A4847;
+	&:visited,
+	&:link,
+	&:hover,
+	&:active {
+		text-decoration: none;
+	}
 	&:hover { 
-	color: #412F4A;
-	text-decoration: none;
+		color: #412F4A;
 	}
 }
 .artist-about-page-about-string{
@@ -327,7 +332,8 @@ textarea {
 		font-size: 1.25em;
 	}
 	&:hover {
-		background-color: lightgrey;
+		background-color: #72557D;
+		color: white;
 	}
 }
 
