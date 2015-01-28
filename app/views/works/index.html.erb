@@ -9,23 +9,29 @@
 
 		<h2>artists</h2>
 		<% @artists.each do |artist| %>
-			<div><%= User.find(artist.id).username %> </div>
+			<div><%= artist.username.camelize %> </div>
 		<% end %>
 
 		<p>_______________________________</p>
 
 		<h2>venues</h2>
 		<% @venues.each do |venue| %>
-			<div><strong><%= venue.name.camelize %></strong>, <%= venue.city %> </div>
+			<div><strong><%= venue.name.camelize %></strong>, <%= venue.city.camelize %> </div>
 		<% end %>
 
 		<p>_______________________________</p>
 
 		<h2>events</h2>
 		<% @events.each do |event| %>
-			<div><strong><%= event.name.camelize %></strong>, <%= event.city unless event.city.nil? %> </div>
+			<div><strong><%= event.name.camelize %></strong>, <%= event.city.camelize unless event.city.nil? %> </div>
 		<% end %>
 
+		<p>_______________________________</p>
+
+		<h2>users</h2>
+		<% @users.each do |user| %>
+			<div><%= user.username.camelize %> </div>
+		<% end %>
 
 
 

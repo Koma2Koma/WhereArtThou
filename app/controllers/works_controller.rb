@@ -35,7 +35,7 @@ class WorksController < ApplicationController
 
     @events = Event.event_search_doc(search_params)
 
-
+    @users = User.user_search_doc(search_params)
 
 
 
