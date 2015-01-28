@@ -22,7 +22,7 @@ $(document).ready( function () {
             lng: <%= venue.longitude %>,
             icon: 'http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-0049c7/shapecolor-no/shadow-0/border-no/symbolstyle-color/symbolshadowstyle-white/gradient-no/art-museum-2.png',
             click: function(e) {
-              $( '#venue-details' ).html('<h1><%= link_to venue.name.capitalize, venue_path(venue) unless venue.name.nil? %></h1><h3><%= venue.address %><br><%= venue.city %>, <%= venue.state %> </h3>');
+              $( '#venue-details' ).html('<h1><%= link_to venue.name.camelize, venue_path(venue) unless venue.name.nil? %></h1><h3><%= venue.address %><br><%= venue.city %>, <%= venue.state %> </h3>');
             }
           });
       <% end %>
