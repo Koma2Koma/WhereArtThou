@@ -33,6 +33,7 @@ class WorksController < ApplicationController
 
     @venues = Venue.venue_search_doc(search_params)
 
+    @events = Event.event_search_doc(search_params)
 
 
 

@@ -19,6 +19,12 @@
 			<div><strong><%= venue.name.camelize %></strong>, <%= venue.city %> </div>
 		<% end %>
 
+		<p>_______________________________</p>
+
+		<h2>events</h2>
+		<% @events.each do |event| %>
+			<div><strong><%= event.name.camelize %></strong>, <%= event.city unless event.city.nil? %> </div>
+		<% end %>
 
 
 
