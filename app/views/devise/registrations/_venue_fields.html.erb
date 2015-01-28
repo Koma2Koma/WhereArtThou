@@ -23,6 +23,11 @@
   </div>
 
   <div class="field">
+    <%= f.label 'Zipcode', class: "form-label" %><br />
+    <%= f.text_field :zip, autocomplete: "off", class: "form-input" %>
+  </div>
+
+  <div class="field">
     <%= f.label :phone, class: "form-label" %><br />
     <%= f.text_field :phone, autocomplete: "off", class: "form-input" %>
   </div>
