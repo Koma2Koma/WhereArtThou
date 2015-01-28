@@ -20,6 +20,7 @@ $(document).ready( function () {
       window.map.addMarker({
             lat: <%= venue.latitude %>,
             lng: <%= venue.longitude %>,
+            icon: 'assets/frame-landscape.png',
             click: function(e) {
               $( '#venue-details' ).html('<h1><%= link_to venue.name.camelize, venue_path(venue) unless venue.name.nil? %></h1><h3><%= venue.address %><br><%= venue.city %>, <%= venue.state %> </h3>');
             }
