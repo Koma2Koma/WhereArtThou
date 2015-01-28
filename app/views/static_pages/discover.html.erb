@@ -17,6 +17,9 @@ $(document).ready( function () {
   setTimeout(function () {
     <% @venues.each do |venue| %>
       <% if !venue.latitude.nil? %>
+        <% if Event.any
+
+
       window.map.addMarker({
             lat: <%= venue.latitude %>,
             lng: <%= venue.longitude %>,
