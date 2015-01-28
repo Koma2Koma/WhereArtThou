@@ -1,39 +1,31 @@
 <div class="search-page-background">
 	<div class="container">
-		<div class="col-md-6">	
-			<h1>Popular Tags</h1>
 
-			<div id='tag_cloud'>
-			  <% tag_cloud Work.tag_counts, %w[s m l] do |tag, css_class|   %>
-			    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-			  <% end %>
+		<h2>works</h2>
+		<% @works.each do |work| %>
+			<div><%= work.title %> </div>
+		<% end %>
+		<p>_______________________________</p>
 
-			</div>
+		<h2>artists</h2>
+		<% @artists.each do |artist| %>
+			<div><%= User.find(artist.id).username %> </div>
+		<% end %>
 
-			<h1>Works</h1>
-			<% @works.each do |work| %>
+		<p>_______________________________</p>
 
-			  <p><%= link_to (image_tag work.image.url(:thumb)), artist_work_path(work.artist, work) %>
-			  <%= link_to work.title, artist_work_path(work.artist, work) %></p>
-			  <br>
-			<% end %>
-		</div>
+		<h2>venues</h2>
+		<% @venues.each do |venue| %>
+			<div><strong><%= venue.name.camelize %></strong>, <%= venue.city %> </div>
+		<% end %>
 
-		<div class="col-md-6">
-			<h1>Artists</h1>
-			<% @user_artists.each do |user_artist| %>
 
-			  <p><%= link_to (gravatar_for user_artist), artist_path(user_artist.artist), class:"gravatar" %>
-					 <%= link_to user_artist.username, artist_path(user_artist.artist) %></p>
-			  <br>
-			<% end %>
 
-			<h1>Users</h1>
-			<% @users.each do |user| %>
-				<p><%= link_to (gravatar_for user), user_path(user), class:"gravatar" %>
-					 <%= link_to user.username, user_path(user) %></p>
-			  <br>
-			<% end %>
-		</div>
+
+
+
+
+
+		
 	</div>
 </div>

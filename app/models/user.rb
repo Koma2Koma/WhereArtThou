@@ -23,6 +23,12 @@ class User < ActiveRecord::Base
 	  end
   end
 
+  def self.user_artist_search_doc(query)
+    where_conditions = ["(to_tsvector(username)) @@ plainto_tsquery(?)", query]
+    artists = User.where(is_artist: true)
+    artists.where(where_conditions)
+  end
+
   
 
 end

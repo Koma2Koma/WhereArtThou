@@ -27,19 +27,33 @@ class WorksController < ApplicationController
 
     search_params = params[:search].downcase if params[:search] != nil
 
-    if search_params
-      @works = Work.where('lower(title) LIKE ?', "%#{search_params}%")
-      @user_artists = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", true)
-      @users = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", false)
-    elsif params[:tag]
-      @works = Work.tagged_with(params[:tag])
-      @user_artists = User.where(is_artist: true)
-      @users = User.where(is_artist: false)
-    else
-      @works = Work.all
-      @user_artists = User.where(is_artist: true)
-      @users = User.where(is_artist: false)
-    end
+    @works = Work.work_search_doc(search_params)
+
+    @artists = User.user_artist_search_doc(search_params)
+
+    @venues = Venue.venue_search_doc(search_params)
+
+
+
+
+
+
+    ###### Original Search Setup #######
+    # search_params = params[:search].downcase if params[:search] != nil
+
+    # if search_params
+    #   @works = Work.where('lower(title) LIKE ?', "%#{search_params}%")
+    #   @user_artists = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", true)
+    #   @users = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", false)
+    # elsif params[:tag]
+    #   @works = Work.tagged_with(params[:tag])
+    #   @user_artists = User.where(is_artist: true)
+    #   @users = User.where(is_artist: false)
+    # else
+    #   @works = Work.all
+    #   @user_artists = User.where(is_artist: true)
+    #   @users = User.where(is_artist: false)
+    # end
   end
 
   def update
