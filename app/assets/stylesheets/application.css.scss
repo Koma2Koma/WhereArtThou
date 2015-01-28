@@ -44,6 +44,14 @@ img.logo {
   width: 110px;
 }
 
+.hp-h2-right-header{
+	font-family: "Open Sans Condensed";
+	font-size: 5em;
+	color: black;
+	padding-left: 70px;
+	text-align: right;
+}
+
 .navbar {
 	background: linear-gradient(white,
 															white 75%,
@@ -79,17 +87,10 @@ img.logo {
 	padding-top: 30px;
 	padding-left: 20px;
 	margin-bottom: 27px;
-	h2{
-		text-align: right;
-		font-family: "Open Sans Condensed"
+	
 	}
-	p {
-		text-align: justify;
-		font-family: "Playfair Display";
-		letter-spacing: 0.5px;
-		padding-bottom: 10px;
-	}
-}
+
+
 
 .action-header {
 	width: 100%;
@@ -106,7 +107,9 @@ img.logo {
 
 .lead {
 	padding-left: 15px;
+	text-align: left;
 }
+
 
 .hpbutton{
 	background-color: #412F4A;
