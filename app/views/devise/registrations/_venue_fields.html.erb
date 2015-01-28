@@ -1,69 +1,67 @@
-  <div class="field">
-    <%= f.label :name, class: "form-label" %><br />
-    <%= f.text_field :name, autocomplete: "off", class: "form-input" %>
+<div class="venue-edit-fields">
+  <div class="col-md-6">  
+    <div class="field">
+      <%= f.label :name, class: "form-label" %><br />
+      <%= f.text_field :name, autocomplete: "off", class: "form-input" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address, class: "form-label" %><br />
+      <%= f.text_field :address, autocomplete: "off", class: "form-input" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :city, class: "form-label" %><br />
+      <%= f.text_field :city, autocomplete: "off", class: "form-input" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :state, class: "form-label" %><br />
+      <%= f.text_field :state, autocomplete: "off", class: "form-input" %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Zipcode', class: "form-label" %><br />
+      <%= f.text_field :zip, autocomplete: "off", class: "form-input" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone, class: "form-label" %><br />
+      <%= f.text_field :phone, autocomplete: "off", class: "form-input" %>
+    </div>
   </div>
 
+  <div class="col-md-6">
+    <div class="field">
+      <%= f.label 'Description', class: "form-label" %><br />
+      <%= f.text_area :description, autocomplete: "off", class: "form-input" %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Website URL', class: "form-label" %><br />
+      <%= f.text_field :website, autocomplete: "off", class: "form-input", value: 'http://' %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Twitter Username', class: "form-label" %><br />
+      <%= f.text_field :twitter, autocomplete: "off", class: "form-input" %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Facebook URL', class: "form-label" %><br />
+      <%= f.text_field :facebook, autocomplete: "off", class: "form-input", value: 'http://' %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Instagram Username', class: "form-label" %><br />
+      <%= f.text_field :instagram, autocomplete: "off", class: "form-input" %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Cover Photo', class: "form-label" %><br><i>(for best results, upload 925x340px)</i><br>
+      <%= f.file_field :picture, class: "form-label" %>
+    </div>
+  </div>
 </div>
-
-<div class="col-md-4">
-
-  <div class="field">
-    <%= f.label :address, class: "form-label" %><br />
-    <%= f.text_field :address, autocomplete: "off", class: "form-input" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city, class: "form-label" %><br />
-    <%= f.text_field :city, autocomplete: "off", class: "form-input" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :state, class: "form-label" %><br />
-    <%= f.text_field :state, autocomplete: "off", class: "form-input" %>
-  </div>
-
-  <div class="field">
-    <%= f.label 'Zipcode', class: "form-label" %><br />
-    <%= f.text_field :zip, autocomplete: "off", class: "form-input" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone, class: "form-label" %><br />
-    <%= f.text_field :phone, autocomplete: "off", class: "form-input" %>
-  </div>
-
-  <div class="field">
-    <%= f.label 'Description', class: "form-label" %><br />
-    <%= f.text_area :description, autocomplete: "off", class: "form-input" %>
-  </div>
-
-  <div class="field">
-    <%= f.label 'Website URL', class: "form-label" %><br />
-    <%= f.text_field :website, autocomplete: "off", class: "form-input" %>
-  </div>
-
-</div>
-
-<div class="col-md-4">
-
-  <div class="field">
-    <%= f.label 'Twitter Username', class: "form-label" %><br />
-    <%= f.text_field :twitter, autocomplete: "off", class: "form-input" %>
-  </div>
-
-  <div class="field">
-    <%= f.label 'Facebook URL', class: "form-label" %><br />
-    <%= f.text_field :facebook, autocomplete: "off", class: "form-input" %>
-  </div>
-
-  <div class="field">
-    <%= f.label 'Instagram Username', class: "form-label" %><br />
-    <%= f.text_field :instagram, autocomplete: "off", class: "form-input" %>
-  </div>
-
-  <div class="field">
-    <%= f.label 'Cover Photo', class: "form-label" %><br><i>(for best results, upload 925x340px)</i><br>
-    <%= f.file_field :picture, class: "form-label" %>
-  </div>
 
 
