@@ -1,43 +1,73 @@
 <div class="search-page-background">
 	<div class="container">
+		<div class='col-md-6'>
+			
+			<h2>works</h2>
+			<% @works.each do |work| %>
+				<div class='hover-work' id=<%= work.id %>><%= work.title %> </div>
+			<% end %>
+			<p>_______________________________</p>
 
-		<h2>works</h2>
-		<% @works.each do |work| %>
-			<div><%= work.title %> </div>
-		<% end %>
-		<p>_______________________________</p>
+			<h2>artists</h2>
+			<% @artists.each do |artist| %>
+				<div class='hover-artist'><%= artist.username.camelize %> </div>
+			<% end %>
 
-		<h2>artists</h2>
-		<% @artists.each do |artist| %>
-			<div><%= artist.username.camelize %> </div>
-		<% end %>
+			<p>_______________________________</p>
 
-		<p>_______________________________</p>
+			<h2>venues</h2>
+			<% @venues.each do |venue| %>
+				<div class='hover-venue'><strong><%= venue.name.camelize %></strong>, <%= venue.city.camelize %> </div>
+			<% end %>
 
-		<h2>venues</h2>
-		<% @venues.each do |venue| %>
-			<div><strong><%= venue.name.camelize %></strong>, <%= venue.city.camelize %> </div>
-		<% end %>
+			<p>_______________________________</p>
 
-		<p>_______________________________</p>
+			<h2>events</h2>
+			<% @events.each do |event| %>
+				<div class='hover-event'><strong><%= event.name.camelize %></strong>, <%= event.city.camelize unless event.city.nil? %> </div>
+			<% end %>
 
-		<h2>events</h2>
-		<% @events.each do |event| %>
-			<div><strong><%= event.name.camelize %></strong>, <%= event.city.camelize unless event.city.nil? %> </div>
-		<% end %>
+			<p>_______________________________</p>
 
-		<p>_______________________________</p>
+			<h2>users</h2>
+			<% @users.each do |user| %>
+				<div class='hover-artist'><%= user.username.camelize %> </div>
+			<% end %>
 
-		<h2>users</h2>
-		<% @users.each do |user| %>
-			<div><%= user.username.camelize %> </div>
-		<% end %>
+		</div>
 
+		<div class='col-md-6'>
 
+			<h2>results</h2>
+			<p>_______________________________</p>
 
+			<div id='hover-output'>
 
+			</div>
 
-
+		</div>
 		
 	</div>
 </div>
+
+<!-- .prepend('<img src=<%= image_tag @works.last.image.url(:small)%> />') -->
+<script>
+
+$(document).ready( function() {
+	
+	$( '.hover-work' ).hover( function() {
+		var id_num = $(this).attr('id');
+		$( '#hover-output' ).html('Getting closer');
+	}, function() {});
+	// } hov_on('Work', $(this).attr('id')), hov_off() );
+
+	// function hov_on(table, id_number) {
+	// 	var id_num = $(this).attr('id');
+	// 	console.log('id_num = ' + id_num);
+	// 	$( '#hover-output' ).html('Ah-hah');
+	// };
+
+
+});
+
+</script>
