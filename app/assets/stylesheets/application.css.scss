@@ -358,3 +358,40 @@ textarea {
   width: 50%;
   height: 100%;
 }
+
+
+
+/////// Search Results Page ///////
+
+#tab-list {
+
+}
+
+.tab-content {
+	clear: left;
+	min-height: 400px;
+}
+
+.hover-work {
+	min-height: 50px;
+	text-align: right;
+	h3 {
+		margin: 0;
+	}
+	div {
+		display: inline-block;
+	}
+}
+
+.hover-work:hover {
+	background-color: #F3F3F3;
+	border: solid black 1px;
+}
+
+
+
+
+
+
+
+
