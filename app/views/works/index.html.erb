@@ -3,15 +3,16 @@
 
 		<div role="tabpanel">
 			 <!-- Nav tabs -->
-			<ul class="nav nav-tabs col-md-4" role="tablist" id='tab-list'>
+			<ul class="nav nav-tabs col-md-5" role="tablist" id='tab-list'>
 		    <li role="presentation" class="active"><a href="#works" aria-controls="works" role="tab" data-toggle="tab">Artwork</a></li>
 		    <li role="presentation"><a href="#artists" aria-controls="artists" role="tab" data-toggle="tab">Artists</a></li>
 		    <li role="presentation"><a href="#venues" aria-controls="venues" role="tab" data-toggle="tab">Venues</a></li>
+		    <li role="presentation"><a href="#events" aria-controls="events" role="tab" data-toggle="tab">Events</a></li>
 		    <li role="presentation"><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Users</a></li>
 		  </ul>
 
 		  <!-- Tab panes -->
-		  <div class="tab-content col-md-4">
+		  <div class="tab-content col-md-5">
 		    <div role="tabpanel" class="tab-pane active" id="works">
 		    <h2>Artwork</h2>
 					<% @works.each do |work| %>
@@ -99,10 +100,6 @@
 
 $(document).ready( function() {
 	
-	$(function () {
-    $('#tab-list a:last').tab('show')
-  })
-	
 	$( '.hover-work' ).click( function() {
 		var id_num = $(this).attr('id');
 		$.ajax({
@@ -112,6 +109,8 @@ $(document).ready( function() {
 			  $( this ).addClass( "done" );
 			});
 	});
+
+
 });
 
 </script>
