@@ -27,7 +27,9 @@
 		    <div role="tabpanel" class="tab-pane" id="artists">
 		    	<h2>Artists</h2>
 					<% @artists.each do |artist| %>
-						<div class='hover-artist'><%= link_to artist.username.titleize, artist_path(Artist.find_by(user_id: artist.id)) %> </div>
+						<% artist_obj = Artist.find_by(user_id: artist.id) %>
+						<div class='hover-artist'><h3><%= link_to artist.username.titleize, artist_path(artist_obj) %></h3><h4>
+							&nbsp &nbsp <%= artist_obj.location.titleize unless artist_obj.location.nil? %> </h4> </div>
 					<% end %>
 				</div>
 
