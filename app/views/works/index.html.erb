@@ -34,7 +34,7 @@
 		    <div role="tabpanel" class="tab-pane" id="venues">
 		    	<h2>Venues</h2>
 					<% @venues.each do |venue| %>
-						<div class='hover-venue'><strong><%= link_to venue.name.titleize, venue_path(venue) %></strong>, <%= venue.city.camelize %> </div>
+						<div class='hover-venue'><h3><strong><%= link_to venue.name.titleize, venue_path(venue) %></strong></h3><h4> &nbsp &nbsp  <%= venue.city.camelize %>, <%= venue.state.upcase %> </h4></div>
 					<% end %>
 				</div>
 
@@ -42,7 +42,7 @@
 		    	<h2>Events</h2>
 					<% @events.each do |event| %>
 						<% venue = Venue.find(event.venue_id) %>
-						<div class='hover-venue'><h3><strong><%= link_to event.name.titleize, venue_event_path(venue, event) %></strong></h3><h4>&nbsp &nbsp<%= venue.name.titleize %>, <%= venue.city.titleize %>, <%= venue.state.upcase %> </h4><br>
+						<div class='hover-venue'><h3><strong><%= link_to event.name.titleize, venue_event_path(venue, event) %></strong></h3><h4> &nbsp &nbsp <%= venue.name.titleize %>, <%= venue.city.titleize %>, <%= venue.state.upcase %> </h4><br>
 						</div>
 					<% end %>
 				</div>
