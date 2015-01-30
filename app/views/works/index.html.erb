@@ -4,7 +4,7 @@
 			
 			<h2>works</h2>
 			<% @works.each do |work| %>
-				<div class='hover-work' id=<%= work.id %>><%= work.title %> </div>
+				<div class='hover-work' id=<%= work.id %> > <%= work.title %><%#=  link_to work.title, works_get_work_data_path(id: work.id), remote: true %> </div>
 			<% end %>
 			<p>_______________________________</p>
 
@@ -50,15 +50,29 @@
 	</div>
 </div>
 
-<!-- .prepend('<img src=<%= image_tag @works.last.image.url(:small)%> />') -->
 <script>
-
 $(document).ready( function() {
 	
 	$( '.hover-work' ).hover( function() {
 		var id_num = $(this).attr('id');
-		$( '#hover-output' ).html('Getting closer');
-	}, function() {});
+		$.ajax({
+			  url: "/works/get_work_data",
+			  data: {"work": id_num} 
+			}).done(function() {
+			  $( this ).addClass( "done" );
+			});
+	});
+});
+
+
+
+		
+
+		
+	// 	console.log('id_num = ' + id_num)
+	// 	$( '#hover-output' ).html('Getting closer');
+	// }, function() {
+
 	// } hov_on('Work', $(this).attr('id')), hov_off() );
 
 	// function hov_on(table, id_number) {
@@ -68,6 +82,5 @@ $(document).ready( function() {
 	// };
 
 
-});
 
 </script>

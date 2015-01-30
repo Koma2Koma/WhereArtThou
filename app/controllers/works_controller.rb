@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :set_artist, except: :index
+  before_action :set_artist, except: [:index, :get_work_data]
   before_action :set_work, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -71,6 +71,17 @@ class WorksController < ApplicationController
     if user_signed_in?    
      @work.destroy
      redirect_to artist_path(@artist)    
+    end
+  end
+
+  def get_work_data
+    ## Create usable instance variables
+    @work = Work.find(params["work"])
+    artist = Artist.find(@work.artist_id)
+    @artist = User.find(artist.user_id)
+
+    respond_to do |format|
+      format.js
     end
   end
 

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'discover' => 'static_pages#discover'
 
+  # post 'get_work' => 'works#get_work_data'
+  get 'works/get_work_data' => 'works#get_work_data'
+
   devise_for :users, :controllers => {registrations: 'registrations',
   																		:omniauth_callbacks => "users/omniauth_callbacks"}
 
