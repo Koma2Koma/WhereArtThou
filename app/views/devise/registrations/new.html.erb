@@ -1,6 +1,6 @@
-<% if params[:artist] == 'true' %>
+<% if resource.is_artist || params[:artist] == 'true' %>
   <h2 class="heading-font form-container">ARTIST SIGN-UP</h2>
-<% elsif params[:venue] == 'true' %>
+<% elsif resource.is_venue || params[:venue] == 'true' %>
   <h2 class="heading-font form-container">VENUE SIGN-UP</h2>
 <% else %>
   <h2 class="heading-font form-container">USER SIGN-UP</h2>
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <%= f.hidden_field :is_artist, value: params[:artist] %>
+    <%= f.hidden_field :is_artist, value: (params.has_key?(:artist) ? params[:artist] : resource.is_artist ) %>
     <% if params[:artist] == 'true' %>
       <% @user.build_artist %>
       <div class='hidden'>
@@ -45,7 +45,7 @@
       </div>
     <% end %>
 
-    <%= f.hidden_field :is_venue, value: params[:venue] %>
+    <%= f.hidden_field :is_venue, value: (params.has_key?(:venue) ? params[:venue] : resource.is_venue) %>
     <% if params[:venue] == 'true' %>
       <% @user.build_venue %>
       <div class='hidden'>
