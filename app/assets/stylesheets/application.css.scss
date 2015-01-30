@@ -388,8 +388,18 @@ textarea {
 	border: solid black 1px;
 }
 
+.tab-content h2 {
+}
 
+.hover-output {
+	min-height: 400px;
+	text-align: center;
+}
 
+#hover-output {
+	// border: black 1px solid;
+	position: fixed;
+}
 
 
 

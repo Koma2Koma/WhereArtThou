@@ -13,7 +13,7 @@
 		  <!-- Tab panes -->
 		  <div class="tab-content col-md-4">
 		    <div role="tabpanel" class="tab-pane active" id="works">
-		    <h2 style='text-decoration: underline;'>Artwork</h2>
+		    <h2>Artwork</h2>
 					<% @works.each do |work| %>
 							<div class='hover-work' id=<%= work.id %> >
 								<a href='/artists/<%= work.artist_id %>/works/<%= work.id %>'
@@ -23,18 +23,18 @@
 					<% end %>
 				</div>
 		    <div role="tabpanel" class="tab-pane" id="artists">
-		    	<h2>artists</h2>
+		    	<h2>Artists</h2>
 					<% @artists.each do |artist| %>
 						<div class='hover-artist'><%= link_to artist.username.titleize, artist_path(Artist.find_by(user_id: artist.id)) %> </div>
 					<% end %>
 					</div>
 		    <div role="tabpanel" class="tab-pane" id="venues">
-		    	<h2>venues</h2>
+		    	<h2>Venues</h2>
 					<% @venues.each do |venue| %>
 						<div class='hover-venue'><strong><%= link_to venue.name.titleize, venue_path(venue) %></strong>, <%= venue.city.camelize %> </div>
 					<% end %></div>
 		    <div role="tabpanel" class="tab-pane" id="users">
-		    	<h2>users</h2>
+		    	<h2>Users</h2>
 					<% @users.each do |user| %>
 						<div class='hover-artist'><%= user.username.titleize %> </div>
 					<% end %>
@@ -78,14 +78,18 @@
 
 		</div> -->
 
-		<div class='col-md-4' style='min-height: 400px; text-align: center;' >
-
-			
-
+		<div class='col-md-4 hover-output'>
 			<div id='hover-output'>
-
 			</div>
+		</div>
 
+		<div class='col-md-3' id=''>
+			<h1>Popular Tags</h1>
+      <div id='tag_cloud'>
+        <% tag_cloud Work.tag_counts, %w[s m l] do |tag, css_class|   %>
+          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+        <% end %>
+      </div>
 		</div>
 		
 	</div>
@@ -99,7 +103,7 @@ $(document).ready( function() {
     $('#tab-list a:last').tab('show')
   })
 	
-	$( '.hover-work' ).hover( function() {
+	$( '.hover-work' ).click( function() {
 		var id_num = $(this).attr('id');
 		$.ajax({
 			  url: "/works/get_work_data",
