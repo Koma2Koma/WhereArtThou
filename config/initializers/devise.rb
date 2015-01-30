@@ -14,7 +14,7 @@ Devise.setup do |config|
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
-  config.omniauth :facebook, ENV['facebook_api_key'], ENV['facebook_api_secret']
+  config.omniauth :facebook, ENV['FACEBOOK_API_KEY'], ENV['FACEBOOK_API_SECRET']
   
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
