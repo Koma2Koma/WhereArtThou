@@ -13,15 +13,15 @@
     	<h3><strong>Tags: </strong><%= @work.tag_list.to_s %></h3>
     </div>
     <%= link_to 'Artist Gallery', artist_path(@work.artist), class: "btn btn-success btn-lg hpbutton" %>
-    <% if user_signed_in? %>
-    	<%= link_to 'Edit', artist_path(@work.artist), class: "btn btn-success btn-lg hpbutton" %>
+    <% if @artist.user == current_user %>
+    	<%= link_to 'Edit', artist_work_path(@artist, @work), method: :patch, class: "btn btn-success btn-lg hpbutton" %>
       <%= link_to 'Delete', artist_work_path(@artist, @work), method: :delete, class: "btn btn-success btn-lg hpbutton" %>
-      <button id='go_back' class='btn btn-success btn-lg hpbutton'>Go Back</button>
-      <% if current_user && current_user.is_artist == false %>
-        <button id='add_tile' class='btn btn-success btn-lg hpbutton'>Add Tile</button>
-      <% end %>
-      <div class="likes"><%= pluralize(@work.likers(User).count, 'like')%></div>
     <% end %>
+    <button id='go_back' class='btn btn-success btn-lg hpbutton'>Go Back</button>
+    <% if user_signed_in? && current_user.is_artist == false %>
+      <button id='add_tile' class='btn btn-success btn-lg hpbutton'>Add Tile</button>
+    <% end %>
+    <div class="likes"><%= pluralize(@work.likers(User).count, 'like')%></div>
   </div>
 </div>
 

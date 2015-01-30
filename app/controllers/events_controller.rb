@@ -28,7 +28,7 @@ class EventsController < ApplicationController
 
   def update
     if user_signed_in?
-      if @event.update(event_params)
+      if @event.update_attributes(event_params)
         redirect_to venue_path(@venue)
       else
         render :edit
