@@ -18,3 +18,5 @@ class ArtistsController < ApplicationController
   end
     
 end
+
+

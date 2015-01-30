@@ -16,7 +16,7 @@
 					<h4><%= @venue.city %>, <%= @venue.state %></h4>
 					<h4><%= @venue.phone %></h4>
 				</div>
-				<% if current_user && @venue == current_user.venue %>
+				<% if @venue.user == current_user %>
 					<%= link_to 'New Event', new_venue_event_path(@venue), class: "btn btn-success btn-lg hpbutton" %><br><br>
 					<%= link_to 'Edit Profile', edit_user_registration_path(:venue => true), class: "btn btn-success btn-lg hpbutton" %>
 				<% end %>

@@ -2,7 +2,7 @@
 	<div class="row">
 	<div class="pull-left left-stuff">
 	<h2><%= @artist.user.username %>'s Gallery</h2>
-	<% if current_user && @artist == current_user.artist %>
+	<% if @artist.user == current_user %>
 		<%= link_to 'Upload new image', new_artist_work_path(@artist), class: "btn btn-success btn-lg hpbutton" %>
 	<% end %>
 	</div>
