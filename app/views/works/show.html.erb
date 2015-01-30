@@ -14,7 +14,7 @@
     </div>
     <%= link_to 'Artist Gallery', artist_path(@work.artist), class: "btn btn-success btn-lg hpbutton" %>
     <% if @artist.user == current_user %>
-    	<%= link_to 'Edit', artist_work_path(@artist, @work), method: :patch, class: "btn btn-success btn-lg hpbutton" %>
+    	<%= link_to 'Edit', edit_artist_work_path(@artist, @work), class: "btn btn-success btn-lg hpbutton" %>
       <%= link_to 'Delete', artist_work_path(@artist, @work), method: :delete, class: "btn btn-success btn-lg hpbutton" %>
     <% end %>
     <button id='go_back' class='btn btn-success btn-lg hpbutton'>Go Back</button>
