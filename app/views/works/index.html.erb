@@ -44,7 +44,7 @@
 		    	<h2>Events</h2>
 					<% @events.each do |event| %>
 						<% venue = Venue.find(event.venue_id) %>
-						<div class='hover-venue'><h3><strong><%= link_to event.name.titleize, venue_event_path(venue, event) %></strong></h3><h4> &nbsp &nbsp <%= venue.name.titleize %>, <%= venue.city.titleize %>, <%= venue.state.upcase %> </h4><br>
+						<div class='hover-venue'><h3><strong><%= link_to event.name.titleize, venue_event_path(venue, event) %></strong></h3><h4> &nbsp &nbsp <%= link_to venue.name.titleize, venue_path(venue) %>, <%= venue.city.titleize %>, <%= venue.state.upcase %> </h4><br>
 						</div>
 					<% end %>
 				</div>
@@ -52,7 +52,7 @@
 		    <div role="tabpanel" class="tab-pane" id="users">
 		    	<h2>Users</h2>
 					<% @users.each do |user| %>
-						<div class='hover-artist'><%= user.username.titleize %> </div>
+						<div class='hover-user'><h3><%= link_to user.username.titleize, user_path(user) %> <%= gravatar_for user, class: "gravatar" %></h3></div>
 					<% end %>
 				</div>
 		  </div>
