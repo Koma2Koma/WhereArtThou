@@ -1,38 +1,47 @@
 <div class="works-page-background">
 
-	<div class = "artist-gallery">
+	<% if @artist.works.empty? == false %>
 
-		<div id="carousel-example-generic" class="carousel slide carousel-gallery" data-ride="carousel">
+		<div class = "artist-gallery">
 
-		  <!-- Indicators -->
-		  <ol class="carousel-indicators">
+			<div id="carousel-example-generic" class="carousel slide carousel-gallery" data-ride="carousel">
 
-		  	<% @artist.works.each_with_index do |work, index| %>
-		  		<li data-target="#carousel-example-generic" data-slide-to="<%= index %>" class="<%= "active" if work == @artist.works.first %>"></li>
-		  	<% end %>
-		  </ol>
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
 
-		  <!-- Wrapper for slides -->
-		  <div class="carousel-inner" role="listbox">
+			  	<% @artist.works.each_with_index do |work, index| %>
+			  		<li data-target="#carousel-example-generic" data-slide-to="<%= index %>" class="<%= "active" if work == @artist.works.first %>"></li>
+			  	<% end %>
+			  </ol>
 
-		  	<% @artist.works.each do |work| %>
-			    <div class="item <%= "active" if work == @artist.works.first %> ">
-			      <%= link_to (image_tag work.image.url), artist_work_path(@artist, work.id), class: "img img-responsive my-image" %>
-			    </div>
-		    <% end %>
-		  </div>
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
 
-		  <!-- Controls -->
-		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		    <span class="sr-only">Previous</span>
-		  </a>
-		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		    <span class="sr-only">Next</span>
-		  </a>
+			  	<% @artist.works.each do |work| %>
+				    <div class="item <%= "active" if work == @artist.works.first %> ">
+				      <%= link_to (image_tag work.image.url), artist_work_path(@artist, work.id), class: "img img-responsive my-image" %>
+				    </div>
+			    <% end %>
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
 		</div>
-	</div>
+	<% else %>
+		<div class="heading-font-dark">
+			<center>Welcome!</center>
+			<center>Click 'Upload new image' below to add artwork,</center>
+			<center>or click 'Edit Profile' to add to your bio page.</center><br>
+		</div>
+	<% end %>
 
 	<div class="artist-header">
 		<span class="heading-font-dark"><%= @artist.user.username.upcase %>'S GALLERY</span>
