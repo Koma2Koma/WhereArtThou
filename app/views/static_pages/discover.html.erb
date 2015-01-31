@@ -16,7 +16,7 @@
         <div>
           <% user = User.find(artist.user_id) %>
           <% sample_art = artist.works.first unless artist.works.nil? %>
-          <div class='indiv-artist'><h3><%= link_to user.username.titleize, artist_path(artist) %></h3><div class='art-art'>
+          <div class='indiv-artist'><h3><%= link_to user.username.titleize, artist_path(artist) %> &nbsp </h3><div class='art-art'>
           <%= link_to (image_tag sample_art.image.url(:small)), artist_work_path(artist, sample_art) unless sample_art.nil? %></div></div>
         </div>
       <% end %>
