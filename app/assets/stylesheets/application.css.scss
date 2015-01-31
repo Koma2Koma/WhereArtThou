@@ -429,13 +429,14 @@ textarea {
 ////// Featured Artists on discover page /////
 
 #featured-artist-container {
-	top: -14%;
 	float: right;
 	border: black 1px solid;
 	display: inline-block;
 	//min-height: 400px;
-	height: 104%;
+	height: 90%;
 	width: 35%;
+	overflow: scroll;
+	//overflow-y: hidden;
 	div {
 		text-align: right;
 	}
@@ -459,7 +460,15 @@ textarea {
 	display: inline-block;
 }
 
+#feature-title {
+	display: inline-block;
+	text-align: left;
+}
 
+#venue-title {
+	display: inline-block;
+	text-align: left;
+}
 
 
 

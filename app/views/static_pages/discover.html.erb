@@ -1,6 +1,7 @@
 <div class='user-page-background'>
 
-  <h1>Art Venues Near You</h1>
+  <h1 id='venue-title' class='col-md-8'>Art Venues Near You</h1>
+  <h1 id='feature-title' class='col-md-4'>Featured Artists</h1>
 
 
   <div id='discover-container'>
@@ -11,7 +12,7 @@
     </div>
 
     <div class='col-md-3' id='featured-artist-container'>
-      <h1>Featured Artists</h1>
+      
       <% @featured_artists.each do |artist| %>
         <div>
           <% user = User.find(artist.user_id) %>

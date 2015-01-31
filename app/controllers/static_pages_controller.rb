@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
   def choose_featured_artists
     user_artists = User.where(is_artist: true).all
     featured_artists = []
-    while featured_artists.length < 3
+    while featured_artists.length < 5
       sample = user_artists.sample.id
       artist = Artist.find_by(user_id: sample)
       featured_artists.append(artist)
