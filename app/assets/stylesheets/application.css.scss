@@ -256,10 +256,6 @@ table {
 	}
 }
 
-.discover-page {
-	height: 545px;
-}
-
 strong {
 	font-family: "Open Sans Condensed";
 }
@@ -386,18 +382,75 @@ textarea {
   display: inline-block;
 }
 
+///////  DISCOVER PAGE ///////
+
+.discover-page {
+	height: 630px;
+}
+
+//// Map on discover page ////
+
 #map-container {
-  width: 100%;
-  height: 70%;
+
+  width: 65%;
+  height: 90%;
+  margin: 0;
+  display: inline-block;
+
 }
 
 #map {
+	border: black 3px solid;
   display: inline-block;
-  width: 50%;
+  width: 70%;
   height: 100%;
 }
+////// Featured Artists on discover page /////
 
-/////// Search Results Page ///////
+#featured-artist-container {
+	float: right;
+	//border: black 1px solid;
+	display: inline-block;
+	//min-height: 400px;
+	height: 90%;
+	width: 35%;
+	overflow: scroll;
+	//overflow-y: hidden;
+	div {
+		text-align: right;
+	}
+}
+
+#discover-container {
+	//border: black 1px solid;
+	height: 100%;
+}
+
+.indiv-artist {
+	h3 {
+		display: inline-block;
+	}
+	margin-bottom: 10px;
+	//border: black 1px solid;
+}
+
+.art-art {
+	border: black 3px solid;
+	display: inline-block;
+}
+
+#feature-title {
+	display: inline-block;
+	text-align: left;
+	border-bottom: 2px solid black;
+}
+
+#venue-title {
+	display: inline-block;
+	text-align: left;
+}
+
+/////// SEARCH RESULTS PAGE ///////
 
 #tab-list {
 
@@ -421,7 +474,7 @@ textarea {
 
 .hover-work:hover {
 	background-color: #F3F3F3;
-	border: solid black 1px;
+	//border: solid black 1px;
 }
 
 .tab-content h2 {
@@ -440,6 +493,3 @@ textarea {
 .hover-artist {
 
 }
-
-
-

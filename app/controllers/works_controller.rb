@@ -27,7 +27,7 @@ class WorksController < ApplicationController
 
     search_params = params[:search].downcase if params[:search] != nil
 
-    @works = Work.work_search_doc(search_params)
+    works = Work.work_search_doc(search_params)
 
     @artists = User.user_artist_search_doc(search_params)
 
@@ -37,6 +37,11 @@ class WorksController < ApplicationController
 
     @users = User.user_search_doc(search_params)
 
+    tags = Work.tagged_with(search_params).all
+
+    
+
+    @works = (works + tags).uniq
 
 
     ###### Original Search Setup #######
