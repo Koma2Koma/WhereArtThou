@@ -17,4 +17,12 @@ class Venue < ActiveRecord::Base
     :content_type => { :content_type => /\Aimage\/.*\Z/ },
     :size => { :in => 0..4.megabytes }
   do_not_validate_attachment_file_type :picture
+
+  def self.venue_search_doc(query)    
+    where_conditions = [" (to_tsvector(name) ||
+                        to_tsvector(city) ||
+                        to_tsvector(state) ) @@ plainto_tsquery(?)", query]
+    Venue.where(where_conditions).all
+  end
+
 end

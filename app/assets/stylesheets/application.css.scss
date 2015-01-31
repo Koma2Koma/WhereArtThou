@@ -374,3 +374,50 @@ textarea {
   width: 50%;
   height: 100%;
 }
+
+/////// Search Results Page ///////
+
+#tab-list {
+
+}
+
+.tab-content {
+	clear: left;
+	min-height: 400px;
+}
+
+.hover-work {
+	min-height: 50px;
+	text-align: right;
+	h3 {
+		margin: 0;
+	}
+	div {
+		display: inline-block;
+	}
+}
+
+.hover-work:hover {
+	background-color: #F3F3F3;
+	border: solid black 1px;
+}
+
+.tab-content h2 {
+}
+
+.hover-output {
+	min-height: 400px;
+	text-align: center;
+}
+
+#hover-output {
+	// border: black 1px solid;
+	position: fixed;
+}
+
+.hover-artist {
+
+}
+
+
+
