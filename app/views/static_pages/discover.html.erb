@@ -1,14 +1,25 @@
 <div class='user-page-background'>
 
-<h1>Art Venues Near You</h1>
+  <h1>Art Venues Near You</h1>
 
 
 
-<div id='map-container'>
-  <div id="map" class='col-md-6' ></div>
+  <div id='map-container'>
+    <div id="map" class='col-md-4' ></div>
 
-  <div id='venue-details' class='col-md-3'></div>
-</div>
+    <div id='venue-details' class='col-md-3'></div>
+  </div>
+
+  <div class='col-md-3' id='featured-artist-container'>
+    <% @featured_artists.each do |artist| %>
+      <div>
+        <% user = User.find(artist.user_id) %>
+        <% sample_art = artist.works.first unless artist.works.nil? %>
+        <h3><%= link_to user.username.titleize, artist_path(artist) %></h3>
+        <div><%= link_to (image_tag sample_art.image.url(:small)), artist_work_path(artist, sample_art) unless sample_art.nil? %></div>
+      </div>
+    <% end %>
+  </div>
 
 </div>
 

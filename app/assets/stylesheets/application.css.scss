@@ -364,9 +364,16 @@ textarea {
   display: inline-block;
 }
 
+//// Map on discover page ////
+
 #map-container {
-  width: 100%;
+	border: black 1px solid;
+
+  width: 50%;
   height: 70%;
+  margin: 0;
+  display: inline-block;
+
 }
 
 #map {
@@ -418,6 +425,34 @@ textarea {
 .hover-artist {
 
 }
+
+////// Featured Artists on discover page /////
+
+#featured-artist-container {
+	border: black 1px solid;
+	display: inline-block;
+	min-height: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

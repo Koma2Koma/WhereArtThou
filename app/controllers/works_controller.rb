@@ -41,7 +41,7 @@ class WorksController < ApplicationController
 
     
 
-    @works = works + tags
+    @works = (works + tags).uniq
 
 
     ###### Original Search Setup #######
