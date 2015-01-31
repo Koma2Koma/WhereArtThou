@@ -369,7 +369,7 @@ textarea {
 #map-container {
 	border: black 1px solid;
 
-  width: 50%;
+  width: 65%;
   height: 70%;
   margin: 0;
   display: inline-block;
@@ -378,7 +378,7 @@ textarea {
 
 #map {
   display: inline-block;
-  width: 50%;
+  width: 60%;
   height: 100%;
 }
 
@@ -429,15 +429,26 @@ textarea {
 ////// Featured Artists on discover page /////
 
 #featured-artist-container {
+	float: right;
 	border: black 1px solid;
 	display: inline-block;
-	min-height: 400px;
+	//min-height: 400px;
+	height: 100%;
+	width: 35%;
 }
 
+#discover-container {
+	border: black 1px solid;
+	height: 100%;
+}
 
+.indiv-artist {
+	border: black 1px solid;
+}
 
-
-
+.art-art {
+	display: inline-block;
+}
 
 
 
