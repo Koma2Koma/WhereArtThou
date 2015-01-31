@@ -1,22 +1,7 @@
 <div class="works-page-background">
-	<div class="row">
-	<div class="pull-left left-stuff">
-	<h2><%= @artist.user.username %>'s Gallery</h2>
-	<% if @artist.user == current_user %>
-		<%= link_to 'Upload new image', new_artist_work_path(@artist), class: "btn btn-success btn-lg hpbutton" %>
-	<% end %>
-	</div>
 
-	 <div class="pull-right">
-      <%= link_to 'View Artist Info', artist_about_path, class: "btn btn-success btn-lg hpbutton", style: "margin-bottom: 5px;" %>
-    <br />
-    <% if @artist.user == current_user %>
-      <%= link_to 'Edit Profile', edit_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton" %>
-    <% end %> <br/>
-    </div>
-  </div>
+	<div class = "artist-gallery">
 
-	<div class = "container artist-gallery">
 		<div id="carousel-example-generic" class="carousel slide carousel-gallery" data-ride="carousel">
 
 		  <!-- Indicators -->
@@ -32,7 +17,7 @@
 
 		  	<% @artist.works.each do |work| %>
 			    <div class="item <%= "active" if work == @artist.works.first %> ">
-			      <%= link_to (image_tag work.image.url(:large)), artist_work_path(@artist, work.id), class: "img img-responsive my-image" %>
+			      <%= link_to (image_tag work.image.url), artist_work_path(@artist, work.id), class: "img img-responsive my-image" %>
 			    </div>
 		    <% end %>
 		  </div>
@@ -49,13 +34,21 @@
 		</div>
 	</div>
 
-	<h2><%= @artist.user.username %>'s Works</h2>
+	<div class="artist-header">
+		<span class="heading-font-dark"><%= @artist.user.username.upcase %>'S GALLERY</span>
+		<div class="artist-buttons">
+			<%= link_to 'View Artist Bio', artist_about_path, class: "btn btn-success btn-lg hpbutton artist-bio-btn" %>
+
+			<% if @artist.user == current_user %>
+				<%= link_to 'Upload new image', new_artist_work_path(@artist), class: "btn btn-success btn-lg hpbutton" %>
+		    <%= link_to 'Edit Profile', edit_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton" %><br>
+			<% end %>
+		</div>
+	</div>
 
 	<div class = "lower-artist-show container">
-
 		<% @artist.works.each do |work| %>
 		  <%= link_to (image_tag work.image.url(:small)), artist_work_path(@artist, work.id), class:"work-thumbnail" %>
 		<%end%>
 	</div>
-</div>
 </div>

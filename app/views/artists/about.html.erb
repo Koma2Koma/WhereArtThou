@@ -1,22 +1,20 @@
-<div class="user-page-background">
+<div class="user-page-background artist-bio-page">
   <div class="row">
-    <div class="col-xs-6 col-sm-10 pager">
-      <%= gravatar_for @artist.user, class: "gravatar " %>
+    <div class="col-md-12">
+      <%= gravatar_for @artist.user, class: "gravatar" %>
       <%= @artist.user.username %><br>
       <%= link_to (fa_icon "facebook"), @artist.facebook if @artist.facebook %>
       <%= link_to (fa_icon "twitter"), @artist.twitter if @artist.twitter %> 
-      <%= link_to (fa_icon "instagram"), @artist.instagram if @artist.instagram %>     
-        <div class="artist-about-page-about-string">
-      <b>ABOUT <%= @artist.user.username.upcase %>: </b><%= @artist.about %><br>
-    </div><br>
-  </div>  
-    <div class="col-xs-6 col-sm-2">
-      <%= link_to 'View Gallery', artist_path, class: "btn btn-success btn-lg user-button" %>
-    <br />
-    <% if @artist.user == current_user %>
-      <%= link_to 'Edit Profile', edit_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton" %>
-    <% end %> <br/>
-    <user-page
+      <%= link_to (fa_icon "instagram"), @artist.instagram if @artist.instagram %><br><br>
+      
+      ABOUT <%= @artist.user.username.upcase %>:<br> 
+      <%= @artist.about %><br>
+
+      <%= link_to 'View Artist Gallery', artist_path, class: "btn btn-success btn-lg user-button artist-gallery-btn" %><br>
+      <% if @artist.user == current_user %>
+        <%= link_to 'Edit Profile', edit_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton" %>
+      <% end %> <br/>
+    </div>
   </div>
 </div>
 
