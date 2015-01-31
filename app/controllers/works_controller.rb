@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :set_artist, except: :index
+  before_action :set_artist, except: [:index, :get_work_data]
   before_action :set_work, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -27,19 +27,34 @@ class WorksController < ApplicationController
 
     search_params = params[:search].downcase if params[:search] != nil
 
-    if search_params
-      @works = Work.where('lower(title) LIKE ?', "%#{search_params}%")
-      @user_artists = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", true)
-      @users = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", false)
-    elsif params[:tag]
-      @works = Work.tagged_with(params[:tag])
-      @user_artists = User.where(is_artist: true)
-      @users = User.where(is_artist: false)
-    else
-      @works = Work.all
-      @user_artists = User.where(is_artist: true)
-      @users = User.where(is_artist: false)
-    end
+    @works = Work.work_search_doc(search_params)
+
+    @artists = User.user_artist_search_doc(search_params)
+
+    @venues = Venue.venue_search_doc(search_params)
+
+    @events = Event.event_search_doc(search_params)
+
+    @users = User.user_search_doc(search_params)
+
+
+
+    ###### Original Search Setup #######
+    # search_params = params[:search].downcase if params[:search] != nil
+
+    # if search_params
+    #   @works = Work.where('lower(title) LIKE ?', "%#{search_params}%")
+    #   @user_artists = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", true)
+    #   @users = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", false)
+    # elsif params[:tag]
+    #   @works = Work.tagged_with(params[:tag])
+    #   @user_artists = User.where(is_artist: true)
+    #   @users = User.where(is_artist: false)
+    # else
+    #   @works = Work.all
+    #   @user_artists = User.where(is_artist: true)
+    #   @users = User.where(is_artist: false)
+    # end
   end
 
   def update
@@ -56,6 +71,17 @@ class WorksController < ApplicationController
     if user_signed_in?    
      @work.destroy
      redirect_to artist_path(@artist)    
+    end
+  end
+
+  def get_work_data
+    ## Create usable instance variables
+    @work = Work.find(params["work"])
+    artist = Artist.find(@work.artist_id)
+    @artist = User.find(artist.user_id)
+
+    respond_to do |format|
+      format.js
     end
   end
 

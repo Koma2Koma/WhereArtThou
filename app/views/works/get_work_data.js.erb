@@ -1,0 +1,7 @@
+
+
+$('#hover-output').html('<a href=' + '/artists/<%= @work.artist_id %>/works/<%= @work.id %>' + '>' +
+  '<h3><%= @work.title.titleize %></h3><br>' + 
+  '<div><%= j image_tag @work.image.url(:medium) %><br>' +
+  '<h3>By: <%= link_to @artist.username.titleize, artist_path(Artist.find_by(user_id: @artist.id)) %></h3></div>');
+
