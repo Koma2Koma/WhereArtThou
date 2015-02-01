@@ -528,7 +528,7 @@ textarea {
 .events-page-background {
 	background-color: white;
 	padding: 20px;
-	height: 600px;
+	//height: 600px;
 }
 
 .venue-name {
@@ -557,6 +557,7 @@ textarea {
 }
 
 .event-page-image {
+	margin-top: 5%;
 	border: 3px solid black;
 }
 
@@ -564,7 +565,7 @@ textarea {
 	text-align: left;
 	color: #D5D5D5;
 	top: -20px;
-	left: -20px;
+	left: -35px;
 	h1 {
 		margin: 0;
 		
