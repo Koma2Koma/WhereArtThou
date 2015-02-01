@@ -232,6 +232,7 @@ table {
 .gravatar {
 	border-radius: 50%;
 	margin-right: 10px;
+	margin-bottom: 20px;
 }
 
 .user-page-background {
@@ -254,6 +255,18 @@ table {
 			background-color: #451a4f;
 		}
 	}
+}
+
+.user-welcome {
+	padding-right: 20%
+}
+
+.mosaic-header {
+	text-align: right;
+	font-size: 1em;
+	font-family: "Playfair Display";
+	padding-bottom: 10px;
+	padding-right: 10px;
 }
 
 strong {
