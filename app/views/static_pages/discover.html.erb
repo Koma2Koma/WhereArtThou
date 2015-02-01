@@ -40,7 +40,14 @@ $(document).ready( function () {
               icon: 'assets/frame-landscape.png',
             <% end %>
             click: function(e) {
-              $( '#venue-details' ).html('<h1><%= link_to venue.name.camelize, venue_path(venue) unless venue.name.nil? %></h1><h3><%= venue.address %><br><%= venue.city %>, <%= venue.state %> </h3>');
+              $( '#venue-details' ).html('<h1><%= link_to venue.name.titleize, venue_path(venue) unless venue.name.nil? %></h1><h3><%= venue.address %><br><%= venue.city %>, <%= venue.state %> </h3>'
+                <% if venue.events.count > 0 %>
+                  + '<h3 id="upcome">Upcoming Events</h3>'
+                  <% venue.events.each do |event| %>
+                  + '<h4><%= link_to event.name.titleize, venue_event_path(venue, event) %></h4>'
+                  <% end %>
+                <% end %>
+                );
             }
           });
 
