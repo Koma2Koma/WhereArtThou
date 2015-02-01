@@ -522,17 +522,24 @@ textarea {
 
 .venue-name {
 	text-align: center;
-	
-
-	
+	h3 {
+		margin-top: 0;
+	}
+	p {
+		margin-bottom: 0;
+	}
 }
 
+#fb-icon {
+	text-align: center;
+}
 .event-container {
-
+	padding-top: 5%;
 }
 
 .event-page-buttons {
 	text-align: center;
+	margin-top: 10px;
 }
 
 .event-page-image {

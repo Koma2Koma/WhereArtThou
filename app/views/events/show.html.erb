@@ -2,9 +2,9 @@
   <div class="event-container col-md-5">
     <div class="venue-name">
       <h2><%= @event.name %></h2>
-      <p>At the</p>
+      <p>at the</p>
       <h3><%= link_to @venue.name.titleize, venue_path(@venue) %></h3><br>
-      <%= link_to (fa_icon "facebook 2x"), "#{@event.facebook}" if @event.facebook %><br>
+      
     </div>
     <table>
       <tbody >
@@ -30,7 +30,9 @@
         </tr>
       </tbody>
     </table>
-  
+    <div id='fb-icon'>
+      <br><%= link_to (fa_icon "facebook 2x"), "#{@event.facebook}" if @event.facebook.chars.count > 8 %>
+    </div>
     <div class="event-page-buttons">
       <% if @venue.user == current_user %>
         <%= link_to 'Edit', edit_venue_event_path(@venue, @event), class: "btn btn-success btn-lg hpbutton event-page-buttons" %>
