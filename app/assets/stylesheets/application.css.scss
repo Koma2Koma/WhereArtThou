@@ -391,14 +391,19 @@ textarea {
 	}
 }
 
-#venue-details {
-  display: inline-block;
-}
 
 ///////  DISCOVER PAGE ///////
 
 .discover-page {
 	height: 630px;
+}
+
+#venue-details {
+  display: inline-block;
+  width: 35%;
+  #upcome {
+  	text-decoration: underline;
+  }
 }
 
 //// Map on discover page ////
@@ -415,7 +420,7 @@ textarea {
 #map {
 	border: black 3px solid;
   display: inline-block;
-  width: 70%;
+  width: 65%;
   height: 100%;
 }
 ////// Featured Artists on discover page /////
