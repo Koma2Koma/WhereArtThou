@@ -279,6 +279,11 @@ strong {
 	padding: 20px;
 }
 
+.artist-page-background {
+	background-color: #4A4847;
+	padding: 20px;
+}
+
 .carousel-gallery {
 	width: 100%;
 	height: 400px;
@@ -288,6 +293,7 @@ strong {
 	margin-bottom: 30px;
 	text-align: center;
 	margin: 0 auto;
+	border: 3px solid black;
 	img {
 		width: 100%;
 		height: auto;
@@ -324,9 +330,19 @@ strong {
 
 .lower-artist-show {
 	padding-top: 25px;
+	margin: 0 auto;
+	text-align: center;
 	.work-thumbnail {
-		margin: 5px;
+		width: 100%;
 	}
+}
+
+.work-thumb {
+	display: inline-block;
+	width: 206px;
+	height: auto;
+	border: 3px solid black;
+	margin: 5px;
 }
 
 .artist-bio-page {
@@ -506,11 +522,6 @@ textarea {
 	position: fixed;
 }
 
-.hover-artist {
-
-}
-
-
 //////  Events Page ////////
 
 
@@ -546,7 +557,6 @@ textarea {
 }
 
 .event-page-image {
-	margin-top: 5%;
 	border: 3px solid black;
 }
 
@@ -561,6 +571,7 @@ textarea {
 		font-size: 6em;
 	}
 }
+
 
 
 
