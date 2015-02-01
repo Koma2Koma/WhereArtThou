@@ -24,5 +24,4 @@ class StaticPagesController < ApplicationController
     end
     featured_artists
   end
-  
 end
