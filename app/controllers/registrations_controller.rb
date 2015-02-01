@@ -18,7 +18,8 @@ class RegistrationsController < Devise::RegistrationsController
                                   :website, 
                                   :tags, 
                                   :about, 
-                                  :location, 
+                                  :location,
+                                  :photo, 
                                   :user_id,],
                                 venue_attributes: 
                                   [:id, 
@@ -98,8 +99,6 @@ class RegistrationsController < Devise::RegistrationsController
       user_path(user)
     end
   end
-
-
 end
 
 
