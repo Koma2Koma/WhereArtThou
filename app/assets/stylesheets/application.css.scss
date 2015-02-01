@@ -24,11 +24,6 @@ a {
 		color: #451a4f;
 	}
 }
-.artist-about-page-about-string{
-	font-family: "Playfair Display";
-	font-size: .75em;
-	color: black;
-}
 
 .flash {
 	font-family: "Open Sans Condensed";
@@ -249,8 +244,7 @@ table {
 
 .user-page-background {
 	background-color: white;
-	height: 545px;
-	padding: 25px;
+	padding: 20px;
 	font-family: "Open Sans Condensed";
 	color: #4A4847;
 	font-size: 2.5em;
@@ -281,15 +275,18 @@ strong {
 }
 
 .carousel-gallery {
-	width: 633px;
+	width: 100%;
+	height: 400px;
+  max-height: 400px;
+  overflow: hidden;
 	margin-top: 40px;
-	margin-right: 20px;
 	margin-bottom: 30px;
 	text-align: center;
 	margin: 0 auto;
 	img {
-		text-align: center;
-		margin: auto;
+		width: 100%;
+		height: auto;
+		vertical-align: center;
 	}
 }
 
@@ -303,11 +300,32 @@ strong {
 	padding: 25px;
 }
 
+.artist-buttons {
+	float: right;
+}	
+
+.artist-bio-btn {
+	font-size: 1.75em;
+}
+
+.artist-gallery-btn {
+	font-size: .75em;
+}
+
+.artist-header {
+	padding-bottom: 35px;
+	margin: 0 20px;
+}
+
 .lower-artist-show {
 	padding-top: 25px;
 	.work-thumbnail {
 		margin: 5px;
 	}
+}
+
+.artist-bio-page {
+	text-align: center;
 }
 
 #tag_cloud {
@@ -372,13 +390,114 @@ textarea {
   display: inline-block;
 }
 
+///////  DISCOVER PAGE ///////
+
+.discover-page {
+	height: 630px;
+}
+
+//// Map on discover page ////
+
 #map-container {
-  width: 100%;
-  height: 70%;
+
+  width: 65%;
+  height: 90%;
+  margin: 0;
+  display: inline-block;
+
 }
 
 #map {
+	border: black 3px solid;
   display: inline-block;
-  width: 50%;
+  width: 70%;
   height: 100%;
+}
+////// Featured Artists on discover page /////
+
+#featured-artist-container {
+	float: right;
+	//border: black 1px solid;
+	display: inline-block;
+	//min-height: 400px;
+	height: 90%;
+	width: 35%;
+	overflow: scroll;
+	//overflow-y: hidden;
+	div {
+		text-align: right;
+	}
+}
+
+#discover-container {
+	//border: black 1px solid;
+	height: 100%;
+}
+
+.indiv-artist {
+	h3 {
+		display: inline-block;
+	}
+	margin-bottom: 10px;
+	//border: black 1px solid;
+}
+
+.art-art {
+	border: black 3px solid;
+	display: inline-block;
+}
+
+#feature-title {
+	display: inline-block;
+	text-align: left;
+	border-bottom: 2px solid black;
+}
+
+#venue-title {
+	display: inline-block;
+	text-align: left;
+}
+
+/////// SEARCH RESULTS PAGE ///////
+
+#tab-list {
+
+}
+
+.tab-content {
+	clear: left;
+	min-height: 400px;
+}
+
+.hover-work {
+	min-height: 50px;
+	text-align: right;
+	h3 {
+		margin: 0;
+	}
+	div {
+		display: inline-block;
+	}
+}
+
+.hover-work:hover {
+	background-color: #F3F3F3;
+	//border: solid black 1px;
+}
+
+.tab-content h2 {
+}
+
+.hover-output {
+	min-height: 400px;
+	text-align: center;
+}
+
+#hover-output {
+	// border: black 1px solid;
+	position: fixed;
+}
+
+.hover-artist {
+
 }

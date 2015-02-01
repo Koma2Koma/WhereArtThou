@@ -1,39 +1,131 @@
 <div class="search-page-background">
 	<div class="container">
-		<div class="col-md-6">	
-			<h1>Popular Tags</h1>
 
-			<div id='tag_cloud'>
-			  <% tag_cloud Work.tag_counts, %w[s m l] do |tag, css_class|   %>
-			    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-			  <% end %>
+		<div role="tabpanel">
+			 <!-- Nav tabs -->
+			<ul class="nav nav-tabs col-md-5" role="tablist" id='tab-list'>
+		    <li role="presentation" class="active"><a href="#works" aria-controls="works" role="tab" data-toggle="tab">Artwork</a></li>
+		    <li role="presentation"><a href="#artists" aria-controls="artists" role="tab" data-toggle="tab">Artists</a></li>
+		    <li role="presentation"><a href="#venues" aria-controls="venues" role="tab" data-toggle="tab">Venues</a></li>
+		    <li role="presentation"><a href="#events" aria-controls="events" role="tab" data-toggle="tab">Events</a></li>
+		    <li role="presentation"><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Users</a></li>
+		  </ul>
 
-			</div>
+		  <!-- Tab panes -->
+		  <div class="tab-content col-md-5">
 
-			<h1>Works</h1>
+		    <div role="tabpanel" class="tab-pane active" id="works">
+		    <h2>Artwork</h2>
+					<% @works.each do |work| %>
+							<div class='hover-work' id=<%= work.id %> >
+								<h3><div id='work-title'><%= work.title.titleize %> &nbsp </div><div id='work-image'><%= image_tag work.image.url(:small) %></div></h3>
+							</div>
+							<br>
+					<% end %>
+				</div>
+
+		    <div role="tabpanel" class="tab-pane" id="artists">
+		    	<h2>Artists</h2>
+					<% @artists.each do |artist| %>
+						<% artist_obj = Artist.find_by(user_id: artist.id) %>
+						<div class='hover-artist'><h3><%= link_to artist.username.titleize, artist_path(artist_obj) %></h3><h4>
+							&nbsp &nbsp <%= artist_obj.location.titleize unless artist_obj.location.nil? %> </h4> </div>
+					<% end %>
+				</div>
+
+		    <div role="tabpanel" class="tab-pane" id="venues">
+		    	<h2>Venues</h2>
+					<% @venues.each do |venue| %>
+						<div class='hover-venue'><h3><strong><%= link_to venue.name.titleize, venue_path(venue) %></strong></h3><h4> &nbsp &nbsp  <%= venue.city.camelize %>, <%= venue.state.upcase %> </h4></div>
+					<% end %>
+				</div>
+
+				<div role="tabpanel" class="tab-pane" id="events">
+		    	<h2>Events</h2>
+					<% @events.each do |event| %>
+						<% venue = Venue.find(event.venue_id) %>
+						<div class='hover-venue'><h3><strong><%= link_to event.name.titleize, venue_event_path(venue, event) %></strong></h3><h4> &nbsp &nbsp <%= link_to venue.name.titleize, venue_path(venue) %>, <%= venue.city.titleize %>, <%= venue.state.upcase %> </h4><br>
+						</div>
+					<% end %>
+				</div>
+
+		    <div role="tabpanel" class="tab-pane" id="users">
+		    	<h2>Users</h2>
+					<% @users.each do |user| %>
+						<div class='hover-user'><h3><%= link_to user.username.titleize, user_path(user) %> <%= gravatar_for user, class: "gravatar" %></h3></div>
+					<% end %>
+				</div>
+		  </div>
+		</div>
+
+		<!-- <div class='col-md-6'> -->
+			
+			<!-- <h2>works</h2>
 			<% @works.each do |work| %>
-
-			  <p><%= link_to (image_tag work.image.url(:thumb)), artist_work_path(work.artist, work) %>
-			  <%= link_to work.title, artist_work_path(work.artist, work) %></p>
-			  <br>
+				<div class='hover-work' id=<%= work.id %> > <%= work.title %><%#=  link_to work.title, works_get_work_data_path(id: work.id), remote: true %> </div>
 			<% end %>
-		</div>
+			<p>_______________________________</p>
 
-		<div class="col-md-6">
-			<h1>Artists</h1>
-			<% @user_artists.each do |user_artist| %>
-
-			  <p><%= link_to (gravatar_for user_artist), artist_path(user_artist.artist), class:"gravatar" %>
-					 <%= link_to user_artist.username, artist_path(user_artist.artist) %></p>
-			  <br>
+			<h2>artists</h2>
+			<% @artists.each do |artist| %>
+				<div class='hover-artist'><%= link_to artist.username.titleize, artist_path(Artist.find_by(user_id: artist.id)) %> </div>
 			<% end %>
 
-			<h1>Users</h1>
+			<p>_______________________________</p>
+
+			<h2>venues</h2>
+			<% @venues.each do |venue| %>
+				<div class='hover-venue'><strong><%= link_to venue.name.titleize, venue_path(venue) %></strong>, <%= venue.city.camelize %> </div>
+			<% end %>
+
+			<p>_______________________________</p>
+
+			<h2>events</h2>
+			<% @events.each do |event| %>
+				<div class='hover-event'><strong><%= event.name.titleize %></strong>, <%= event.city.camelize unless event.city.nil? %> </div>
+			<% end %>
+
+			<p>_______________________________</p>
+
+			<h2>users</h2>
 			<% @users.each do |user| %>
-				<p><%= link_to (gravatar_for user), user_path(user), class:"gravatar" %>
-					 <%= link_to user.username, user_path(user) %></p>
-			  <br>
+				<div class='hover-artist'><%= user.username.titleize %> </div>
 			<% end %>
+
+		</div> -->
+
+		<div class='col-md-4 hover-output'>
+			<div id='hover-output'>
+			</div>
 		</div>
+
+		<div class='col-md-3' id=''>
+			<h1>Popular Tags</h1>
+      <div id='tag_cloud'>
+        <% tag_cloud Work.tag_counts, %w[s m l] do |tag, css_class|   %>
+          <%= link_to tag.name, tag_path(tag.name, search: tag.name ), class: css_class %>
+        <% end %>
+      </div>
+		</div>
+		
 	</div>
 </div>
+
+<script>
+
+$(document).ready( function() {
+	
+	$( '.hover-work' ).click( function() {
+		var id_num = $(this).attr('id');
+		$.ajax({
+			  url: "/works/get_work_data",
+			  data: {"work": id_num} 
+			}).done(function() {
+			  $( this ).addClass( "done" );
+			});
+	});
+
+
+});
+
+</script>

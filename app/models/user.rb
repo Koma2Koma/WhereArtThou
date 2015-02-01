@@ -24,13 +24,19 @@ class User < ActiveRecord::Base
 	    # user.image = auth.info.image # assuming the user model has an image
 	  end
   end
-
-class User < ActiveRecord::Base
-  # existing code
-
   
 end
+  def self.user_artist_search_doc(query)
+    where_conditions = ["(to_tsvector(username)) @@ plainto_tsquery(?)", query]
+    artists = User.where(is_artist: true)
+    artists.where(where_conditions)
+  end
 
-  
+  def self.user_search_doc(query)
+    where_conditions = ["(to_tsvector(username)) @@ plainto_tsquery(?)", query]
+    artists = User.where(is_artist: false)
+    artists.where(where_conditions)
+  end
+
 
 end
