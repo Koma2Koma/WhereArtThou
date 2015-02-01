@@ -11,8 +11,7 @@ body {
   background-color: #4A4847;
   font-family: "Playfair Display";
   padding-bottom: 50px;
-}
-
+ }
 a {
 	color: #4A4847;
 	&:visited,
@@ -45,10 +44,11 @@ img.logo {
 }
 
 .hp-h2-right-header{
-	font-family: "Playfair Display";
-	font-size: 2.5em;
+	font-family: "Open Sans Condensed";
+	font-size: 3.0em;
 	color: black;
-	padding-top: 20px;
+	padding-top: 0em;
+	padding-bottom: .25em;
 	padding-left: 70px; 
 	text-align: right;
 }
@@ -81,7 +81,7 @@ img.logo {
 	/*margin-top: 40px;
 	margin-right: 20px;
 	margin-bottom: 30px;*/
-	padding: 2em;
+	padding-top: 1em;
 }
 
 .side-text {
@@ -102,10 +102,18 @@ img.logo {
 
 
 
+.HP-WhereArtThere-headers {
+	width: 100%;
+	font-family: "Open Sans Condensed";
+	margin: 0em;
+	padding-left: 5em;
+}
+
 .action-header {
 	width: 100%;
 	font-family: "Open Sans Condensed";
-	margin: 0;
+	margin: 0em;
+	padding-left: 1em;
 }
 
 .home-page-buttons {
