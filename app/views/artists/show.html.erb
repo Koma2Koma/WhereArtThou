@@ -48,12 +48,11 @@
 			<%= @artist.user.username.upcase %>'S GALLERY
 		</div>
 		<div class="artist-buttons col-md-6 col-sm-12">
-			<%= link_to 'View Artist Bio', artist_about_path, class: "btn btn-success btn-lg hpbutton artist-bio-btn col-md-4 col-sm-4" %>
-
 			<% if @artist.user == current_user %>
 				<%= link_to 'Upload new image', new_artist_work_path(@artist), class: "btn btn-success btn-lg hpbutton col-md-4 col-sm-3" %>
 		    <%= link_to 'Edit Profile', edit_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton col-md-3 col-sm-3" %><br>
 			<% end %>
+			<%= link_to 'View Artist Bio', artist_about_path, class: "btn btn-success btn-lg hpbutton artist-bio-btn col-md-4 col-sm-4" %>
 		</div>
 	</div>
 
