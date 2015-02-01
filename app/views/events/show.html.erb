@@ -2,6 +2,7 @@
   <div class="event-container col-md-5">
     <div class="venue-name">
       <h2><%= @event.name %></h2>
+      <p>At the</p>
       <h3><%= link_to @venue.name.titleize, venue_path(@venue) %></h3><br>
       <%= link_to (fa_icon "facebook 2x"), "#{@event.facebook}" if @event.facebook %><br>
     </div>
@@ -39,7 +40,7 @@
     </div>
   </div>
   <div>
-    <%= image_tag 
+    <%= image_tag 'empty_gallery.jpg', class: 'event-page-image' %>
   </div>
 </div>
 
