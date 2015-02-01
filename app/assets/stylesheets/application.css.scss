@@ -373,9 +373,7 @@ textarea {
 	width: 100%;
 }
 
-.venue-name {
-	text-align: center;
-}
+
 
 .venue-show {
 	margin: 0 auto;
@@ -524,3 +522,37 @@ textarea {
 	position: fixed;
 }
 
+//////  Events Page ////////
+
+
+.events-page-background {
+	background-color: white;
+	padding: 20px;
+	height: 600px;
+}
+
+.venue-name {
+	text-align: center;
+	h3 {
+		margin-top: 0;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+
+#fb-icon {
+	text-align: center;
+}
+.event-container {
+	padding-top: 5%;
+}
+
+.event-page-buttons {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.event-page-image {
+	padding-top: 10%;
+}
