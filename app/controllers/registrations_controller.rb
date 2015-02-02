@@ -10,6 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
                                  :current_password, 
                                  :is_artist, 
                                  :is_venue, 
+                                 :photo,
                                 artist_attributes: 
                                 [:id, 
                                   :twitter, 
@@ -47,6 +48,7 @@ class RegistrationsController < Devise::RegistrationsController
 																 :current_password,
                                  :is_artist,
                                  :is_venue,
+                                 :photo,
                                 artist_attributes:
                                   [:id, 
                                    :twitter, 
@@ -92,7 +94,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_update_path_for(user)
     if user.is_artist
-      artist_path(user.artist)
+      artist_about_path(user.artist)
     elsif user.is_venue
       venue_path(user.venue) 
     else
