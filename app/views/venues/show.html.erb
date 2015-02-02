@@ -10,26 +10,34 @@
 	    <%= link_to (fa_icon "instagram 2x"), "http://instagram.com/#{@venue.instagram}" if @venue.instagram %>
 	    <%= link_to (fa_icon "globe 2x"), "http://#{@venue.website}" if @venue.instagram %>
 	  </div>
-		<div class="venue-show">
-			<div class="col-md-3">
-				<h3 class="venue-header">Information</h3>
-				
-		    <div class="modal-title">
-					<h4><%= @venue.address %></h4>
-					<h4><%= @venue.city %>, <%= @venue.state %></h4>
-					<h4><%= @venue.phone %></h4>
+	  <div class='col-md-8'>
+		  <div class="col-md-12 venue-about-container">
+					<h2 class="venue-header">About</h2>
+					<h4 class="venue-about modal-title"><%= @venue.description %></h4>
 				</div>
-				<% if @venue.user == current_user %>
-					<%= link_to 'New Event', new_venue_event_path(@venue), class: "btn btn-success btn-lg hpbutton" %><br><br>
-					<%= link_to 'Edit Profile', edit_user_registration_path(:venue => true), class: "btn btn-success btn-lg hpbutton" %>
-				<% end %>
+				<div>
+				<div id='venue-map-container' class='col-md-6'>
+	        <div id='venue-map'>
+	        </div>
+	          <p>Click on map for directions.</p>
+	      </div>
+				<div class="col-md-3 ven-address">
+					
+					
+			    <div class="modal-title">
+						<h4><%= @venue.address %></h4>
+						<h4><%= @venue.city %>, <%= @venue.state %></h4>
+						<h4><%= @venue.phone %></h4>
+					</div>
+					<% if @venue.user == current_user %>
+						<%= link_to 'New Event', new_venue_event_path(@venue), class: "btn btn-success btn-lg hpbutton" %><br><br>
+						<%= link_to 'Edit Profile', edit_user_registration_path(:venue => true), class: "btn btn-success btn-lg hpbutton" %>
+					<% end %>
+				</div>
 			</div>
-			<div class="col-md-6">
-				<h3 class="venue-header">About</h3>
-				<h4 class="venue-about modal-title"><%= @venue.description %></h4>
-			</div>
+		</div>
 			<div class="col-md-3 venue-buttons">
-				<h3 class="venue-header">Events</h3>
+				<h2 class="venue-events-header">Events</h2>
 				<% if @venue.events.empty? %>
 					<h4>No events.</h4>
 				<% else %>
@@ -47,13 +55,7 @@
 				<% end %>
 			</div>
 		</div>
-		<div>
-			<div id='venue-map-container' class='col-md-6'>
-        <div id='event-map'>
-        </div>
-          <p>Click on map for directions.</p>
-      </div>
-		</div>
+		
 	</div>
 </div>
 
@@ -71,7 +73,7 @@ $(document).ready( function () {
     });
           
     $('<img id="mappy"/>').attr('src', url)
-      .appendTo('#event-map');
+      .appendTo('#venue-map');
 
     $(".mappy").click(function () {
       window.open('https://www.google.com/maps/dir/Current+Location/<%= @venue.latitude %>,<%= @venue.longitude %>');
