@@ -19,7 +19,7 @@
     <% end %>
     <button id='go_back' class='btn btn-success btn-lg hpbutton'>Go Back</button>
     <% if user_signed_in? && current_user.is_artist == false %>
-      <button id='add_tile' class='btn btn-success btn-lg hpbutton'>Add Tile</button>
+      <span id="add_tile"><%= link_to 'Add Tile', add_tile_path(@work), remote: true, class: 'btn btn-success btn-lg hpbutton' %></span>
     <% end %>
     <div class="likes"><%= pluralize(@work.likers(User).count, 'like')%></div>
   </div>
@@ -31,9 +31,4 @@ $( '#go_back' ).click( function() {
   window.history.back()
 });
 
-$( '#add_tile' ).click( function() {
-  
-  <% current_user.like!(@work) if current_user %>
-  
-});
 </script>
