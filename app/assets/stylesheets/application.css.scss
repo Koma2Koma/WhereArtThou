@@ -261,10 +261,8 @@ table {
 }
 
 .user-page-background {
-	background-color: white;
 	padding: 20px;
 	font-family: "Open Sans Condensed";
-	color: #4A4847;
 	font-size: 2.5em;
 	.user-button {
 		background-color: #451a4f;
@@ -302,6 +300,15 @@ table {
 			background-color: #451a4f;
 		}
 	}
+.user-color {
+	background-color: #4A4847;
+	color: white;
+}
+
+.white-background {
+	background-color: white;
+	color: #4A4847;
+}
 
 .user-welcome {
 	padding-right: 20%
@@ -357,13 +364,13 @@ strong {
 	padding: 25px;
 }
 
-.artist-buttons {
+.artist-buttons,
+.artist-bio-btn {
 	float: right;
 }	
 
 .artist-bio-btn {
 	font-size: 1.75em;
-	float:right;
 }
 
 .artist-gallery-btn {
@@ -576,7 +583,7 @@ textarea {
 .events-page-background {
 	background-color: white;
 	padding: 20px;
-	height: 600px;
+	//height: 600px;
 }
 
 .venue-name {
@@ -587,13 +594,16 @@ textarea {
 	p {
 		margin-bottom: 0;
 	}
+	h2 {
+		margin-top: 0;
+	}
 }
 
 #fb-icon {
 	text-align: center;
 }
 .event-container {
-	padding-top: 5%;
+	padding-top: 0;
 }
 
 .event-page-buttons {
@@ -602,6 +612,42 @@ textarea {
 }
 
 .event-page-image {
-	padding-top: 10%;
+
+	margin-top: 5%;
+	border: 3px solid black;
 }
+
+.event-page-title {
+	text-align: left;
+	color: #D5D5D5;
+	top: -20px;
+	left: -35px;
+	h1 {
+		margin: 0;
+		font-size: 6em;
+	}
 }
+
+#event-map-container {
+	p {
+		text-align: center;
+	}
+	#event-map {
+		text-align: center;
+		img {
+			border: solid black 2px;
+			margin-top: 50px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
