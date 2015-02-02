@@ -417,6 +417,32 @@ strong {
 	margin: 5px;
 }
 
+.work-show {
+	padding-right: 50px;
+}
+
+.work-list {
+	padding-left: 40px;
+	a {
+		color: #72557D;
+		&:hover {
+			color: #451a4f;
+		}
+	}
+}
+
+.work-show-image {
+	border: 3px solid black;
+}
+
+.likes {
+	font-size: 1.25em;
+	margin-left: 50px;
+	padding: 5px 10px;
+	background-color: #4A4847;
+	color: white;
+}
+
 .artist-bio-page {
 	text-align: center;
 }
