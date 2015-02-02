@@ -28,7 +28,7 @@
 		    	<h2>Artists</h2>
 					<% @artists.each do |artist| %>
 						<% artist_obj = Artist.find_by(user_id: artist.id) %>
-						<div class='hover-artist'><h3><%= link_to artist.username.titleize, artist_path(artist_obj) %></h3><h4>
+						<div class='hover-artist'><h3><%= image_tag(artist.photo.url(:thumb), class:"user-thumb") %>  <%= link_to artist.username.titleize, artist_path(artist_obj) %></h3><h4>
 							&nbsp &nbsp <%= artist_obj.location.titleize unless artist_obj.location.nil? %> </h4> </div>
 					<% end %>
 				</div>
@@ -52,7 +52,7 @@
 		    <div role="tabpanel" class="tab-pane" id="users">
 		    	<h2>Users</h2>
 					<% @users.each do |user| %>
-						<div class='hover-user'><h3><%= link_to user.username.titleize, user_path(user) %> <%= gravatar_for user, class: "gravatar" %></h3></div>
+						<div class='hover-user'><h3><%= image_tag(user.photo.url(:thumb), class:"user-thumb") %>  <%= link_to user.username.titleize, user_path(user) %></h3></div>
 					<% end %>
 				</div>
 		  </div>

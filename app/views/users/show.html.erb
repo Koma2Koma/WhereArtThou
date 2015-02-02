@@ -9,7 +9,7 @@
 <div class="user-page-background user-color container">
   <div class="col-md-3 col-sm-12">
     <div class="user-info">
-      <div><%= image_tag(current_user.photo.url(:avatar), class:"user-avatar") %>
+      <div><%= image_tag(@user.photo.url(:avatar), class:"user-avatar") %>
       </div> 
       <%= @user.username %><br>
       <% if @user == current_user %>
