@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
-  before_action :set_artist, except: [:index, :get_work_data]
-  before_action :set_work, only: [:show, :edit, :update, :destroy]
+  before_action :set_artist, except: [:index, :get_work_data, :add_tile, :remove_tile]
+  before_action :set_work, only: [:show, :edit, :update, :destroy, :add_tile, :remove_tile]
 
   def new
     @work = Work.new
@@ -85,6 +85,20 @@ class WorksController < ApplicationController
     artist = Artist.find(@work.artist_id)
     @artist = User.find(artist.user_id)
 
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def add_tile()
+    current_user.like!(@work) if current_user
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def remove_tile()
+    current_user.unlike!(@work) if current_user
     respond_to do |format|
       format.js
     end
