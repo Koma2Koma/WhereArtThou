@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-5">
       <div class="round-image-50">
-        <%= image_tag(current_user.photo.url(:thumb)) %>
+        <%= image_tag(@artist.photo.url(:avatar)) %>
       </div>  
         <%= link_to (fa_icon "facebook"), @artist.facebook if @artist.facebook %>
         <%= link_to (fa_icon "twitter"), @artist.twitter if @artist.twitter %> 
