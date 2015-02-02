@@ -8,7 +8,8 @@
 
 <div class="user-page-background user-color container">
   <div class="col-md-3 col-sm-12">
-    <%= gravatar_for @user, class: "gravatar" %>
+    <div class="round-image-50"><%= image_tag(current_user.photo.url(:thumb)) %>
+    </div> 
     <%= @user.username %><br>
     <% if @user == current_user %>
       <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button" %>
@@ -33,6 +34,7 @@
             <%= link_to artist_work_path(tile.artist_id, tile.id) do %>
               <div class="tile">
                 <%= image_tag tile.image.url(:small), class: "item" %>
+                <p class="caption" ><%= tile.title%></p>
               </div>
             <% end %>
           <% end %>
