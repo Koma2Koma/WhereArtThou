@@ -54,13 +54,13 @@ img.logo {
 	color: black;
 }
 
-.user-show-page-medium-header{
+.user-show-page-medium-header {
 	font-family: "Open Sans Condensed";
 	font-size: 1em;
 	color: black;
 }
 
-.user-show-page-paragraph{
+.user-show-page-paragraph {
 	font-family: "Playfair Display";
 	font-size: .5em;
 	text-align: justify;
@@ -72,7 +72,7 @@ img.logo {
 															white 75%,
 															#4A4847 75%);
 	border: none;
-	height: 140px;
+	max-height: 140px;
 	.nav-links {
 		font-size: 1.5em;
 		padding-top: 50px;
