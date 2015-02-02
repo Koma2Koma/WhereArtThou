@@ -234,10 +234,8 @@ table {
 }
 
 .user-page-background {
-	background-color: white;
 	padding: 20px;
 	font-family: "Open Sans Condensed";
-	color: #4A4847;
 	font-size: 2.5em;
 	.user-button {
 		background-color: #451a4f;
@@ -253,6 +251,16 @@ table {
 			background-color: #451a4f;
 		}
 	}
+}
+
+.user-color {
+	background-color: #4A4847;
+	color: white;
+}
+
+.white-background {
+	background-color: white;
+	color: #4A4847;
 }
 
 .user-welcome {
@@ -309,13 +317,13 @@ strong {
 	padding: 25px;
 }
 
-.artist-buttons {
+.artist-buttons,
+.artist-bio-btn {
 	float: right;
 }	
 
 .artist-bio-btn {
 	font-size: 1.75em;
-	float:right;
 }
 
 .artist-gallery-btn {

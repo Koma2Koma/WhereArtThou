@@ -8,5 +8,14 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.username, class: "gravatar")
   end
 
-
+  def liked_artists(user)
+    artists = []
+    Work.all.each do |work|
+      if user.likes?(work)
+        artists << work.artist.user.username
+      end
+ 		end
+ 		names = artists.uniq.join(' ')
+ 	end
 end
+
