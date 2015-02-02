@@ -280,6 +280,22 @@ table {
 	}
 }
 
+.liked-artists-header {
+	font-family: "Playfair Display";
+	margin-bottom: -40px;
+}
+
+.user-side-list {
+	list-style-type: circle;
+	font-size: .8em;
+	a {
+		color: white;
+		&:hover { 
+			color: #451a4f;
+		}
+	}
+}
+
 .artist-about-background {
 	background-color: white;
 	padding: 0px;
@@ -301,6 +317,7 @@ table {
 		}
 	}
 }	
+
 .user-color {
 	background-color: #4A4847;
 	color: white;
