@@ -477,6 +477,13 @@ textarea {
 
 ////////  Venue Page ///////////
 
+.venue-name {
+	text-align: center;
+}
+#venue-logged-in-buttons {
+	margin-top: 20px;
+}
+
 .ven-img {
 	max-height: 100%;
 	max-width: 100%;
@@ -491,6 +498,9 @@ textarea {
 	margin: 0 auto;
 	width: 100%;
 	height: 340px;
+	img {
+		border: 3px solid black;
+	}
 }
 
 .venue-show {
@@ -531,6 +541,10 @@ textarea {
 
 #venue-map {
 	width: 300px;
+}
+
+.mappy {
+	border: solid 2px black;
 }
 
 #venue-map-container {
@@ -585,20 +599,16 @@ textarea {
 
 #featured-artist-container {
 	float: right;
-	//border: black 1px solid;
 	display: inline-block;
-	//min-height: 400px;
 	height: 90%;
 	width: 35%;
 	overflow: scroll;
-	//overflow-y: hidden;
 	div {
 		text-align: right;
 	}
 }
 
 #discover-container {
-	//border: black 1px solid;
 	height: 100%;
 }
 
@@ -607,7 +617,6 @@ textarea {
 		display: inline-block;
 	}
 	margin-bottom: 10px;
-	//border: black 1px solid;
 }
 
 .art-art {
@@ -650,7 +659,6 @@ textarea {
 
 .hover-work:hover {
 	background-color: #F3F3F3;
-	//border: solid black 1px;
 }
 
 .tab-content h2 {
@@ -662,7 +670,6 @@ textarea {
 }
 
 #hover-output {
-	// border: black 1px solid;
 	position: fixed;
 }
 
@@ -672,7 +679,6 @@ textarea {
 .events-page-background {
 	background-color: white;
 	padding: 20px;
-	//height: 600px;
 }
 
 .venue-name {
@@ -722,6 +728,7 @@ textarea {
 	}
 	#event-map {
 		text-align: center;
+		max-width: 500px;
 		img {
 			border: solid black 2px;
 			margin-top: 50px;
