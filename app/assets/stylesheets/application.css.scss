@@ -50,13 +50,13 @@ img.logo {
 
 .user-show-page-large-header{
 	font-family: "Open Sans Condensed";
-	font-size: 1.5em;
+	font-size: 1.25em;
 	color: black;
 }
 
 .user-show-page-medium-header{
 	font-family: "Open Sans Condensed";
-	font-size: 1em;
+	font-size: 0.75em;
 	color: black;
 }
 
@@ -332,6 +332,11 @@ table {
 	border-radius: 15%;
 	border: 2px solid black;
 	margin-right: 10px;
+}
+
+.artist-thumb {
+	border-radius: 15%;
+	border: 2px solid black;
 }
 
 .user-color {
