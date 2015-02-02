@@ -475,6 +475,13 @@ textarea {
 	margin-top: 30px;
 }
 
+////////  Venue Page ///////////
+
+.ven-img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
 .venue-page {
 	padding-right: 8%;
 }
@@ -483,15 +490,23 @@ textarea {
 	text-align: center;
 	margin: 0 auto;
 	width: 100%;
+	height: 340px;
 }
+
 .venue-show {
 	margin: 0 auto;
 	width: 80%;
 }
 
+.venue-about-container {
+	text-align: center;
+}
+
 .venue-about {
 	font-size: 1.5em;
 	text-align: justify;
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 .venue-buttons {
@@ -514,6 +529,27 @@ textarea {
 	}
 }
 
+#venue-map {
+	width: 300px;
+}
+
+#venue-map-container {
+	p {
+		text-align: center;
+	}
+}
+
+.link-icons {
+	text-align: center;
+}
+
+.venue-events-header {
+	text-align: center;
+}
+
+.ven-address {
+	margin-top: 145px;
+}
 
 ///////  DISCOVER PAGE ///////
 
@@ -537,7 +573,6 @@ textarea {
   height: 90%;
   margin: 0;
   display: inline-block;
-
 }
 
 #map {
