@@ -4,13 +4,16 @@
 			<%= image_tag @venue.picture, class: 'ven-img' %>
 		</div>
 		<h2 class="venue-name heading-font-dark"><%= @venue.name %></h2>
+		<div class='link-icons'>
+			<%= link_to (fa_icon "facebook 2x"), "http://#{@venue.facebook}" if @venue.facebook %>
+	    <%= link_to (fa_icon "twitter 2x"), "http://twitter.com/#{@venue.twitter}" if @venue.twitter %> 
+	    <%= link_to (fa_icon "instagram 2x"), "http://instagram.com/#{@venue.instagram}" if @venue.instagram %>
+	    <%= link_to (fa_icon "globe 2x"), "http://#{@venue.website}" if @venue.instagram %>
+	  </div>
 		<div class="venue-show">
 			<div class="col-md-3">
 				<h3 class="venue-header">Information</h3>
-				<%= link_to (fa_icon "facebook 2x"), "http://#{@venue.facebook}" if @venue.facebook %>
-		    <%= link_to (fa_icon "twitter 2x"), "http://twitter.com/#{@venue.twitter}" if @venue.twitter %> 
-		    <%= link_to (fa_icon "instagram 2x"), "http://instagram.com/#{@venue.instagram}" if @venue.instagram %>
-		    <%= link_to (fa_icon "globe 2x"), "http://#{@venue.website}" if @venue.instagram %>
+				
 		    <div class="modal-title">
 					<h4><%= @venue.address %></h4>
 					<h4><%= @venue.city %>, <%= @venue.state %></h4>
@@ -44,5 +47,38 @@
 				<% end %>
 			</div>
 		</div>
+		<div>
+			<div id='venue-map-container' class='col-md-6'>
+        <div id='event-map'>
+        </div>
+          <p>Click on map for directions.</p>
+      </div>
+		</div>
 	</div>
 </div>
+
+<script>
+$(document).ready( function () {
+    
+    url = GMaps.staticMapURL({
+      size: [300, 200],
+      zoom: 14,
+      lat: <%= @venue.latitude %>,
+      lng: <%= @venue.longitude %>,
+      markers: [
+        {lat: <%= @venue.latitude %>, lng: <%= @venue.longitude %>},
+      ]
+    });
+          
+    $('<img id="mappy"/>').attr('src', url)
+      .appendTo('#event-map');
+
+    $(".mappy").click(function () {
+      window.open('https://www.google.com/maps/dir/Current+Location/<%= @venue.latitude %>,<%= @venue.longitude %>');
+    });
+
+  });
+
+</script>
+
+
