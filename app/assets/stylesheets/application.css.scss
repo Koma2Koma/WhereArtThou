@@ -11,8 +11,7 @@ body {
   background-color: #4A4847;
   font-family: "Playfair Display";
   padding-bottom: 50px;
-}
-
+ }
 a {
 	color: #4A4847;
 	&:visited,
@@ -39,14 +38,34 @@ img.logo {
   width: 110px;
 }
 
-.hp-h2-right-header{
-	font-family: "Playfair Display";
-	font-size: 2.5em;
+.homepage-large-header{
+	font-family: "Open Sans Condensed";
+	font-size: 3.0em;
 	color: black;
-	padding-top: 20px;
+	padding-top: 0em;
+	padding-bottom: .25em;
 	padding-left: 70px; 
 	text-align: right;
 }
+
+.user-show-page-large-header{
+	font-family: "Open Sans Condensed";
+	font-size: 1.5em;
+	color: black;
+}
+
+.user-show-page-medium-header{
+	font-family: "Open Sans Condensed";
+	font-size: 1em;
+	color: black;
+}
+
+.user-show-page-paragraph{
+	font-family: "Playfair Display";
+	font-size: .5em;
+	text-align: justify;
+}
+
 
 .navbar {
 	background: linear-gradient(white,
@@ -76,7 +95,7 @@ img.logo {
 	/*margin-top: 40px;
 	margin-right: 20px;
 	margin-bottom: 30px;*/
-	padding: 2em;
+	padding-top: 1em;
 }
 
 .side-text {
@@ -95,10 +114,18 @@ img.logo {
 	text-align: left;
 }
 
+.HP-WhereArtThere-headers {
+	width: 100%;
+	font-family: "Open Sans Condensed";
+	margin: 0em;
+	padding-left: 5em;
+}
+
 .action-header {
 	width: 100%;
 	font-family: "Open Sans Condensed";
-	margin: 0;
+	margin: 0em;
+	padding-left: 1em;
 }
 
 .home-page-buttons {
@@ -253,6 +280,27 @@ table {
 	}
 }
 
+.artist-about-background {
+	background-color: white;
+	padding: 0px;
+	font-family: "Open Sans Condensed";
+	color: #4A4847;
+	font-size: 2.5em;
+	.user-button {
+		background-color: #451a4f;
+		color: white;
+		border: none;
+		border-radius: 0;
+		font-family: "Open Sans Condensed";
+		&:hover { 
+			background-color: #72557D;
+			color: white;
+		}
+		&:visited {
+			background-color: #451a4f;
+		}
+	}
+}	
 .user-color {
 	background-color: #4A4847;
 	color: white;
@@ -361,6 +409,7 @@ strong {
   .m { font-size: 1.2em;}
   .l { font-size: 1.8em;}
 }
+
 
 textarea {
 	resize: none;
@@ -564,6 +613,7 @@ textarea {
 }
 
 .event-page-image {
+
 	margin-top: 5%;
 	border: 3px solid black;
 }

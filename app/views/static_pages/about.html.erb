@@ -32,7 +32,20 @@
       <%= image_tag "hpimage3_thou.jpg", class: "featurette-image img-responsive img-about-bottom" %>
     </div>
   </div>
-
+  <div class="row">
+      <% if !user_signed_in? %>
+        <div class="home-page-buttons">
+          <div class="container action-header">
+            <h2>Get started now.</h2>
+          </div>
+          <%= render 'layouts/discover_modal' %>
+          <%= link_to 'SIGN UP', '#', data: {toggle: 'modal', target: '#myModal'}, class: "btn btn-success btn-lg hpbutton" %>
+        </div>
+      <% else %>
+        <div class="container action-header">
+        </div>
+      <% end %>
+</div>
 
 
 </div>
