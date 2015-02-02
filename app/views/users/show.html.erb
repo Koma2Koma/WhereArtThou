@@ -6,24 +6,39 @@
     });
 </script>
 
-<div class="user-page-background">
-  <div class="col-sm-6 col-md-11 col-lg-12">
+<div class="user-page-background container">
+  <div class="col-md-3 col-sm-12">
     <div class="round-image-50"><%= image_tag(current_user.photo.url(:thumb)) %>
-    </div>  
-    <%= @user.username %>
+    </div> 
+    <%= @user.username %><br>
+    <% if @user == current_user %>
+      <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button" %>
+    <% end %>
   </div>
-  <% if @user == current_user %>
-    <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button col-md-1" %>
-  <% end %> <br/>
-  <div id="gallery">
-    <div class="ftg-items">
-      <% if @mosaic %>
-        <% @mosaic.each do |tile| %>
-          <div class="tile">
-            <%= image_tag tile.image.url(:small), class: "item" %>
+  <div class="col-md-9 col-sm-12">
+    <div id="gallery">
+      <% if @user == current_user %>
+        <div class="mosaic-header">Your Mosaic</div>
+      <% else %>
+        <div class="mosaic-header"><%= @user.username %>'s Mosaic</div>
+      <% end %>
+      <div class="ftg-items">
+        <% if @mosaic.empty? == false %>
+          <% @mosaic.each do |tile| %>
+            <%= link_to artist_work_path(tile.artist_id, tile.id) do %>
+              <div class="tile">
+                <%= image_tag tile.image.url(:small), class: "item" %>
+              </div>
+            <% end %>
+          <% end %>
+        <% elsif @user == current_user %>
+          <div class="user-welcome">
+            <center>Welcome!</center>
+            <center>Use the search bar above to find art</center>
+            <center>to add to your Mosaic!</center><br>
           </div>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div> 
 </div>

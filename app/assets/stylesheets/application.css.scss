@@ -114,8 +114,6 @@ img.logo {
 	text-align: left;
 }
 
-
-
 .HP-WhereArtThere-headers {
 	width: 100%;
 	font-family: "Open Sans Condensed";
@@ -259,6 +257,7 @@ table {
 .gravatar {
 	border-radius: 50%;
 	margin-right: 10px;
+	margin-bottom: 20px;
 }
 
 .user-page-background {
@@ -303,6 +302,17 @@ table {
 			background-color: #451a4f;
 		}
 	}
+
+.user-welcome {
+	padding-right: 20%
+}
+
+.mosaic-header {
+	text-align: right;
+	font-size: 1em;
+	font-family: "Playfair Display";
+	padding-bottom: 10px;
+	padding-right: 10px;
 }
 
 strong {
@@ -315,6 +325,11 @@ strong {
 	padding: 20px;
 }
 
+.artist-page-background {
+	background-color: #4A4847;
+	padding: 20px;
+}
+
 .carousel-gallery {
 	width: 100%;
 	height: 400px;
@@ -324,6 +339,7 @@ strong {
 	margin-bottom: 30px;
 	text-align: center;
 	margin: 0 auto;
+	border: 3px solid black;
 	img {
 		width: 100%;
 		height: auto;
@@ -347,6 +363,7 @@ strong {
 
 .artist-bio-btn {
 	font-size: 1.75em;
+	float:right;
 }
 
 .artist-gallery-btn {
@@ -360,9 +377,19 @@ strong {
 
 .lower-artist-show {
 	padding-top: 25px;
+	margin: 0 auto;
+	text-align: center;
 	.work-thumbnail {
-		margin: 5px;
+		width: 100%;
 	}
+}
+
+.work-thumb {
+	display: inline-block;
+	width: 206px;
+	height: auto;
+	border: 3px solid black;
+	margin: 5px;
 }
 
 .artist-bio-page {
@@ -394,9 +421,7 @@ textarea {
 	width: 100%;
 }
 
-.venue-name {
-	text-align: center;
-}
+
 
 .venue-show {
 	margin: 0 auto;
@@ -428,14 +453,19 @@ textarea {
 	}
 }
 
-#venue-details {
-  display: inline-block;
-}
 
 ///////  DISCOVER PAGE ///////
 
 .discover-page {
 	height: 630px;
+}
+
+#venue-details {
+  display: inline-block;
+  width: 35%;
+  #upcome {
+  	text-decoration: underline;
+  }
 }
 
 //// Map on discover page ////
@@ -452,7 +482,7 @@ textarea {
 #map {
 	border: black 3px solid;
   display: inline-block;
-  width: 70%;
+  width: 65%;
   height: 100%;
 }
 ////// Featured Artists on discover page /////
@@ -540,6 +570,38 @@ textarea {
 	position: fixed;
 }
 
-.hover-artist {
+//////  Events Page ////////
 
+
+.events-page-background {
+	background-color: white;
+	padding: 20px;
+	height: 600px;
+}
+
+.venue-name {
+	text-align: center;
+	h3 {
+		margin-top: 0;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+
+#fb-icon {
+	text-align: center;
+}
+.event-container {
+	padding-top: 5%;
+}
+
+.event-page-buttons {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.event-page-image {
+	padding-top: 10%;
+}
 }

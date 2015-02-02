@@ -15,10 +15,12 @@
       
       <% @featured_artists.each do |artist| %>
         <div>
-          <% user = User.find(artist.user_id) %>
-          <% sample_art = artist.works.first unless artist.works.nil? %>
-          <div class='indiv-artist'><h3><%= link_to user.username.titleize, artist_path(artist) %> &nbsp </h3><div class='art-art'>
-          <%= link_to (image_tag sample_art.image.url(:small)), artist_work_path(artist, sample_art) unless sample_art.nil? %></div></div>
+          <% user = artist.user %>
+          <% if user.present? %>
+            <% sample_art = artist.works.first unless artist.works.nil? %>
+            <div class='indiv-artist'><h3><%= link_to user.username.titleize, artist_path(artist) %> &nbsp </h3><div class='art-art'>
+            <%= link_to (image_tag sample_art.image.url(:small)), artist_work_path(artist, sample_art) unless sample_art.nil? %></div></div>
+          <% end %>
         </div>
       <% end %>
     </div>
@@ -34,11 +36,23 @@ $(document).ready( function () {
       window.map.addMarker({
             lat: <%= venue.latitude %>,
             lng: <%= venue.longitude %>,
-            icon: 'assets/frame-landscape.png',
+            <% if venue.events.count > 0 %>
+              icon: '<%= ['assets/red_splat.png', 'assets/blue_splat.png', 'assets/green_splat.png'].sample %>', 
+            <% else %>
+              icon: 'assets/frame-landscape.png',
+            <% end %>
             click: function(e) {
-              $( '#venue-details' ).html('<h1><%= link_to venue.name.camelize, venue_path(venue) unless venue.name.nil? %></h1><h3><%= venue.address %><br><%= venue.city %>, <%= venue.state %> </h3>');
+              $( '#venue-details' ).html('<h1><%= link_to venue.name.titleize, venue_path(venue) unless venue.name.nil? %></h1><h3><%= venue.address %><br><%= venue.city %>, <%= venue.state %> </h3>'
+                <% if venue.events.count > 0 %>
+                  + '<h3 id="upcome">Upcoming Events</h3>'
+                  <% venue.events.each do |event| %>
+                  + '<h4><%= link_to event.name.titleize, venue_event_path(venue, event) %></h4>'
+                  <% end %>
+                <% end %>
+                );
             }
           });
+
       <% end %>
     <% end %>
   }, 5000);
