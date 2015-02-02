@@ -378,7 +378,10 @@ strong {
 	img {
 		width: 100%;
 		height: auto;
-		vertical-align: center;
+	}
+	.carousel-inner {
+		position: absolute;
+		bottom:-50%;
 	}
 }
 
