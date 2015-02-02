@@ -6,13 +6,17 @@
     });
 </script>
 
-<div class="user-page-background container">
+<div class="user-page-background user-color container">
   <div class="col-md-3 col-sm-12">
     <%= gravatar_for @user, class: "gravatar" %>
     <%= @user.username %><br>
     <% if @user == current_user %>
       <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button" %>
-    <% end %>
+    <% end %><br><br>
+    Liked Artists<br>
+    <ul>
+      <%= liked_artists(@user) %>
+    </ul>
   </div>
   <div class="col-md-9 col-sm-12">
     <div id="gallery">
