@@ -13,9 +13,11 @@
     <% if @user == current_user %>
       <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button" %>
     <% end %><br><br>
-    Liked Artists<br>
-    <ul>
-      <%= liked_artists(@user) %>
+    <div class="liked-artists-header">Liked Artists</div><br>
+    <ul class="user-side-list">
+      <% liked_artists(@user).each do |user| %>
+        <li><%= link_to user.username.titleize, artist_path(user.artist.id) %></li>
+      <% end %>
     </ul>
   </div>
   <div class="col-md-9 col-sm-12">
