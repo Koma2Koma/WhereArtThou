@@ -670,14 +670,17 @@ textarea {
 #gallery .tile .caption {
 	background: transparent;
 }
+
 #gallery .tile .caption p {
 	color: #666;
 	font-family: 'Engagement', cursive;
 	font-size:20px;
 }
+
 #gallery .tile .tile-inner {
 	/*box-shadow:#999 0px 0px 10px;*/ 
 }
+
 #gallery .tile:hover img {
 	-moz-transition: opacity, 0.3s;
 	-ms-transition: opacity, 0.3s;
@@ -686,6 +689,7 @@ textarea {
 	transition: opacity, 0.3s;
 	opacity:0.4;
 }
+
 #gallery .tile .ftg-social {
 	display: none;
 	position: absolute;
@@ -694,15 +698,18 @@ textarea {
 	width: 100%;
 	text-align: center;
 }
+
 #gallery .tile:hover .ftg-social {
 	display: block;
 }
+
 #gallery .tile .ftg-social a {
 	color: #fff;
 	font-size: 22px;
 	width:30px;
 	height: 30px;	
 }
+
 #gallery .tile:hover .ftg-social a:hover {
 	color: #451A4F;
 	text-decoration: none;
