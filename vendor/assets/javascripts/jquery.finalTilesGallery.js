@@ -235,9 +235,9 @@ jQuery.easing["jswing"] = jQuery.easing["swing"]; jQuery.extend(jQuery.easing, {
             autoLoadOffset: 50,
             gridCellSize: 10,
             scrollEffect: 'zoom',
-            enableTwitter: false,
+            enableTwitter: true,
             twitterText: '',
-            enableFacebook: false,
+            enableFacebook: true,
             facebookText: '',
             enableGplus: false,
             enablePinterest: false,
@@ -257,7 +257,7 @@ jQuery.easing["jswing"] = jQuery.easing["swing"]; jQuery.extend(jQuery.easing, {
         var animateTiles = false;
         var isLoading = false;
         var currentPage = 1;
-        var hasSocial = false;
+        var hasSocial = true;
         var maxHeight = 0;
 
         plugin.settings = {}
@@ -591,7 +591,7 @@ jQuery.easing["jswing"] = jQuery.easing["swing"]; jQuery.extend(jQuery.easing, {
                     case "fade":
                         $caption.css({
                             left: 0,
-                            top: 0
+                            bottom: 0
                         });
                         props.enter.opacity = 1;
 	                    props.leave.opacity = 0;
