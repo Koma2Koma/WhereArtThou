@@ -280,6 +280,22 @@ table {
 	}
 }
 
+.liked-artists-header {
+	font-family: "Playfair Display";
+	margin-bottom: -40px;
+}
+
+.user-side-list {
+	list-style-type: circle;
+	font-size: .8em;
+	a {
+		color: white;
+		&:hover { 
+			color: #451a4f;
+		}
+	}
+}
+
 .artist-about-background {
 	background-color: white;
 	padding: 0px;
@@ -301,6 +317,17 @@ table {
 		}
 	}
 }	
+
+.user-info {
+	text-align: center;
+	padding-right: 40px;
+}
+
+.user-avatar {
+	border-radius: 15%;
+	border: 3px solid black;
+}
+
 .user-color {
 	background-color: #4A4847;
 	color: white;
@@ -351,7 +378,10 @@ strong {
 	img {
 		width: 100%;
 		height: auto;
-		vertical-align: center;
+	}
+	.carousel-inner {
+		position: absolute;
+		bottom:-50%;
 	}
 }
 
@@ -400,6 +430,32 @@ strong {
 	margin: 5px;
 }
 
+.work-show {
+	padding-right: 50px;
+}
+
+.work-list {
+	padding-left: 40px;
+	a {
+		color: #72557D;
+		&:hover {
+			color: #451a4f;
+		}
+	}
+}
+
+.work-show-image {
+	border: 3px solid black;
+}
+
+.likes {
+	font-size: 1.25em;
+	margin-left: 50px;
+	padding: 5px 10px;
+	background-color: #4A4847;
+	color: white;
+}
+
 .artist-bio-page {
 	text-align: center;
 }
@@ -419,6 +475,13 @@ textarea {
 	margin-top: 30px;
 }
 
+////////  Venue Page ///////////
+
+.ven-img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
 .venue-page {
 	padding-right: 8%;
 }
@@ -427,18 +490,23 @@ textarea {
 	text-align: center;
 	margin: 0 auto;
 	width: 100%;
+	height: 340px;
 }
-
-
 
 .venue-show {
 	margin: 0 auto;
 	width: 80%;
 }
 
+.venue-about-container {
+	text-align: center;
+}
+
 .venue-about {
 	font-size: 1.5em;
 	text-align: justify;
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 .venue-buttons {
@@ -461,6 +529,27 @@ textarea {
 	}
 }
 
+#venue-map {
+	width: 300px;
+}
+
+#venue-map-container {
+	p {
+		text-align: center;
+	}
+}
+
+.link-icons {
+	text-align: center;
+}
+
+.venue-events-header {
+	text-align: center;
+}
+
+.ven-address {
+	margin-top: 145px;
+}
 
 ///////  DISCOVER PAGE ///////
 
@@ -484,7 +573,6 @@ textarea {
   height: 90%;
   margin: 0;
   display: inline-block;
-
 }
 
 #map {
@@ -613,7 +701,6 @@ textarea {
 }
 
 .event-page-image {
-
 	margin-top: 5%;
 	border: 3px solid black;
 }
@@ -642,13 +729,52 @@ textarea {
 	}
 }
 
+//////  Mosaic ////////
 
+#gallery .tile .caption {
+	background: transparent;
+}
 
+#gallery .tile .caption p {
+	color: #666;
+	font-family: 'Engagement', cursive;
+	font-size:20px;
+}
 
+#gallery .tile .tile-inner {
+	/*box-shadow:#999 0px 0px 10px;*/ 
+}
 
+#gallery .tile:hover img {
+	-moz-transition: opacity, 0.3s;
+	-ms-transition: opacity, 0.3s;
+	-o-transition: opacity, 0.3s;
+	-webkit-transition: opacity, 0.3s;
+	transition: opacity, 0.3s;
+	opacity:0.4;
+}
 
+#gallery .tile .ftg-social {
+	display: none;
+	position: absolute;
+	left: 0px;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+}
 
+#gallery .tile:hover .ftg-social {
+	display: block;
+}
 
+#gallery .tile .ftg-social a {
+	color: #fff;
+	font-size: 22px;
+	width:30px;
+	height: 30px;	
+}
 
-
-
+#gallery .tile:hover .ftg-social a:hover {
+	color: #451A4F;
+	text-decoration: none;
+}

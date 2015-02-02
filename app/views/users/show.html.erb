@@ -8,15 +8,19 @@
 
 <div class="user-page-background user-color container">
   <div class="col-md-3 col-sm-12">
-    <div class="round-image-50"><%= image_tag(current_user.photo.url(:thumb)) %>
-    </div> 
-    <%= @user.username %><br>
-    <% if @user == current_user %>
-      <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button" %>
-    <% end %><br><br>
-    Liked Artists<br>
-    <ul>
-      <%= liked_artists(@user) %>
+    <div class="user-info">
+      <div><%= image_tag(current_user.photo.url(:avatar), class:"user-avatar") %>
+      </div> 
+      <%= @user.username %><br>
+      <% if @user == current_user %>
+        <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-lg user-button" %>
+      <% end %><br><br>
+    </div>
+    <div class="liked-artists-header">Liked Artists</div><br>
+    <ul class="user-side-list">
+      <% liked_artists(@user).each do |user| %>
+        <li><%= link_to user.username.titleize, artist_path(user.artist.id) %></li>
+      <% end %>
     </ul>
   </div>
   <div class="col-md-9 col-sm-12">
@@ -32,6 +36,7 @@
             <%= link_to artist_work_path(tile.artist_id, tile.id) do %>
               <div class="tile">
                 <%= image_tag tile.image.url(:small), class: "item" %>
+                <p class="caption" ><%= tile.title%></p>
               </div>
             <% end %>
           <% end %>

@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :works, only: :index
 
   get 'artist_about/:id', to: 'artists#about', as: :artist_about
+  get 'add_tile/:id', to: 'works#add_tile', as: :add_tile
+  get 'remove_tile/:id', to: 'works#remove_tile', as: :remove_tile
 
   resources :venues, only: [:show, :index, :edit] do
     resources :events
