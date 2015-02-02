@@ -568,11 +568,22 @@ textarea {
 	left: -35px;
 	h1 {
 		margin: 0;
-		
 		font-size: 6em;
 	}
 }
 
+#event-map-container {
+	p {
+		text-align: center;
+	}
+	#event-map {
+		text-align: center;
+		img {
+			border: solid black 2px;
+			margin-top: 50px;
+		}
+	}
+}
 
 
 
