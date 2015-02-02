@@ -328,6 +328,12 @@ table {
 	border: 3px solid black;
 }
 
+.user-thumb {
+	border-radius: 15%;
+	border: 2px solid black;
+	margin-right: 10px;
+}
+
 .user-color {
 	background-color: #4A4847;
 	color: white;
@@ -531,6 +537,7 @@ textarea {
 
 #venue-map {
 	width: 300px;
+	max-width: 300px;
 }
 
 #venue-map-container {
