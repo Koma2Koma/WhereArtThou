@@ -12,10 +12,9 @@ module UsersHelper
     artists = []
     Work.all.each do |work|
       if user.likes?(work)
-        artists << work.artist.user.username
+        artists << work.artist.user
       end
  		end
- 		names = artists.uniq.join(' ')
+ 		artists.uniq!
  	end
 end
-
