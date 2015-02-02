@@ -32,6 +32,7 @@
             <%= link_to artist_work_path(tile.artist_id, tile.id) do %>
               <div class="tile">
                 <%= image_tag tile.image.url(:small), class: "item" %>
+                <p class="caption" ><%= tile.title%></p>
               </div>
             <% end %>
           <% end %>
