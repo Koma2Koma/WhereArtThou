@@ -449,6 +449,11 @@ textarea {
 	margin-top: 30px;
 }
 
+.ven-img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
 .venue-page {
 	padding-right: 8%;
 }
@@ -457,7 +462,9 @@ textarea {
 	text-align: center;
 	margin: 0 auto;
 	width: 100%;
+	height: 340px;
 }
+
 .venue-show {
 	margin: 0 auto;
 	width: 80%;
