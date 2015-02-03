@@ -27,21 +27,17 @@ class WorksController < ApplicationController
 
     search_params = params[:search].downcase if params[:search] != nil
 
-    works = Work.work_search_doc(search_params)
-
-    @artists = User.user_artist_search_doc(search_params)
-
-    @venues = Venue.venue_search_doc(search_params)
-
-    @events = Event.event_search_doc(search_params)
-
-    @users = User.user_search_doc(search_params)
-
+    works = Work.search(search_params)
     tags = Work.tagged_with(search_params).all
+    @works = (works + tags).uniq
+    @artists = User.search_by_artists(search_params)
+    @venues = Venue.search(search_params)
+    @events = Event.search(search_params)
+    @users = User.search_by_users(search_params)
+
 
     
 
-    @works = (works + tags).uniq
 
 
     ###### Original Search Setup #######
