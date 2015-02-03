@@ -1,10 +1,12 @@
 class Work < ActiveRecord::Base
+  include Searchable
+
   belongs_to :artist
 
   acts_as_likeable
   acts_as_taggable
 
-  searchable
+  searchable_columns :title, :description, :medium
 
   has_attached_file :image, :styles => { :small => "200x200>", 
                                          :medium => "300x300>", 
@@ -17,11 +19,11 @@ class Work < ActiveRecord::Base
     :file_name => { :matches => [/png\Z/, /jpe?g\Z/]}
   do_not_validate_attachment_file_type :image
 
-  def self.work_search_doc(query)    
-    where_conditions = [" (to_tsvector(title) ||
-                        to_tsvector(description) ||
-                        to_tsvector(medium) ) @@ plainto_tsquery(?)", query]
-    Work.where(where_conditions).all
-  end
+  # def self.work_search_doc(query)    
+  #   where_conditions = [" (to_tsvector(title) ||
+  #                       to_tsvector(description) ||
+  #                       to_tsvector(medium) ) @@ plainto_tsquery(?)", query]
+  #   Work.where(where_conditions).all
+  # end
 
 end
