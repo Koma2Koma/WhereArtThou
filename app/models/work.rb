@@ -4,6 +4,8 @@ class Work < ActiveRecord::Base
   acts_as_likeable
   acts_as_taggable
 
+  searchable
+
   has_attached_file :image, :styles => { :small => "200x200>", 
                                          :medium => "300x300>", 
                                          :large => "450x450>", 

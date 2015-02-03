@@ -2,6 +2,8 @@ class Event < ActiveRecord::Base
 	belongs_to :venue
 	has_many :artists
 
+  searchable
+
   def self.event_search_doc(query)    
     where_conditions = [" (to_tsvector(name) ||
                         to_tsvector(city) ||

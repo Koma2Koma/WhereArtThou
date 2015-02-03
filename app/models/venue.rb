@@ -5,6 +5,7 @@ class Venue < ActiveRecord::Base
   geocoded_by :full_street_address
   after_validation :geocode
 
+  searchable
 
   reverse_geocoded_by :latitude, :longitude
 
