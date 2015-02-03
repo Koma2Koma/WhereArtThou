@@ -475,6 +475,8 @@ strong {
   .s { font-size: 0.8em;}
   .m { font-size: 1.2em;}
   .l { font-size: 1.8em;}
+  padding-left: 0;
+  padding-right: 20px;
 }
 
 
@@ -649,8 +651,33 @@ textarea {
 
 /////// SEARCH RESULTS PAGE ///////
 
-#tab-list {
+.work-title {
+	
+}
 
+.spacer {
+	height: 10px;
+}
+
+.result-row {
+	text-align: left;
+	h3 {
+		text-align: left;
+	}
+}
+
+.tab-pane {
+	h2 {
+		margin-top: 10px;
+	}
+	.no-result {
+		text-align: center;
+	}
+}
+
+.top-row {
+	padding: 0;
+	height: 50px;
 }
 
 .tab-content {
@@ -685,8 +712,20 @@ textarea {
 	position: fixed;
 }
 
-//////  Events Page ////////
+.hover-user {
+	text-align: center;
+}
 
+.hover-artist {
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+.hover-venue {
+	float: left;
+}
+
+//////  Events Page ////////
 
 .events-page-background {
 	background-color: white;
