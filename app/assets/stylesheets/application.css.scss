@@ -658,6 +658,10 @@ textarea {
 	}
 }
 
+.top-row {
+	padding: 0;
+}
+
 .tab-content {
 	clear: left;
 	min-height: 400px;
@@ -690,8 +694,24 @@ textarea {
 	position: fixed;
 }
 
-//////  Events Page ////////
+.hover-user {
+	text-align: center;
+}
 
+.hover-artist {
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+.tab-inner-title {
+	padding: 0;
+}
+
+.tab-inner-search {
+	padding: 0;
+}
+
+//////  Events Page ////////
 
 .events-page-background {
 	background-color: white;
