@@ -15,45 +15,112 @@
 		  <div class="tab-content col-md-5">
 
 		    <div role="tabpanel" class="tab-pane active" id="works">
-		    <h2>Artwork</h2>
+		    <h2 class='col-md-4'>Artwork</h2>
+		    <div class='col-md-8'>
+			    <%= form_tag works_path, class: "navbar-form navbar-right search-bar", role: "search", method: "get" do %>
+				    <div class="form-group">
+				      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search for Artwork" %>
+				    </div>
+				   <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
+				  <% end %>
+			  </div>
 					<% @works.each do |work| %>
-							<div class='hover-work' id=<%= work.id %> >
+							<div class='hover-work' id='<%= work.id %>' >
 								<h3><div id='work-title'><%= work.title.titleize %> &nbsp </div><div id='work-image'><%= image_tag work.image.url(:small) %></div></h3>
 							</div>
 							<br>
 					<% end %>
+					<% if @works.count == 0 %>
+						<div>
+							<h4 class='no-result col-md-12'><br>Sorry, no artwork found with that search. <br> <br>Try another tab.</h4>
+						</div>
+					<% end %>
 				</div>
 
 		    <div role="tabpanel" class="tab-pane" id="artists">
-		    	<h2>Artists</h2>
+		    	<h2 class='col-md-4'>Artists</h2>
+		    	<div class='col-md-8'>
+			    <%= form_tag works_path, class: "navbar-form navbar-right search-bar", role: "search", method: "get" do %>
+				    <div class="form-group">
+				      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search for Artists" %>
+				    </div>
+				   <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
+				  <% end %>
+			  </div>
 					<% @artists.each do |artist| %>
 						<% artist_obj = Artist.find_by(user_id: artist.id) %>
 						<div class='hover-artist'><h3><%= image_tag(artist.photo.url(:thumb), class:"user-thumb") %>  <%= link_to artist.username.titleize, artist_path(artist_obj) %></h3><h4>
 							&nbsp &nbsp <%= artist_obj.location.titleize unless artist_obj.location.nil? %> </h4> </div>
 					<% end %>
+					<% if @works.count == 0 %>
+						<div>
+							<h4 class='no-result col-md-12'><br>Sorry, no artists found with that search. <br> <br>Try another tab.</h4>
+						</div>
+					<% end %>
 				</div>
 
 		    <div role="tabpanel" class="tab-pane" id="venues">
-		    	<h2>Venues</h2>
+		    	<h2 class='col-md-4'>Venues</h2>
+		    	<div class='col-md-8'>
+			    <%= form_tag works_path, class: "navbar-form navbar-right search-bar", role: "search", method: "get" do %>
+				    <div class="form-group">
+				      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search for Venues" %>
+				    </div>
+				   <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
+				  <% end %>
+			  </div>
 					<% @venues.each do |venue| %>
 						<div class='hover-venue'><h3><strong><%= link_to venue.name.titleize, venue_path(venue) %></strong></h3><h4> &nbsp &nbsp  <%= venue.city.camelize %>, <%= venue.state.upcase %> </h4></div>
+					<% end %>
+					<% if @works.count == 0 %>
+						<div>
+							<h4 class='no-result col-md-12'><br>Sorry, no venues found with that search. <br> <br>Try another tab.</h4>
+						</div>
 					<% end %>
 				</div>
 
 				<div role="tabpanel" class="tab-pane" id="events">
-		    	<h2>Events</h2>
+		    	<h2 class='col-md-4'>Events</h2>
+		    	<div class='col-md-8'>
+			    <%= form_tag works_path, class: "navbar-form navbar-right search-bar", role: "search", method: "get" do %>
+				    <div class="form-group">
+				      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search for Events" %>
+				    </div>
+				   <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
+				  <% end %>
+				</div>
 					<% @events.each do |event| %>
 						<% venue = Venue.find(event.venue_id) %>
 						<div class='hover-venue'><h3><strong><%= link_to event.name.titleize, venue_event_path(venue, event) %></strong></h3><h4> &nbsp &nbsp <%= link_to venue.name.titleize, venue_path(venue) %>, <%= venue.city.titleize %>, <%= venue.state.upcase %> </h4><br>
 						</div>
 					<% end %>
+					<% if @works.count == 0 %>
+						<div>
+							<h4 class='no-result col-md-12'><br>Sorry, no events found with that search. <br> <br>Try another tab.</h4>
+						</div>
+					<% end %>
 				</div>
+			
 
 		    <div role="tabpanel" class="tab-pane" id="users">
-		    	<h2>Users</h2>
+		    	<h2 class='col-md-4'>Users</h2>
+		    	<div class='col-md-8'>
+			    <%= form_tag works_path, class: "navbar-form navbar-right search-bar", role: "search", method: "get" do %>
+				    <div class="form-group">
+				      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search for Users" %>
+				    </div>
+				   <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
+				  <% end %>
+				</div>
 					<% @users.each do |user| %>
 						<div class='hover-user'><h3><%= image_tag(user.photo.url(:thumb), class:"user-thumb") %>  <%= link_to user.username.titleize, user_path(user) %></h3></div>
 					<% end %>
+					<% if @works.count == 0 %>
+						<div>
+							<h4 class='no-result col-md-12'><br>Sorry, no users found with that search. <br> <br>Try another tab.</h4>
+						</div>
+					<% end %>
+				
 				</div>
 		  </div>
 		</div>

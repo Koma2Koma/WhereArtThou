@@ -649,8 +649,13 @@ textarea {
 
 /////// SEARCH RESULTS PAGE ///////
 
-#tab-list {
-
+.tab-pane {
+	h2 {
+		margin-top: 10px;
+	}
+	.no-result {
+		text-align: center;
+	}
 }
 
 .tab-content {
