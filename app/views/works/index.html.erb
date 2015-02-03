@@ -20,12 +20,14 @@
 				    <div class='col-md-8'>
 					    <%= form_tag works_path, class: "navbar-form navbar-right search-bar", role: "search", method: "get" do %>
 						    <div class="form-group">
-						      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search for Artwork" %>
+						      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search Here" %>
 						    </div>
 						   <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
 						  <% end %>
 						</div>
-					 </div>
+					</div>
+					<div class='spacer col-md-12'>
+			  	</div>
 					<% @works.each do |work| %>
 							<div class='hover-work' id='<%= work.id %>' >
 								<h3><div class='work-title'><%= work.title.titleize %> &nbsp </div><div class='work-image'><%= image_tag work.image.url(:small) %></div></h3>
@@ -40,19 +42,19 @@
 				</div>
 
 		    <div role="tabpanel" class="tab-pane" id="artists">
-		    	
-		    	<div class='top-row col-md-12'>
-			    	<h2 class='col-md-4 tab-inner-title'>Artists</h2>
-			    	<div class='col-md-8 tab-inner-search'>
+		    	<div class='top-row'>
+			    	<h2 class='col-md-4'>Artists</h2>
+			    	<div class='col-md-8'>
 				    <%= form_tag works_path, class: "navbar-form navbar-right tab-search-bar", role: "search", method: "get" do %>
 					    <div class="form-group">
-					      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search for Artists" %>
+					      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search Here" %>
 					    </div>
 					   <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
 					  <% end %>
 				  </div>
 			  </div>
-
+			  <div class='spacer col-md-12'>
+			  </div>
 					<% @artists.each do |artist| %>
 						<% artist_obj = Artist.find_by(user_id: artist.id) %>
 						<div class='hover-artist result-row'><%= image_tag(artist.photo.url(:thumb), class:"user-thumb") %>  <%= link_to artist.username.titleize, artist_path(artist_obj) %>
@@ -71,13 +73,17 @@
 		    	<div class='col-md-8'>
 			    <%= form_tag works_path, class: "navbar-form navbar-right search-bar", role: "search", method: "get" do %>
 				    <div class="form-group">
-				      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search for Venues" %>
+				      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search Here" %>
 				    </div>
 				   <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
 				  <% end %>
 			  </div>
+			  <div class='spacer col-md-12'>
+			  </div>
 					<% @venues.each do |venue| %>
 						<div class='hover-venue'><h3><strong><%= link_to venue.name.titleize, venue_path(venue) %></strong></h3><h4> &nbsp &nbsp  <%= venue.city.camelize %>, <%= venue.state.upcase %> </h4></div>
+						<div class='spacer col-md-12'>
+			  		</div>
 					<% end %>
 					<% if @venues.count == 0 %>
 						<div>
@@ -91,11 +97,13 @@
 		    	<div class='col-md-8'>
 			    <%= form_tag works_path, class: "navbar-form navbar-right search-bar", role: "search", method: "get" do %>
 				    <div class="form-group">
-				      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search for Events" %>
+				      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search Here" %>
 				    </div>
 				   <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
 				  <% end %>
 				</div>
+				<div class='spacer col-md-12'>
+			  </div>
 					<% @events.each do |event| %>
 						<% venue = Venue.find(event.venue_id) %>
 						<div class='hover-venue'><h3><strong><%= link_to event.name.titleize, venue_event_path(venue, event) %></strong></h3><h4> &nbsp &nbsp <%= link_to venue.name.titleize, venue_path(venue) %>, <%= venue.city.titleize %>, <%= venue.state.upcase %> </h4><br>
@@ -114,13 +122,18 @@
 		    	<div class='col-md-8'>
 			    <%= form_tag works_path, class: "navbar-form navbar-right search-bar", role: "search", method: "get" do %>
 				    <div class="form-group">
-				      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search for Users" %>
+				      <%= text_field_tag :search,"", class: "form-control", placeholder: "Search Here" %>
 				    </div>
 				   <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
 				  <% end %>
 				</div>
+				<div class='spacer col-md-12'>
+			  </div>
 					<% @users.each do |user| %>
-						<div class='hover-user col-md-12'><h3><%= image_tag(user.photo.url(:thumb), class:"user-thumb") %>  <%= link_to user.username.titleize, user_path(user) %></h3></div>
+						<div class='hover-user col-md-12 result-row'><h3><%= image_tag(user.photo.url(:thumb), class:"user-thumb") %>  <%= link_to user.username.titleize, user_path(user) %></h3>
+						</div>
+						<div class='spacer col-md-12'>
+			  		</div>
 					<% end %>
 					<% if @users.count == 0 %>
 						<div>

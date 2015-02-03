@@ -655,6 +655,16 @@ textarea {
 	
 }
 
+.spacer {
+	height: 10px;
+}
+
+.result-row {
+	text-align: left;
+	h3 {
+		text-align: left;
+	}
+}
 
 .tab-pane {
 	h2 {
@@ -711,12 +721,8 @@ textarea {
 	margin-bottom: 5px;
 }
 
-.tab-inner-title {
-	padding: 0;
-}
-
-.tab-inner-search {
-	padding: 0;
+.hover-venue {
+	float: left;
 }
 
 //////  Events Page ////////
