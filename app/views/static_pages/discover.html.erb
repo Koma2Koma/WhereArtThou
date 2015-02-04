@@ -39,9 +39,9 @@ $(document).ready( function () {
             lat: <%= venue.latitude %>,
             lng: <%= venue.longitude %>,
             <% if venue.events.count > 0 %>
-              icon: '<%= ['assets/red_splat.png', 'assets/blue_splat.png', 'assets/green_splat.png'].sample %>', 
+              icon: { url: '<%= [(image_path("red_splat.png")), (image_path("blue_splat.png")), (image_path("green_splat.png"))].sample %>' }, 
             <% else %>
-              icon: 'assets/frame-landscape.png',
+              icon: { url: "<%= image_path('frame-landscape.png') %>" },  // maybe add width and height.
             <% end %>
             click: function(e) {
               $( '#venue-details' ).html('<h1><%= link_to venue.name.titleize, venue_path(venue) unless venue.name.nil? %></h1><h3><%= venue.address %><br><%= venue.city %>, <%= venue.state %> </h3>'
