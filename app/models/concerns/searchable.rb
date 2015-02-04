@@ -4,6 +4,7 @@ module Searchable
   COLUMNS_TO_SEARCH_VARIABLE = '@@columns_to_search'
 
   module ClassMethods
+    
     def searchable_columns(*columns_to_search)
       class_variable_set COLUMNS_TO_SEARCH_VARIABLE, columns_to_search
     end
