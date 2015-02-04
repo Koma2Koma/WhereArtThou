@@ -1,3 +1,5 @@
+$grid-float-breakpoint: 1045px;
+$screen-md: 1045px;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "final-tiles-gallery";
@@ -38,6 +40,20 @@ img.logo {
   width: 110px;
 }
 
+img.logo-small {
+  margin-top: -120px;
+  margin-left: 0px;
+  max-width: 90px;
+}
+
+.homepage-small-header{
+	font-family: "Open Sans Condensed";
+	font-size: 3.0em;
+	color: black;
+	float: left;
+
+}
+
 .homepage-large-header{
 	font-family: "Open Sans Condensed";
 	font-size: 3.0em;
@@ -54,13 +70,13 @@ img.logo {
 	color: black;
 }
 
-.user-show-page-medium-header{
+.user-show-page-medium-header {
 	font-family: "Open Sans Condensed";
 	font-size: 0.75em;
 	color: black;
 }
 
-.user-show-page-paragraph{
+.user-show-page-paragraph {
 	font-family: "Playfair Display";
 	font-size: .5em;
 	text-align: justify;
@@ -72,7 +88,7 @@ img.logo {
 															white 75%,
 															#4A4847 75%);
 	border: none;
-	height: 140px;
+	max-height: 140px;
 	.nav-links {
 		font-size: 1.5em;
 		padding-top: 50px;
@@ -87,6 +103,36 @@ img.logo {
 			font-size: 1.25em;
 		}
 	}
+}
+
+.small-search{
+	border: none;
+	margin: 0;
+	display: inline-flex;
+	float: right;
+	.form-control {
+			width: 200px;
+			font-family: "Open Sans Condensed";
+			font-size: 1.25em;
+			margin-bottom: 1em;
+	}
+	.hpbutton{
+		height: 34px;
+	}
+}
+.navbar-collapse{
+	border:none;
+	box-shadow: none;
+}
+.navbar-form{
+	border:none;
+	box-shadow: none;
+}
+.small-links{
+	background-color: white;
+	font-size: 1.5em;
+	font-family: "Open Sans Condensed";
+	margin: 0;
 }
 
 .carousel-home {
