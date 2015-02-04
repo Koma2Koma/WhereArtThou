@@ -3,12 +3,19 @@
 		<div class="venue-coverphoto">
 			<%= image_tag @venue.picture, class: 'ven-img' %>
 		</div>
+		
 		<h2 class="venue-name heading-font-dark"><%= @venue.name %></h2>
 		<div class='link-icons'>
 			<%= link_to (fa_icon "facebook 2x"), "http://#{@venue.facebook}" if @venue.facebook %>
 	    <%= link_to (fa_icon "twitter 2x"), "http://twitter.com/#{@venue.twitter}" if @venue.twitter %> 
 	    <%= link_to (fa_icon "instagram 2x"), "http://instagram.com/#{@venue.instagram}" if @venue.instagram %>
 	    <%= link_to (fa_icon "globe 2x"), "http://#{@venue.website}" if @venue.instagram %>
+	    <% if @venue.user == current_user %>
+			<div id='venue-logged-in-buttons'>
+			<%= link_to 'New Event', new_venue_event_path(@venue), class: "btn btn-success btn-lg hpbutton" %>
+			<%= link_to 'Edit Profile', edit_user_registration_path(:venue => true), class: "btn btn-success btn-lg hpbutton" %>
+			</div>
+		<% end %>
 	  </div>
 	  <div class='col-md-8'>
 		  <div class="col-md-12 venue-about-container">
@@ -23,16 +30,12 @@
 	      </div>
 				<div class="col-md-3 ven-address">
 					
-					
 			    <div class="modal-title">
 						<h4><%= @venue.address %></h4>
 						<h4><%= @venue.city %>, <%= @venue.state %></h4>
 						<h4><%= @venue.phone %></h4>
 					</div>
-					<% if @venue.user == current_user %>
-						<%= link_to 'New Event', new_venue_event_path(@venue), class: "btn btn-success btn-lg hpbutton" %><br><br>
-						<%= link_to 'Edit Profile', edit_user_registration_path(:venue => true), class: "btn btn-success btn-lg hpbutton" %>
-					<% end %>
+
 				</div>
 			</div>
 		</div>
@@ -67,12 +70,13 @@ $(document).ready( function () {
       zoom: 14,
       lat: <%= @venue.latitude %>,
       lng: <%= @venue.longitude %>,
+      scale: 1,
       markers: [
         {lat: <%= @venue.latitude %>, lng: <%= @venue.longitude %>},
       ]
     });
           
-    $('<img id="mappy"/>').attr('src', url)
+    $('<img class="mappy"/>').attr('src', url)
       .appendTo('#venue-map');
 
     $(".mappy").click(function () {

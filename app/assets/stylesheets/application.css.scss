@@ -1,3 +1,5 @@
+$grid-float-breakpoint: 1045px;
+$screen-md: 1045px;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "final-tiles-gallery";
@@ -23,7 +25,7 @@ a {
 	&:hover { 
 		color: #451a4f;
 	}
-}
+}	
 
 .flash {
 	font-family: "Open Sans Condensed";
@@ -38,29 +40,40 @@ img.logo {
   width: 110px;
 }
 
-.homepage-large-header{
+img.logo-small {
+  margin-top: -120px;
+  margin-left: 0px;
+  max-width: 90px;
+}
+
+.homepage-small-header{
 	font-family: "Open Sans Condensed";
 	font-size: 3.0em;
 	color: black;
-	padding-top: 0em;
-	padding-bottom: .25em;
-	padding-left: 70px; 
+	float: left;
+
+}
+
+.homepage-large-header{
+	font-family: "Open Sans Condensed";
+	font-size: 2.5em;
+	color: black;
 	text-align: right;
 }
 
 .user-show-page-large-header{
 	font-family: "Open Sans Condensed";
-	font-size: 1.5em;
+	font-size: 1.25em;
 	color: black;
 }
 
-.user-show-page-medium-header{
+.user-show-page-medium-header {
 	font-family: "Open Sans Condensed";
-	font-size: 1em;
+	font-size: 0.75em;
 	color: black;
 }
 
-.user-show-page-paragraph{
+.user-show-page-paragraph {
 	font-family: "Playfair Display";
 	font-size: .5em;
 	text-align: justify;
@@ -72,7 +85,7 @@ img.logo {
 															white 75%,
 															#4A4847 75%);
 	border: none;
-	height: 140px;
+	max-height: 140px;
 	.nav-links {
 		font-size: 1.5em;
 		padding-top: 50px;
@@ -89,23 +102,49 @@ img.logo {
 	}
 }
 
+.small-search{
+	border: none;
+	margin: 0;
+	display: inline-flex;
+	float: right;
+	.form-control {
+			width: 200px;
+			font-family: "Open Sans Condensed";
+			font-size: 1.25em;
+			margin-bottom: 1em;
+	}
+	.hpbutton{
+		height: 34px;
+	}
+}
+.navbar-collapse{
+	border:none;
+	box-shadow: none;
+}
+.navbar-form{
+	border:none;
+	box-shadow: none;
+}
+.small-links{
+	background-color: white;
+	font-size: 1.5em;
+	font-family: "Open Sans Condensed";
+	margin: 0;
+}
+
 .carousel-home {
 	max-width: 100%;
-	/*float: right;*/
-	/*margin-top: 40px;
-	margin-right: 20px;
-	margin-bottom: 30px;*/
-	padding-top: 1em;
+	padding-top: 2em;
 }
 
 .side-text {
 	float: left;
 	width: 460px;
 }
-	p {
+	
+p {
 	font-size: 1.25em;
-	padding-bottom: .5em;
-	}
+}
 
 .lead {
 	float: left;
@@ -115,35 +154,24 @@ img.logo {
 }
 
 .HP-WhereArtThere-headers {
-	width: 100%;
 	font-family: "Open Sans Condensed";
-	margin: 0em;
-	padding-left: 5em;
 }
 
 .action-header {
 	width: 100%;
 	font-family: "Open Sans Condensed";
-	margin: 0em;
 	padding-left: 1em;
 }
 
 .home-page-buttons {
 	text-align: center;
 	margin: 0 auto;
-	/*padding: 30px;*/
 }
 
 .homepage {
 	background-color: white;
 	padding: 2em;
 }
-
-.lead {
-	padding-left: 15px;
-	text-align: left;
-}
-
 
 .hpbutton{
 	background-color: #451a4f;
@@ -328,6 +356,17 @@ table {
 	border: 3px solid black;
 }
 
+.user-thumb {
+	border-radius: 15%;
+	border: 2px solid black;
+	margin-right: 10px;
+}
+
+.artist-thumb {
+	border-radius: 15%;
+	border: 2px solid black;
+}
+
 .user-color {
 	background-color: #4A4847;
 	color: white;
@@ -464,6 +503,8 @@ strong {
   .s { font-size: 0.8em;}
   .m { font-size: 1.2em;}
   .l { font-size: 1.8em;}
+  padding-left: 0;
+  padding-right: 20px;
 }
 
 
@@ -476,6 +517,13 @@ textarea {
 }
 
 ////////  Venue Page ///////////
+
+.venue-name {
+	text-align: center;
+}
+#venue-logged-in-buttons {
+	margin-top: 20px;
+}
 
 .ven-img {
 	max-height: 100%;
@@ -491,6 +539,9 @@ textarea {
 	margin: 0 auto;
 	width: 100%;
 	height: 340px;
+	img {
+		border: 3px solid black;
+	}
 }
 
 .venue-show {
@@ -531,6 +582,11 @@ textarea {
 
 #venue-map {
 	width: 300px;
+	max-width: 300px;
+}
+
+.mappy {
+	border: solid 2px black;
 }
 
 #venue-map-container {
@@ -585,20 +641,16 @@ textarea {
 
 #featured-artist-container {
 	float: right;
-	//border: black 1px solid;
 	display: inline-block;
-	//min-height: 400px;
 	height: 90%;
 	width: 35%;
 	overflow: scroll;
-	//overflow-y: hidden;
 	div {
 		text-align: right;
 	}
 }
 
 #discover-container {
-	//border: black 1px solid;
 	height: 100%;
 }
 
@@ -607,7 +659,6 @@ textarea {
 		display: inline-block;
 	}
 	margin-bottom: 10px;
-	//border: black 1px solid;
 }
 
 .art-art {
@@ -628,8 +679,35 @@ textarea {
 
 /////// SEARCH RESULTS PAGE ///////
 
-#tab-list {
+.work-image {
+	img {
+		border: 3px solid black;
+	}
+}
 
+.spacer {
+	height: 10px;
+}
+
+.result-row {
+	text-align: left;
+	h3 {
+		text-align: left;
+	}
+}
+
+.tab-pane {
+	h2 {
+		margin-top: 10px;
+	}
+	.no-result {
+		text-align: center;
+	}
+}
+
+.top-row {
+	padding: 0;
+	height: 50px;
 }
 
 .tab-content {
@@ -650,10 +728,6 @@ textarea {
 
 .hover-work:hover {
 	background-color: #F3F3F3;
-	//border: solid black 1px;
-}
-
-.tab-content h2 {
 }
 
 .hover-output {
@@ -662,17 +736,27 @@ textarea {
 }
 
 #hover-output {
-	// border: black 1px solid;
 	position: fixed;
+}
+
+.hover-user {
+	text-align: center;
+}
+
+.hover-artist {
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+.hover-venue {
+	float: left;
 }
 
 //////  Events Page ////////
 
-
 .events-page-background {
 	background-color: white;
 	padding: 20px;
-	//height: 600px;
 }
 
 .venue-name {
@@ -722,6 +806,7 @@ textarea {
 	}
 	#event-map {
 		text-align: center;
+		max-width: 500px;
 		img {
 			border: solid black 2px;
 			margin-top: 50px;
@@ -777,4 +862,31 @@ textarea {
 #gallery .tile:hover .ftg-social a:hover {
 	color: #451A4F;
 	text-decoration: none;
+}
+
+/* ----------------------------
+
+         Media Queries
+
+------------------------------ */
+
+@media screen and (min-width: 1045px) and (max-width: 1200px) {
+
+  .desktop-hp-buttons {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .tablet-hp-buttons {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1045px) {
+
+  .tablet-hp-buttons {
+    display: none;
+  }
 }
