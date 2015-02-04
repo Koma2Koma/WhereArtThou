@@ -14,9 +14,12 @@
         </div>
        <%= submit_tag "SEARCH", class: "btn btn-default hpbutton" %>
       <% end %>   
-      <%= link_to (image_tag "WATlogo.jpg", class: "img img-responsive logo hidden-xs"), root_path %>
-
+      <%= link_to (image_tag "WATlogo.jpg", class: "img logo hidden-xs"), root_path %>
     </div>
+    <div class="homepage-small-header hidden-sm hidden-md hidden-lg">
+      <%= link_to (image_tag "WATlogo.jpg", class: "img logo-small"), root_path %>
+    </div>
+
     
 
     <%= form_tag works_path, class: "navbar-form navbar-right search-bar hidden-sm hidden-xs", role: "search", method: "get" do %>

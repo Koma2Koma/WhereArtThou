@@ -39,16 +39,19 @@ img.logo {
   margin-left: 50px;
   width: 110px;
 }
+
 img.logo-small {
-  width: 110px;
-  margin-right: 33%;
+  margin-top: -120px;
+  margin-left: 0px;
+  max-width: 90px;
 }
 
 .homepage-small-header{
 	font-family: "Open Sans Condensed";
 	font-size: 3.0em;
 	color: black;
-	text-align: right;
+	float: left;
+
 }
 
 .homepage-large-header{
