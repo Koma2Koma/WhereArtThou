@@ -1,3 +1,5 @@
+$grid-float-breakpoint: 1045px;
+$screen-md: 1045px;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "final-tiles-gallery";
@@ -38,6 +40,20 @@ img.logo {
   width: 110px;
 }
 
+img.logo-small {
+  margin-top: -120px;
+  margin-left: 0px;
+  max-width: 90px;
+}
+
+.homepage-small-header{
+	font-family: "Open Sans Condensed";
+	font-size: 3.0em;
+	color: black;
+	float: left;
+
+}
+
 .homepage-large-header{
 	font-family: "Open Sans Condensed";
 	font-size: 2.5em;
@@ -51,13 +67,13 @@ img.logo {
 	color: black;
 }
 
-.user-show-page-medium-header{
+.user-show-page-medium-header {
 	font-family: "Open Sans Condensed";
 	font-size: 0.75em;
 	color: black;
 }
 
-.user-show-page-paragraph{
+.user-show-page-paragraph {
 	font-family: "Playfair Display";
 	font-size: .5em;
 	text-align: justify;
@@ -69,7 +85,7 @@ img.logo {
 															white 75%,
 															#4A4847 75%);
 	border: none;
-	height: 140px;
+	max-height: 140px;
 	.nav-links {
 		font-size: 1.5em;
 		padding-top: 50px;
@@ -84,6 +100,36 @@ img.logo {
 			font-size: 1.25em;
 		}
 	}
+}
+
+.small-search{
+	border: none;
+	margin: 0;
+	display: inline-flex;
+	float: right;
+	.form-control {
+			width: 200px;
+			font-family: "Open Sans Condensed";
+			font-size: 1.25em;
+			margin-bottom: 1em;
+	}
+	.hpbutton{
+		height: 34px;
+	}
+}
+.navbar-collapse{
+	border:none;
+	box-shadow: none;
+}
+.navbar-form{
+	border:none;
+	box-shadow: none;
+}
+.small-links{
+	background-color: white;
+	font-size: 1.5em;
+	font-family: "Open Sans Condensed";
+	margin: 0;
 }
 
 .carousel-home {
@@ -457,6 +503,8 @@ strong {
   .s { font-size: 0.8em;}
   .m { font-size: 1.2em;}
   .l { font-size: 1.8em;}
+  padding-left: 0;
+  padding-right: 20px;
 }
 
 
@@ -631,8 +679,35 @@ textarea {
 
 /////// SEARCH RESULTS PAGE ///////
 
-#tab-list {
+.work-image {
+	img {
+		border: 3px solid black;
+	}
+}
 
+.spacer {
+	height: 10px;
+}
+
+.result-row {
+	text-align: left;
+	h3 {
+		text-align: left;
+	}
+}
+
+.tab-pane {
+	h2 {
+		margin-top: 10px;
+	}
+	.no-result {
+		text-align: center;
+	}
+}
+
+.top-row {
+	padding: 0;
+	height: 50px;
 }
 
 .tab-content {
@@ -664,8 +739,20 @@ textarea {
 	position: fixed;
 }
 
-//////  Events Page ////////
+.hover-user {
+	text-align: center;
+}
 
+.hover-artist {
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+.hover-venue {
+	float: left;
+}
+
+//////  Events Page ////////
 
 .events-page-background {
 	background-color: white;

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Searchable
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_one :artist, dependent: :destroy
@@ -8,6 +10,8 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :venue, reject_if: :all_blank
 
   acts_as_liker
+
+  searchable_columns :username
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -20,6 +24,8 @@ class User < ActiveRecord::Base
     :size => { :in => 0..4.megabytes }
   do_not_validate_attachment_file_type :photo
 
+  scope :search_by_artists, ->(query) { search(query).where(is_artist: true) }
+  scope :search_by_users, ->(query) { search(query).where(is_artist: false) }
 
   def self.from_omniauth(auth)
 	  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -30,15 +36,4 @@ class User < ActiveRecord::Base
 	  end
   end
   
-  def self.user_artist_search_doc(query)
-    where_conditions = ["(to_tsvector(username)) @@ plainto_tsquery(?)", query]
-    artists = User.where(is_artist: true)
-    artists.where(where_conditions)
-  end
-
-  def self.user_search_doc(query)
-    where_conditions = ["(to_tsvector(username)) @@ plainto_tsquery(?)", query]
-    artists = User.where(is_artist: false)
-    artists.where(where_conditions)
-  end
 end

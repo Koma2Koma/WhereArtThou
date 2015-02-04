@@ -24,42 +24,14 @@ class WorksController < ApplicationController
   end
 
   def index
-
     search_params = params[:search].downcase if params[:search] != nil
-
-    works = Work.work_search_doc(search_params)
-
-    @artists = User.user_artist_search_doc(search_params)
-
-    @venues = Venue.venue_search_doc(search_params)
-
-    @events = Event.event_search_doc(search_params)
-
-    @users = User.user_search_doc(search_params)
-
+    works = Work.search(search_params)
     tags = Work.tagged_with(search_params).all
-
-    
-
     @works = (works + tags).uniq
-
-
-    ###### Original Search Setup #######
-    # search_params = params[:search].downcase if params[:search] != nil
-
-    # if search_params
-    #   @works = Work.where('lower(title) LIKE ?', "%#{search_params}%")
-    #   @user_artists = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", true)
-    #   @users = User.where('lower(username) LIKE ? AND is_artist = ?', "%#{search_params}%", false)
-    # elsif params[:tag]
-    #   @works = Work.tagged_with(params[:tag])
-    #   @user_artists = User.where(is_artist: true)
-    #   @users = User.where(is_artist: false)
-    # else
-    #   @works = Work.all
-    #   @user_artists = User.where(is_artist: true)
-    #   @users = User.where(is_artist: false)
-    # end
+    @artists = User.search_by_artists(search_params)
+    @venues = Venue.search(search_params)
+    @events = Event.search(search_params)
+    @users = User.search_by_users(search_params)
   end
 
   def update
@@ -85,20 +57,6 @@ class WorksController < ApplicationController
     artist = Artist.find(@work.artist_id)
     @artist = User.find(artist.user_id)
 
-    respond_to do |format|
-      format.js
-    end
-  end
-
-  def add_tile()
-    current_user.like!(@work) if current_user
-    respond_to do |format|
-      format.js
-    end
-  end
-
-  def remove_tile()
-    current_user.unlike!(@work) if current_user
     respond_to do |format|
       format.js
     end
