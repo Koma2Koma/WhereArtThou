@@ -1,0 +1,53 @@
+
+<script type="text/javascript">
+  var lat,
+      lon,
+      latLon = [],
+      lAndl,
+      map;
+
+
+  $(function(){
+    getLocation();  
+  });
+
+  function callMap() {
+
+    map = new GMaps({
+      div: '#map',
+      zoom: 14,
+      minZoom: 8,
+      maxZoom: 16,
+      lat: latLon[0],
+      lng: latLon[1],
+    });
+    
+    map.addMarker({
+      lat: latLon[0],
+      lng: latLon[1],
+      icon: 'assets/star_red_256.png'
+    });
+  };
+    
+
+
+  function showPosition(position) {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        latLon = [lat, lon];
+        console.log( latLon );
+        callMap();
+  }
+    function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, error);
+        } else {
+          $( '#demo').html( "Geolocation is not supported by this browser." );
+        }
+    }
+
+    function error(err) {
+      console.warn('ERROR(' + err.code + '): ' + err.message);
+    }
+
+  </script>

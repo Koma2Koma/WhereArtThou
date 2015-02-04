@@ -1,14 +1,18 @@
-<div class="user-page-background white-background artist-bio-page">
+<div class="user-page-background white-background artist-bio-page container">
   <div class="row">
     <div class="col-md-5">
-      <div class="round-image-50">
-        <%= image_tag(current_user.photo.url(:thumb)) %>
+      <div>
+        <%= image_tag(@artist.user.photo(:avatar), class: "artist-thumb") %>
       </div>  
-        <%= link_to (fa_icon "facebook"), @artist.facebook if @artist.facebook %>
-        <%= link_to (fa_icon "twitter"), @artist.twitter if @artist.twitter %> 
-        <%= link_to (fa_icon "instagram"), @artist.instagram if @artist.instagram %>
-        <%= link_to (fa_icon "globe"), @artist.website if @artist.website %>
-        <%= link_to (fa_icon "envelope"), @artist.instagram if @artist.instagram %>
+      <%= link_to (fa_icon "facebook"), @artist.facebook if @artist.facebook %>
+      <%= link_to (fa_icon "twitter"), @artist.twitter if @artist.twitter %> 
+      <%= link_to (fa_icon "instagram"), @artist.instagram if @artist.instagram %>
+      <%= link_to (fa_icon "globe"), @artist.website if @artist.website %>
+      <%= link_to (fa_icon "envelope"), @artist.instagram if @artist.instagram %><br>
+      <%= link_to 'View Artist Gallery', artist_path, class: "btn btn-success btn-lg user-button artist-gallery-btn" %>
+      <% if @artist.user == current_user %>
+        <%= link_to 'Edit Profile', edit_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton" %>
+      <% end %>
     </div>
     
     <div class="col-md-7">
@@ -24,14 +28,4 @@
       </div>
     </div>
    </div> 
-   
-    <div class=pull-left>
-      <%= link_to 'View Artist Gallery', artist_path, class: "btn btn-success btn-lg user-button artist-gallery-btn" %>
-      <% if @artist.user == current_user %>
-        <%= link_to 'Edit Profile', edit_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton" %>
-    </div>
-      <% end %><br/>
 </div>
-
-
-
