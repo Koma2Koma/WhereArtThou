@@ -23,7 +23,7 @@ a {
 	&:hover { 
 		color: #451a4f;
 	}
-}
+}	
 
 .flash {
 	font-family: "Open Sans Condensed";
@@ -40,11 +40,8 @@ img.logo {
 
 .homepage-large-header{
 	font-family: "Open Sans Condensed";
-	font-size: 3.0em;
+	font-size: 2.5em;
 	color: black;
-	padding-top: 0em;
-	padding-bottom: .25em;
-	padding-left: 70px; 
 	text-align: right;
 }
 
@@ -91,21 +88,17 @@ img.logo {
 
 .carousel-home {
 	max-width: 100%;
-	/*float: right;*/
-	/*margin-top: 40px;
-	margin-right: 20px;
-	margin-bottom: 30px;*/
-	padding-top: 1em;
+	padding-top: 2em;
 }
 
 .side-text {
 	float: left;
 	width: 460px;
 }
-	p {
+	
+p {
 	font-size: 1.25em;
-	padding-bottom: .5em;
-	}
+}
 
 .lead {
 	float: left;
@@ -115,35 +108,24 @@ img.logo {
 }
 
 .HP-WhereArtThere-headers {
-	width: 100%;
 	font-family: "Open Sans Condensed";
-	margin: 0em;
-	padding-left: 5em;
 }
 
 .action-header {
 	width: 100%;
 	font-family: "Open Sans Condensed";
-	margin: 0em;
 	padding-left: 1em;
 }
 
 .home-page-buttons {
 	text-align: center;
 	margin: 0 auto;
-	/*padding: 30px;*/
 }
 
 .homepage {
 	background-color: white;
 	padding: 2em;
 }
-
-.lead {
-	padding-left: 15px;
-	text-align: left;
-}
-
 
 .hpbutton{
 	background-color: #451a4f;
@@ -673,9 +655,6 @@ textarea {
 	background-color: #F3F3F3;
 }
 
-.tab-content h2 {
-}
-
 .hover-output {
 	min-height: 400px;
 	text-align: center;
@@ -796,4 +775,31 @@ textarea {
 #gallery .tile:hover .ftg-social a:hover {
 	color: #451A4F;
 	text-decoration: none;
+}
+
+/* ----------------------------
+
+         Media Queries
+
+------------------------------ */
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+
+  .desktop-hp-buttons {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .tablet-hp-buttons {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  .tablet-hp-buttons {
+    display: none;
+  }
 }
