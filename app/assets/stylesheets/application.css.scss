@@ -1,3 +1,5 @@
+$grid-float-breakpoint: 1045px;
+$screen-md: 1045px;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "final-tiles-gallery";
@@ -36,6 +38,17 @@ img.logo {
   margin-top: 20px;
   margin-left: 50px;
   width: 110px;
+}
+img.logo-small {
+  width: 110px;
+  margin-right: 33%;
+}
+
+.homepage-small-header{
+	font-family: "Open Sans Condensed";
+	font-size: 3.0em;
+	color: black;
+	text-align: right;
 }
 
 .homepage-large-header{
@@ -87,6 +100,36 @@ img.logo {
 			font-size: 1.25em;
 		}
 	}
+}
+
+.small-search{
+	border: none;
+	margin: 0;
+	display: inline-flex;
+	float: right;
+	.form-control {
+			width: 200px;
+			font-family: "Open Sans Condensed";
+			font-size: 1.25em;
+			margin-bottom: 1em;
+	}
+	.hpbutton{
+		height: 34px;
+	}
+}
+.navbar-collapse{
+	border:none;
+	box-shadow: none;
+}
+.navbar-form{
+	border:none;
+	box-shadow: none;
+}
+.small-links{
+	background-color: white;
+	font-size: 1.5em;
+	font-family: "Open Sans Condensed";
+	margin: 0;
 }
 
 .carousel-home {
