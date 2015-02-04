@@ -641,10 +641,11 @@ textarea {
 
 //// Map on discover page ////
 
-#map-container {
+.map-container {
 
   width: 65%;
-  height: 90%;
+  height: 400px;
+  min-height: 400px;
   margin: 0;
   display: inline-block;
 }
@@ -668,7 +669,7 @@ textarea {
 	}
 }
 
-#discover-container {
+#discover-map-container {
 	height: 100%;
 }
 

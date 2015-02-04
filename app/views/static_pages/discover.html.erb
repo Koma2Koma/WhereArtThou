@@ -1,17 +1,16 @@
 <div class='user-page-background white-background discover-page'>
 
-  <h1 id='venue-title' class='col-md-8'>Art Venues Near You</h1>
-  <h1 id='feature-title' class='col-md-4'>Featured Artists</h1>
 
 
-  <div id='discover-container'>
-    <div id='map-container'>
-      <div id="map" class='col-md-4' ></div>
-
-      <div id='venue-details' class='col-md-3'></div>
+  <div id='discover-map-container col-md-8'>
+    <div class='map-container col-md-7 col-sm-12'>
+      <h1 id='venue-title' class='col-md-12'>Art Venues Near You</h1>
+      <div id="map" class='col-md-4 col-sm-8' ></div>
+      <div id='venue-details' class='col-md-3 col-sm-4'></div>
     </div>
-
-    <div class='col-md-3' id='featured-artist-container'>
+  </div>
+  <div class='col-md-4 col-sm-12' id='featured-artist-container'>
+  <h1 id='feature-title' class='col-md-12'>Featured Artists</h1>
       
       <% @featured_artists.each do |artist| %>
         <div>
@@ -24,7 +23,6 @@
         </div>
       <% end %>
     </div>
-  </div>
 
 </div>
 
