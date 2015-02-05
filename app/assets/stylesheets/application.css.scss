@@ -627,11 +627,13 @@ textarea {
 
 ///////  DISCOVER PAGE ///////
 
-.discover-page {
-	height: 630px;
+.discover-page-background {
+	height: 100%;
+	//border: black solid 2px;
 }
 
 #venue-details {
+	//border: black solid 2px;
   display: inline-block;
   width: 35%;
   #upcome {
@@ -643,7 +645,7 @@ textarea {
 
 .map-container {
 
-  width: 65%;
+	//border: black solid 2px;
   height: 400px;
   min-height: 400px;
   margin: 0;
@@ -654,15 +656,16 @@ textarea {
 	border: black 3px solid;
   display: inline-block;
   width: 65%;
-  height: 100%;
+  height: 80%;
 }
 ////// Featured Artists on discover page /////
 
 #featured-artist-container {
+	//border: black 3px solid;
 	float: right;
 	display: inline-block;
 	height: 90%;
-	width: 35%;
+	//width: 100%;
 	overflow: scroll;
 	div {
 		text-align: right;

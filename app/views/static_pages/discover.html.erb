@@ -1,32 +1,37 @@
-<div class='user-page-background white-background discover-page'>
+
+<div class='discover-page-background'>
+  <div class='container white-background'>
 
 
 
-  <div id='discover-map-container col-md-8'>
-    <div class='map-container col-md-7 col-sm-12'>
-      <h1 id='venue-title' class='col-md-12'>Art Venues Near You</h1>
-      <div id="map" class='col-md-4 col-sm-8' ></div>
-      <div id='venue-details' class='col-md-3 col-sm-4'></div>
+    <div class='discover-map-container'>
+      <div class='map-container col-md-7 col-sm-12'>
+        <h1 id='venue-title' class='col-md-12 col-sm-12'>Art Venues Near You</h1>
+        <div id="map" class='col-md-4 col-sm-8' ></div>
+          <%= render 'gmaps' %>
+        <div id='venue-details' class='col-md-3 col-sm-4'></div>
+      </div>
+    </div>
+
+    <div class='container'>
+      <div class='col-md-4 col-xs-12' id='featured-artist-container'>
+      <h1 id='feature-title' class='col-md-12 col-sm-12 col-xs-12'>Featured Artists</h1>
+          
+        <% @featured_artists.each do |artist| %>
+          <div>
+            <% user = artist.user %>
+            <% if user.present? %>
+              <% sample_art = artist.works.first unless artist.works.nil? %>
+              <div class='indiv-artist'><h3><%= link_to user.username.titleize, artist_path(artist) %> &nbsp </h3><div class='art-art'>
+              <%= link_to (image_tag sample_art.image.url(:small)), artist_work_path(artist, sample_art) unless sample_art.nil? %></div></div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class='col-md-4 col-sm-12' id='featured-artist-container'>
-  <h1 id='feature-title' class='col-md-12'>Featured Artists</h1>
-      
-      <% @featured_artists.each do |artist| %>
-        <div>
-          <% user = artist.user %>
-          <% if user.present? %>
-            <% sample_art = artist.works.first unless artist.works.nil? %>
-            <div class='indiv-artist'><h3><%= link_to user.username.titleize, artist_path(artist) %> &nbsp </h3><div class='art-art'>
-            <%= link_to (image_tag sample_art.image.url(:small)), artist_work_path(artist, sample_art) unless sample_art.nil? %></div></div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-
 </div>
 
-<%= render 'gmaps' %>
 
 <script type="text/javascript">
 $(document).ready( function () {
@@ -39,7 +44,7 @@ $(document).ready( function () {
             <% if venue.events.count > 0 %>
               icon: { url: '<%= [(image_path("red_splat.png")), (image_path("blue_splat.png")), (image_path("green_splat.png"))].sample %>' }, 
             <% else %>
-              icon: { url: "<%= image_path('frame-landscape.png') %>" },  // maybe add width and height.
+              icon: { url: "<%= image_path('frame-landscape.png') %>" },
             <% end %>
             click: function(e) {
               $( '#venue-details' ).html('<h1><%= link_to venue.name.titleize, venue_path(venue) unless venue.name.nil? %></h1><h3><%= venue.address %><br><%= venue.city %>, <%= venue.state %> </h3>'
