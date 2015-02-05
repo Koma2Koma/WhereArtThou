@@ -11,54 +11,48 @@
 	    <%= link_to (fa_icon "instagram 2x"), "http://instagram.com/#{@venue.instagram}" if @venue.instagram %>
 	    <%= link_to (fa_icon "globe 2x"), "http://#{@venue.website}" if @venue.instagram %>
 	    <% if @venue.user == current_user %>
-			<div id='venue-logged-in-buttons'>
-			<%= link_to 'New Event', new_venue_event_path(@venue), class: "btn btn-success btn-lg hpbutton" %>
-			<%= link_to 'Edit Profile', edit_user_registration_path(:venue => true), class: "btn btn-success btn-lg hpbutton" %>
-			</div>
-		<% end %>
-	  </div>
-	  <div class='col-md-8'>
-		  <div class="col-md-12 venue-about-container">
-					<h2 class="venue-header">About</h2>
-					<h4 class="venue-about modal-title"><%= @venue.description %></h4>
+				<div id='venue-logged-in-buttons'>
+				<%= link_to 'New Event', new_venue_event_path(@venue), class: "btn btn-success btn-lg hpbutton" %>
+				<%= link_to 'Edit Profile', edit_user_registration_path(:venue => true), class: "btn btn-success btn-lg hpbutton" %>
 				</div>
-				<div>
-				<div id='venue-map-container' class='col-md-6'>
-	        <div id='venue-map'>
-	        </div>
-	          <p>Click on map for directions.</p>
+			<% end %>
+	  </div>
+	  <div class='col-md-9 col-sm-12 venue-about-container'>
+			<h2 class="venue-header">About</h2>
+			<h4 class="venue-about modal-title"><%= @venue.description %></h4>
+			<div class="col-sm-12">
+				<div id='venue-map-container' class='col-md-5 col-sm-6'>
+        	<div id='venue-map'>
+        	</div>
+          <p>Click on map for directions.</p>
 	      </div>
-				<div class="col-md-3 ven-address">
-					
-			    <div class="modal-title">
-						<h4><%= @venue.address %></h4>
-						<h4><%= @venue.city %>, <%= @venue.state %></h4>
-						<h4><%= @venue.phone %></h4>
-					</div>
-
+				<div class="col-md-7 col-sm-4 modal-title ven-address">
+					<h4><%= @venue.address %></h4>
+					<h4><%= @venue.city %>, <%= @venue.state %></h4>
+					<h4><%= @venue.phone %></h4>
 				</div>
 			</div>
 		</div>
-			<div class="col-md-3 venue-buttons">
-				<h2 class="venue-events-header">Events</h2>
-				<% if @venue.events.empty? %>
-					<h4>No events.</h4>
-				<% else %>
+		<div class="col-md-3 col-sm-12 venue-buttons">
+			<h2 class="venue-events-header">Events</h2>
+			<% if @venue.events.empty? %>
+				<h4>No events.</h4>
+			<% else %>
 					<% @venue.events.each do |event| %>
 						<%= link_to venue_event_path(@venue, event) do %>
-							<div class="event-box">
-								<div class="modal-title event-list-header"><%= event.name %></div>
-								<div class="event-list">
-									<%= event.start_date %> to <%= event.end_date %><br>
-									<%= event.city %>, <%= event.state %> <%= event.zip %><br>
+								<div class="col-md-12 col-sm-4 col-xs-6">
+							<div class="event-box"> 
+									<div class="modal-title event-list-header"><%= event.name %></div>
+									<div class="event-list">
+										<%= event.start_date %> to <%= event.end_date %><br>
+										<%= event.city %>, <%= event.state %><br>
+									</div>
 								</div>
-							</div><br>
+							</div>
 						<% end %>
 					<% end %>
-				<% end %>
-			</div>
+			<% end %>
 		</div>
-		
 	</div>
 </div>
 
