@@ -465,8 +465,11 @@ strong {
 	display: inline-block;
 	width: 206px;
 	height: auto;
-	border: 3px solid black;
 	margin: 5px;
+	img {
+		border: 3px solid black;
+
+	}
 }
 
 .work-show {
