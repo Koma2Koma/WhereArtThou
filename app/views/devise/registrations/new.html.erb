@@ -10,7 +10,7 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="col-md-3">
+    <div class="col-md-3 col-sm-3 col-xs-12">
       <div class="field">
         <%= f.label :username, class: "form-label" %><br />
         <%= f.text_field :username, autofocus: true, class: "form-input" %>
@@ -33,6 +33,13 @@
         <%= f.label :password_confirmation, class: "form-label" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-input" %>
       </div>
+
+      <% if resource.is_venue == false %>
+        <div class="field">
+          <%= f.label 'Profile Photo', class: "form-label" %><br><i>(for best results, upload 300x300px)</i><br>
+          <%= f.file_field :photo, class: "form-label" %>
+        </div>
+      <% end %>
     </div>
 
     <%= f.hidden_field :is_artist, value: (params.has_key?(:artist) ? params[:artist] : resource.is_artist ) %>
@@ -55,7 +62,7 @@
       </div>
     <% end %>
 
-    <div class="col-md-3">
+    <div class="col-md-3 col-sm-3 col-xs-12">
       <div class="signup-button">
         <%= f.submit "SIGN UP", class: "btn btn-success btn-lg hpbutton form-submit" %><br><br>
       </div>

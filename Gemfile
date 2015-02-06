@@ -35,6 +35,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-byebug'
   gem 'figaro'
+  gem 'rails-erd'
 end
 
 group :production do
