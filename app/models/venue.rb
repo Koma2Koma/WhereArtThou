@@ -1,10 +1,13 @@
 class Venue < ActiveRecord::Base
   include Searchable
 
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :history, :finders]
+  
   has_many :events, dependent: :destroy
   belongs_to :user
 
-  geocoded_by :full_street_address
+ geocoded_by :full_street_address
   after_validation :geocode
 
   searchable_columns :name, :city, :state

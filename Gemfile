@@ -17,10 +17,17 @@ gem 'aws-sdk'
 gem 'socialization'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'omniauth-facebook'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'geocoder'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'gmaps4rails'
+gem 'friendly_id', '~> 5.1.0'
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+end
 
 group :test, :development do
   gem 'rspec-rails'
@@ -30,7 +37,7 @@ end
 
 group :development do
   gem 'spring'
-  gem "spring-commands-rspec"
+  gem 'spring-commands-rspec'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-byebug'

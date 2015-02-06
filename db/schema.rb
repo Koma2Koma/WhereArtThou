@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150201205943) do
+ActiveRecord::Schema.define(version: 20150206074430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,10 @@ ActiveRecord::Schema.define(version: 20150201205943) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "slug"
   end
 
+  add_index "artists", ["slug"], name: "index_artists_on_slug", unique: true, using: :btree
   add_index "artists", ["user_id"], name: "index_artists_on_user_id", using: :btree
 
   create_table "events", force: true do |t|
@@ -47,8 +49,10 @@ ActiveRecord::Schema.define(version: 20150201205943) do
     t.integer  "venue_id"
     t.string   "start_time"
     t.string   "end_time"
+    t.string   "slug"
   end
 
+  add_index "events", ["slug"], name: "index_events_on_slug", unique: true, using: :btree
   add_index "events", ["venue_id"], name: "index_events_on_venue_id", using: :btree
 
   create_table "follows", force: true do |t|
@@ -177,6 +181,9 @@ ActiveRecord::Schema.define(version: 20150201205943) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "slug"
   end
+
+  add_index "works", ["slug"], name: "index_works_on_slug", unique: true, using: :btree
 
 end
