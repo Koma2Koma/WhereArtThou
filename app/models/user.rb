@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   include Searchable
 
+  extend FriendlyId
+  friendly_id :username, use: [:slugged, :history, :finders]
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_one :artist, dependent: :destroy
