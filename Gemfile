@@ -23,7 +23,11 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'gmaps4rails'
 gem 'friendly_id', '~> 5.1.0'
 
-
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+end
 
 group :test, :development do
   gem 'rspec-rails'
