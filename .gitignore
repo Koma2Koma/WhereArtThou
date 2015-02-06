@@ -21,6 +21,7 @@ coverage
 #Ignore files with sensitive information
 config/application.yml
 
+/public/assets
 
 # Ignore schema.rb
 /db/schema.rb
