@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'about' => 'static_pages#about'
+  get 'get_started' => 'static_pages#get_started'
   get 'discover' => 'static_pages#discover'
   get 'works/get_work_data' => 'works#get_work_data'
   get 'tags/:tag', to: 'works#index', as: :tag

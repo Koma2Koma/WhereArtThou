@@ -1,55 +1,48 @@
 <div class="homepage">
   <div class="row featurette">
     <div class="col-md-7">
-      <h2 class="featurette-heading heading-font-dark">Getting Started is easy. <span class="text-muted">Here's how...</span></h2>
+      <h2 class="featurette-heading heading-font-dark">WhereArtThou works because we <font color="purple">love</font>art.</h2>
       <p class="lead">Use the search field to browse the works of thousands of artists from across the United States and Canada.  You can search by artist, name of work, or by descriptive terms like "landscape," "acrylic," or even "cheerful."</p>
     </div>
     <div class="col-md-5">
       <%= image_tag "search.jpg", class: "featurette-image img-responsive img-about-top" %>
-    </div>
   </div>
   
-  <hr class="featurette-divider">
-  
-  <div class="row featurette">
-    <div class="col-md-5">
-      <%= image_tag "signup.jpg", class: "featurette-image img-responsive img-about-middle" %>
-    </div>
-    <div class="col-md-7">
-      <h2 class="featurette-heading heading-font-dark">Create your own mosaic. <span class="text-muted">(This is where it gets fun.)</span></h2>
-      <p class="lead">Signing up allows you to create your own user page where you can start a collection, or "mosaic," of all the works you like.  You'll have easy access to your favorite works, and you can bookmark your favorite artists to see their newest works as soon as they're finished.</p>
-    </div>
-  </div>
+  <div class="founder_bios">  
+    <div class="row">
+      <div class="col-lg-3">
+        <center><img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;"></center>
+        <h2>Amanda Walter</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      
+      <div class="col-lg-3">
+        <center><img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;"></center>
+        <h2>Konrad Maurer</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      
+      <div class="col-lg-3">
+        <center><img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;"></center>
+        <h2>Anne Nichols</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
 
-  <hr class="featurette-divider">
-  
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading heading-font-dark">Are you an artist? <span class="text-muted">Reach new people.</span></h2>
-      <p class="lead">Art lovers use Where Art Thou to connect with their favorite artists--Add your collections to Where Art Thou, along with pricing and contact information, and share your art with new audiences.  Sign up and select "artist"--we'll help you set up your own searchable gallery.</p>
-    </div>
-    <div class="col-md-5">
-      <%= image_tag "hpimage3_thou.jpg", class: "featurette-image img-responsive img-about-bottom" %>
-    </div>
-  </div>
-  <div class="row">
-      <% if !user_signed_in? %>
-        <div class="home-page-buttons">
-          <div class="container action-header">
-            <h2>Get started now.</h2>
-          </div>
-          <%= render 'layouts/discover_modal' %>
-          <%= link_to 'SIGN UP', '#', data: {toggle: 'modal', target: '#myModal'}, class: "btn btn-success btn-lg hpbutton" %>
-        </div>
-      <% else %>
-        <div class="container action-header">
-        </div>
-      <% end %>
-</div>
-
-
+      <div class="col-lg-3">
+        <center><img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;"></center>
+        <h2>Craig Nielson</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div> 
+  </div>     
 </div>
 
 
 
 
+
+     
