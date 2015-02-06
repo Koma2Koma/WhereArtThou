@@ -1,5 +1,5 @@
-$grid-float-breakpoint: 1045px;
-$screen-md: 1045px;
+$grid-float-breakpoint: 1200px;
+$screen-md: 1200px;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "final-tiles-gallery";
@@ -883,4 +883,15 @@ textarea {
 #gallery .tile:hover .ftg-social a:hover {
 	color: #451A4F;
 	text-decoration: none;
+}
+
+.heading-font {
+	font-family: "Open Sans Condensed";
+	color: white;
+	font-size: 2.5em;
+}
+
+
+.founder-bios {
+	padding-top: 100px;
 }
