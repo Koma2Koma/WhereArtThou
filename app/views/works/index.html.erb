@@ -1,5 +1,5 @@
 <div class="search-page-background">
-	<div class="container">
+	<div class="container-fluid">
 
 		<div role="tabpanel">
 			 <!-- Nav tabs -->
@@ -69,6 +69,7 @@
 				</div>
 
 		    <div role="tabpanel" class="tab-pane" id="venues">
+
 		    	<h2 class='col-md-4 tab-inner-title'>Venues</h2>
 		    	<div class='col-md-8'>
 			    <%= form_tag works_path, class: "navbar-form navbar-right search-bar", role: "search", method: "get" do %>
@@ -147,12 +148,12 @@
 
 		
 
-		<div class='col-md-4 hover-output'>
+		<div class='col-md-4 hover-output hidden-sm hidden-xs'>
 			<div id='hover-output'>
 			</div>
 		</div>
 
-		<div class='col-md-3' id=''>
+		<div class='col-md-3'>
 			<h1>Popular Tags</h1>
       <div id='tag_cloud'>
         <% tag_cloud Work.tag_counts, %w[s m l] do |tag, css_class|   %>

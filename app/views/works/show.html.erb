@@ -7,9 +7,15 @@
         <%= link_to 'Delete', artist_work_path(@artist, @work), method: :delete, class: "btn btn-success btn-lg hpbutton" %>
       <% end %>
       <button id='go_back' class='btn btn-success btn-lg hpbutton'>Go Back</button>
-      <% if user_signed_in? && current_user.is_artist == false %>
+
+      <% if user_signed_in? && current_user.is_artist == false && !current_user.likes?(@work) %>
         <span id="add_tile"><%= link_to 'Add Tile', add_tile_path(@work), remote: true, class: 'btn btn-success btn-lg hpbutton' %></span>
       <% end %>
+
+      <% if user_signed_in? && current_user.is_artist == false && current_user.likes?(@work) %>
+        <span id="add_tile"><%= link_to "Remove Tile", remove_tile_path(@work), remote: true, class: "btn btn-success btn-lg hpbutton" %></span>
+      <% end %>
+
       <span class="likes">Added to <%= pluralize(@work.likers(User).count, 'Mosaic') %></span></center>
     </div>
     <div class="col-md-6 col-sm-12 work-list">
@@ -27,6 +33,7 @@
 
 
 <script>
+
 $( '#go_back' ).click( function() {
   window.history.back()
 });

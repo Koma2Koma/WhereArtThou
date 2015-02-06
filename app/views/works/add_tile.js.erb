@@ -1,1 +1,5 @@
-$('#add_tile').html('<%= link_to "Remove Tile", remove_tile_path(@work), remote: true, class: "btn btn-success btn-lg hpbutton" %>');
+$('#add_tile').html( <% current_user.like!(@work) %>
+  '<%= link_to "Remove Tile", 
+  remove_tile_path(@work), 
+  remote: true, 
+  class: "btn btn-success btn-lg hpbutton" %>');

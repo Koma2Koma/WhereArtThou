@@ -3,6 +3,9 @@ class Work < ActiveRecord::Base
 
   belongs_to :artist
 
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history, :finders]
+
   acts_as_likeable
   acts_as_taggable
 
