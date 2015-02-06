@@ -688,6 +688,8 @@ textarea {
 
 .spacer {
 	height: 10px;
+	display: inline-block;
+	width: 100%;
 }
 
 .result-row {
@@ -709,6 +711,7 @@ textarea {
 .top-row {
 	padding: 0;
 	height: 50px;
+	display: inline-block;
 }
 
 .tab-content {
