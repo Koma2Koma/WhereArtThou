@@ -1,5 +1,6 @@
-require 'test_helper'require 'simplecov'
-SimpleCov.start 'rails'
+require 'test_helper'
+require 'simplecov'
+
 
 class ArtistsHelperTest < ActionView::TestCase
 end
