@@ -21,7 +21,11 @@
       lat: latLon[0],
       lng: latLon[1],
       mapTypeControl: false,
-      panControl: false
+      panControl: false,
+      scaleControl: false,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.LEFT_BOTTOM
+      }
     });
     
     map.addMarker({
