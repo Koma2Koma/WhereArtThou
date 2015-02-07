@@ -23,16 +23,19 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'gmaps4rails'
 gem 'friendly_id', '~> 5.1.0'
 
-group :test do
-  gem 'factory_girl_rails'
+group :test do 
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'database_cleaner'
+  gem 'faker'
 end
 
 group :test, :development do
   gem 'rspec-rails'
   gem 'simplecov', :require => false
   gem 'shoulda-matchers'
+  
+  gem 'factory_girl_rails'
 end
 
 group :development do
