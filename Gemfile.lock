@@ -316,7 +316,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-facebook
-  owlcarousel-rails
   paperclip (~> 4.2)
   pg
   pry-byebug
