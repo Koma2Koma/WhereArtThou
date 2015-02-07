@@ -30,11 +30,13 @@
     <% end %> 
 
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Regular Navbar -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right nav-links hidden-sm hidden-xs">
         <li><%= link_to 'HOME', root_path %></li>
-        <li><%= link_to 'GET STARTED', get_started_path %></li>
+        <% if !user_signed_in? %>
+          <li><%= link_to 'GET STARTED', get_started_path %></li>
+        <% end %>
         <li><%= link_to 'ABOUT', about_path %></li>
         <li><%= link_to 'DISCOVER', discover_path %></li>
         <% if !current_user %>
@@ -51,9 +53,13 @@
           <li><%= link_to 'LOG OUT', destroy_user_session_path, method: :delete %></li> 
         <% end %>
       </ul>
+
+      <!-- Small Navbar -->
       <ul class="nav navbar-nav navbar-right small-links hidden-md hidden-lg ">
         <li><%= link_to 'HOME', root_path %></li>
-        <li><%= link_to 'GET STARTED', about_path %></li>
+        <% if !user_signed_in? %>
+          <li><%= link_to 'GET STARTED', about_path %></li>
+        <% end %>
         <li><%= link_to 'ABOUT', about_path %></li>
         <li><%= link_to 'DISCOVER', discover_path %></li>
         <% if !current_user %>
@@ -73,15 +79,3 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
-
-
-
-
-
-
-
-
-
-
