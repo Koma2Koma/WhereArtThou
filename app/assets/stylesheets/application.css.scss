@@ -1,5 +1,5 @@
-$grid-float-breakpoint: 1200px;
-$screen-md: 1200px;
+$grid-float-breakpoint: 1045px;
+$screen-md: 1045px;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "final-tiles-gallery";
@@ -109,23 +109,16 @@ img.logo-small {
 	display: inline-flex;
 	float: right;
 	.form-control {
-			width: 200px;
-			font-family: "Open Sans Condensed";
-			font-size: 1.25em;
-			margin-bottom: 1em;
+		width: 200px;
+		font-family: "Open Sans Condensed";
+		font-size: 1.25em;
+		margin-bottom: 1em;
 	}
 	.hpbutton{
 		height: 34px;
 	}
 }
-.navbar-collapse{
-	border:none;
-	box-shadow: none;
-}
-.navbar-form{
-	border:none;
-	box-shadow: none;
-}
+
 .small-links{
 	background-color: white;
 	font-size: 1.5em;
