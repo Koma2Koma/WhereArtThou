@@ -12,6 +12,7 @@ FactoryGirl.define do
 
   factory :work do
     title 'Mona Lisa'
+    image_file_name 'images/image.jpg'
   end
-  
+
 end
