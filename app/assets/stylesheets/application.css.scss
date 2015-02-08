@@ -167,7 +167,7 @@ p {
 	padding: 2em;
 }
 
-.hpbutton{
+.hpbutton {
 	background-color: #451a4f;
 	color: white;
 	border: none;
@@ -176,13 +176,15 @@ p {
 	margin-left: 5px;
 	font-family: "Open Sans Condensed";
 	&:hover { 
-		background-color: #72557D;
-		color: white;
+	color: white;
+	background-color: #72557D;
 	}
 	&:visited {
-		background-color: #451a4f;
+	color: white;
+	background-color: #451a4f;
 	}
 }
+
 
 .modal-title {
 	font-family: "Open Sans Condensed";
@@ -405,16 +407,13 @@ strong {
   overflow: hidden;
 	margin-top: 40px;
 	margin-bottom: 30px;
-	text-align: center;
-	margin: 0 auto;
 	border: 3px solid black;
 	img {
 		width: 100%;
 		height: auto;
 	}
 	.carousel-inner {
-		position: absolute;
-		bottom:-50%;
+		top:-50%;
 	}
 }
 
