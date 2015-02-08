@@ -34,7 +34,6 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'simplecov', :require => false
   gem 'shoulda-matchers'
-  
   gem 'factory_girl_rails'
 end
 

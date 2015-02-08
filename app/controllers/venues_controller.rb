@@ -8,4 +8,5 @@ class VenuesController < ApplicationController
   def show
     @venue = Venue.friendly.find(params[:id])
   end
+  
 end
