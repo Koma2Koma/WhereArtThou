@@ -13,6 +13,10 @@ FactoryGirl.define do
   factory :work do
     title 'Mona Lisa'
     image_file_name 'images/image.jpg'
+    artist_id 999
   end
 
+  factory :artist_999 do
+    id 999
+  end
 end
