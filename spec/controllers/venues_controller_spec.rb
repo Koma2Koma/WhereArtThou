@@ -19,10 +19,15 @@ describe VenuesController do
   describe 'GET #show' do
     it 'creates an instance variable @venue with the desired venue' do
       venue = FactoryGirl.create(:venue)
-
+      get :show, id: venue
+      expect(assigns(:venue)).to eq(venue)
     end
 
-    it 'renders the :show view'
+    it 'renders the :show view' do
+      venue = FactoryGirl.create(:venue)
+      get :show, id: venue
+      expect(response).to render_template :show
+    end
   end
 
 end
