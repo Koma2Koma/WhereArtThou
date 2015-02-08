@@ -10,5 +10,8 @@ FactoryGirl.define do
     f.name nil
   end
 
+  factory :work do
+    title 'Mona Lisa'
+  end
   
 end
