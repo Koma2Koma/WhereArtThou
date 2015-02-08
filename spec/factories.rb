@@ -6,4 +6,9 @@ FactoryGirl.define do
     state 'UT'
   end
 
+  factory :invalid_venue, parent: :venue do |f|
+    f.name nil
+  end
+
+  
 end
