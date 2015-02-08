@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20150206211905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_trgm"
 
   create_table "artists", force: true do |t|
     t.string   "twitter"
@@ -89,6 +90,14 @@ ActiveRecord::Schema.define(version: 20150206211905) do
 
   add_index "likes", ["likeable_id", "likeable_type"], name: "fk_likeables", using: :btree
   add_index "likes", ["liker_id", "liker_type"], name: "fk_likes", using: :btree
+
+  create_table "pg_search_documents", force: true do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
