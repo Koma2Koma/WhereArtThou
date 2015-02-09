@@ -890,16 +890,24 @@ textarea {
 }
 
 @media screen and (min-width: 1200px) {
-  .tablet-hp-buttons {
+  .tablet-hp-buttons,
+  .desktop-btns {
     display: none;
   }
 }
 
 @media screen and (max-width: 1045px) {
-  .tablet-hp-buttons {
+  .tablet-hp-buttons,
+  .mobile-btns {
     display: none;
   }
   .venue-coverphoto {
 		height: 100%;
+	}
+}
+
+@media screen and (max-width: 475px) {
+	.form-control {
+		max-width: 120px;
 	}
 }
