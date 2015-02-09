@@ -20,7 +20,7 @@ describe WorksController do
   end
 
   describe 'GET #index' do
-    
+
     it 'renders the :index view' do
       get :index
       expect(response).to render_template :index
@@ -52,13 +52,29 @@ describe WorksController do
     end
   end
 
-  describe 'GET #get_work_data'
-    it 'creates an instace variable @work'
-    it 'creates an instace variable @artist'
+  # describe 'GET #get_work_data' do
+  #   before :each do
+  #     @artwork = FactoryGirl.create(:work)
+  #   end
 
-  describe 'GET #new'
-    it 'renders the new view'
-    it 'assigns a new title and image_file_name to new works'
+  #   it 'executes get_work_data.js.erb' do
+  #     xhr :get, :get_work_data, data: {"work": @artwork.id} #{id: @artwork.id}
+  #     expect(response).to render_template :get_work_data
+  #   end
+  #   it 'creates an instace variable @work'
+  #   it 'creates an instace variable @artist'
+  # end
+
+  describe 'GET #new' do
+    before :each do
+      @artist999 = FactoryGirl.create(:artist999)
+    end
+
+    it 'renders the new view' do
+      get :new, {artist_id: @artist999.id}
+      expect(response).to render_template :new
+    end
+  end
 
   describe 'POST #create'
     context 'with valid input'

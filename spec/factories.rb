@@ -14,6 +14,7 @@ FactoryGirl.define do
     title 'Mona Lisa'
     image_file_name 'images/image.jpg'
     artist_id 999
+    id 1099
   end
 
   factory :artist999, class: Artist do
