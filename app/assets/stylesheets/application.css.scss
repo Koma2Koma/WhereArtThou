@@ -405,7 +405,6 @@ strong {
 	height: 400px;
   max-height: 400px;
   overflow: hidden;
-	margin-top: 40px;
 	margin-bottom: 30px;
 	border: 3px solid black;
 	img {
@@ -480,11 +479,13 @@ strong {
 
 .work-show-image {
 	border: 3px solid black;
+	width: 100%;
 }
 
 .likes {
+	text-align: center;
+	margin: 0 auto;
 	font-size: 1.25em;
-	margin-left: 50px;
 	padding: 5px 10px;
 	background-color: #4A4847;
 	color: white;
@@ -909,5 +910,11 @@ textarea {
 @media screen and (max-width: 475px) {
 	.form-control {
 		max-width: 120px;
+	}
+}
+
+@media screen and (max-width: 404px) {
+	.works-back-btn {
+		margin-top: 10px;
 	}
 }

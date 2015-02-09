@@ -1,22 +1,26 @@
 <div class="works-page-background">
-  <div class="container work-show">
+  <div class="work-show container-fluid">
   	<div class="col-md-6 col-sm-12">
-    	<center><%= image_tag @work.image.url(:large), class: 'work-show-image' %><br><br>
-      <% if @artist.user == current_user %>
-        <%= link_to 'Edit', edit_artist_work_path(@artist, @work), class: "btn btn-success btn-lg hpbutton" %>
-        <%= link_to 'Delete', artist_work_path(@artist, @work), method: :delete, class: "btn btn-success btn-lg hpbutton" %>
-      <% end %>
-      <button id='go_back' class='btn btn-success btn-lg hpbutton'>Go Back</button>
+    	<center><%= image_tag @work.image.url(:large), class: 'work-show-image' %></center><br><br>
+      <center><span class="likes">Added to <%= pluralize(@work.likers(User).count, 'Mosaic') %></span></center><br>
+      <center>
+      <div>
+        <% if @artist.user == current_user %>
+          <%= link_to 'Edit', edit_artist_work_path(@artist, @work), class: "btn btn-success btn-lg hpbutton" %>
+          <%= link_to 'Delete', artist_work_path(@artist, @work), method: :delete, class: "btn btn-success btn-lg hpbutton" %>
+        <% end %>
 
-      <% if user_signed_in? && current_user.is_artist == false && !current_user.likes?(@work) %>
-        <span id="add_tile"><%= link_to 'Add Tile', add_tile_path(@work), remote: true, class: 'btn btn-success btn-lg hpbutton' %></span>
-      <% end %>
+        <% if user_signed_in? && current_user.is_artist == false && !current_user.likes?(@work) %>
+          <span id="add_tile"><%= link_to 'Add Tile', add_tile_path(@work), remote: true, class: 'btn btn-success btn-lg hpbutton' %></span>
+        <% end %>
 
-      <% if user_signed_in? && current_user.is_artist == false && current_user.likes?(@work) %>
-        <span id="add_tile"><%= link_to "Remove Tile", remove_tile_path(@work), remote: true, class: "btn btn-success btn-lg hpbutton" %></span>
-      <% end %>
+        <% if user_signed_in? && current_user.is_artist == false && current_user.likes?(@work) %>
+          <span id="add_tile"><%= link_to "Remove Tile", remove_tile_path(@work), remote: true, class: "btn btn-success btn-lg hpbutton" %></span>
+        <% end %>
 
-      <span class="likes">Added to <%= pluralize(@work.likers(User).count, 'Mosaic') %></span></center>
+        <button id='go_back' class='btn btn-success btn-lg hpbutton works-back-btn'>Go Back</button>
+      </div>
+      </center>
     </div>
     <div class="col-md-6 col-sm-12 work-list">
       <h3><strong>Artist: </strong><%= link_to @work.artist.user.username, artist_path(@work.artist) %></h3>
