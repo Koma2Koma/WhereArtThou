@@ -25,5 +25,13 @@ FactoryGirl.define do
 
   factory :artist999, class: Artist do
     id 999
+    user_id 2999
+  end
+
+  factory :user333, class: User do
+    email 'email@email.com'
+    username 'Fake Fakerson'
+    password 'password'
+    id 2999
   end
 end

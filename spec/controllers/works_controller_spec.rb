@@ -1,7 +1,7 @@
 require 'rails_helper'
+include Devise::TestHelpers
 
 describe WorksController do
-  
   describe 'GET #show' do
     before :each do
       @artist999 = FactoryGirl.create(:artist999)
@@ -120,15 +120,43 @@ describe WorksController do
     end
   end
 
-  describe 'PUT update'
-    context 'valid input'
-      it 'located the requested @work'
-      it 'changes @work attributes'
-      it 'redirects to the updated work'
-    context 'invalid input'
+  describe 'PUT update' do
+    before :each do
+      @artist999 = FactoryGirl.create(:artist999)
+      @work = FactoryGirl.create(:work)
+      @request.env["devise.mapping"] = Devise.mappings[:user]
+      user = FactoryGirl.create(:user333)
+      sign_in user
+      
+    end
+
+    context 'with valid input' do
+      it 'locates the requested @work' do
+        put :update, artist_id: @artist999.id, id: @work.id, 
+          work: FactoryGirl.attributes_for(:work) 
+        expect(assigns(:work)).to eq(@work)
+      end
+
+      it 'changes @work attributes' do
+        put :update, artist_id: @artist999.id, id: @work.id, 
+          work: FactoryGirl.attributes_for(:work, title: 'BumbleBee Tuna', image_file_name: 'images/bumb.jpg')
+        @work.reload
+        expect(@work.title).to eq('BumbleBee Tuna') 
+        expect(@work.image_file_name).to eq('images/bumb.jpg')
+      end
+
+      it 'redirects to the updated work' do
+        put :update, artist_id: @artist999.id, id: @work.id, 
+          work: FactoryGirl.attributes_for(:work, title: 'BumbleBee Tuna', image_file_name: 'images/bumb.jpg')
+        expect(response).to redirect_to @artist999 #, {artist_id: @artist999.id}
+      end
+    end
+
+    context 'with invalid input'
       it 'located the requested @work'
       it 'does not change @work attributes'
       it 're-renders the edit page'
+  end
 
   describe 'DELETE destroy'
     it 'deletes the work'
