@@ -3,6 +3,8 @@ class Work < ActiveRecord::Base
 
   belongs_to :artist
 
+  validates :title, :image_file_name, presence: true
+
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history, :finders]
 
