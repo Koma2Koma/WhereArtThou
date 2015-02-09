@@ -17,6 +17,12 @@ FactoryGirl.define do
     id 1099
   end
 
+  factory :invalid_work, parent: :work do
+    title nil
+    image_file_name nil
+    artist_id nil
+  end
+
   factory :artist999, class: Artist do
     id 999
   end

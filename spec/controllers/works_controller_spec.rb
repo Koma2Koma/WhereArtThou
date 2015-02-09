@@ -76,13 +76,37 @@ describe WorksController do
     end
   end
 
-  describe 'POST #create'
-    context 'with valid input'
-      it 'creates a new work'
-      it 'redirects to the new work'
-    context 'with invalid input'
-      it 'does not save the new work'
-      it 're-renders the "new" page'
+  describe 'POST #create' do
+    before :each do
+      @artist999 = FactoryGirl.create(:artist999)
+    end
+
+    context 'with valid input' do
+      it 'creates a new work' do 
+        expect { 
+          post :create, {artist_id: @artist999.id, work: FactoryGirl.attributes_for(:work)}
+          }.to change(Work,:count).by(1) 
+      end
+
+      it 'redirects to artist page after new work is created' do
+        post :create, {artist_id: @artist999.id, work: FactoryGirl.attributes_for(:work)}
+        expect(response).to redirect_to @artist999
+      end
+    end
+
+    context 'with invalid input' do
+      it 'does not save the new work' do
+        expect { 
+          post :create, {artist_id: @artist999.id, work: FactoryGirl.attributes_for(:invalid_work)}
+          }.to_not change(Work, :count)
+      end
+
+      it 're-renders the "new" page' do
+        post :create, {artist_id: @artist999.id, work: FactoryGirl.attributes_for(:invalid_work)}
+        expect(response).to render_template :new, {artist_id: @artist999.id}
+      end
+    end
+  end
 
   describe 'GET #edit'
     it 'renders the edit view'
