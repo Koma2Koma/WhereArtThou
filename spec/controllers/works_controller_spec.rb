@@ -108,8 +108,17 @@ describe WorksController do
     end
   end
 
-  describe 'GET #edit'
-    it 'renders the edit view'
+  describe 'GET #edit' do
+    before :each do
+      @artist999 = FactoryGirl.create(:artist999)
+      @work = FactoryGirl.create(:work)
+    end
+
+    it 'renders the edit view' do
+      get :edit, {artist_id: @artist999.id, id: @work.id}
+      expect(response).to render_template :edit
+    end
+  end
 
   describe 'PUT update'
     context 'valid input'
