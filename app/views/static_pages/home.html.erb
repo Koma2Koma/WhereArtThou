@@ -61,8 +61,8 @@
             <div class="container action-header">
               <h2>Get started now.</h2>
             </div>
-            <%= render 'layouts/discover_modal' %>
-            <%= link_to 'SIGN UP', '#', data: {toggle: 'modal', target: '#myModal'}, class: "btn btn-success btn-lg hpbutton" %>
+            <%= link_to 'DISCOVER', discover_path, class: "btn btn-success btn-lg hpbutton" %>
+            <%= link_to 'SIGN UP', signup_path, class: "btn btn-success btn-lg hpbutton" %>
           </div>
         <% else %>
           <div class="container action-header">
@@ -78,8 +78,14 @@
           <div class="container action-header">
             <h2>Get started now.</h2>
           </div>
-          <%= render 'layouts/discover_modal' %>
-          <%= link_to 'SIGN UP', '#', data: {toggle: 'modal', target: '#myModal'}, class: "btn btn-success btn-lg hpbutton" %>
+          <div class="desktop-btns">
+            <%= link_to 'DISCOVER', discover_path, class: "btn btn-success btn-lg hpbutton" %>
+            <%= link_to 'SIGN UP', signup_path, class: "btn btn-success btn-lg hpbutton" %>
+          </div>
+          <div class="mobile-btns">
+            <%= render 'layouts/discover_modal' %>
+            <%= link_to 'SIGN UP', '#', data: {toggle: 'modal', target: '#myModal'}, class: "btn btn-success btn-lg hpbutton" %>
+          </div>
         </div>
       <% else %>
         <div class="container action-header">
@@ -88,6 +94,3 @@
   </div>
 
 </div>
-
-
-
