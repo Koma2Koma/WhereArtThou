@@ -22,12 +22,4 @@ describe UsersController do
       expect(assigns(:user)).to eq(@user)
     end
   end
-
-  describe 'GET #edit'
-
-  describe 'GET #index'
-
-
-
-
 end
