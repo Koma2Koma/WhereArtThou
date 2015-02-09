@@ -17,15 +17,40 @@ describe WorksController do
       get :show, {artist_id: 999, id: @work.id}
       expect(response).to render_template :show
     end
-
   end
 
-  describe 'GET #index'
-    it 'creates an instace variable @works'
-    it 'creates an instace variable @artists'
-    it 'creates an instace variable @venues'
-    it 'creates an instace variable @events'
-    it 'creates an instace variable @users'
+  describe 'GET #index' do
+    
+    it 'renders the :index view' do
+      get :index
+      expect(response).to render_template :index
+    end
+
+    it 'creates an instace variable @works' do
+      get :index
+      expect(assigns(:works)).to_not be_nil
+    end
+
+    it 'creates an instace variable @artists' do
+      get :index
+      expect(assigns(:artists)).to_not be_nil
+    end
+
+    it 'creates an instace variable @venues' do
+      get :index
+      expect(assigns(:venues)).to_not be_nil
+    end
+
+    it 'creates an instace variable @events' do
+      get :index
+      expect(assigns(:events)).to_not be_nil
+    end
+
+    it 'creates an instace variable @users' do
+      get :index
+      expect(assigns(:users)).to_not be_nil
+    end
+  end
 
   describe 'GET #get_work_data'
     it 'creates an instace variable @work'
