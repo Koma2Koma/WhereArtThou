@@ -1,0 +1,16 @@
+<center><h2 class="heading-font">What type of account would you like?</h2></center>
+<center>
+<%= link_to 'ARTIST', new_user_registration_path(:artist => true), class: "btn btn-success btn-lg hpbutton modal-button" %>
+<%= link_to 'USER', new_user_registration_path(:artist => false), class: "btn btn-success btn-lg hpbutton modal-button" %>
+<%= link_to 'VENUE', new_user_registration_path(:venue => true), class: "btn btn-success btn-lg hpbutton modal-button" %>
+</center><br><br>
+
+<center><button id='go_back' class='btn btn-success btn-lg hpbutton'>Go Back</button><center>
+
+<script>
+
+$( '#go_back' ).click( function() {
+  window.history.back()
+});
+
+</script>

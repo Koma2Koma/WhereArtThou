@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'artist_about/:id', to: 'artists#about', as: :artist_about
   get 'add_tile/:id', to: 'works#add_tile', as: :add_tile
   get 'remove_tile/:id', to: 'works#remove_tile', as: :remove_tile
+  get 'signup' => 'static_pages#signup'
   
 
   devise_for :users, :controllers => {registrations: 'registrations',
