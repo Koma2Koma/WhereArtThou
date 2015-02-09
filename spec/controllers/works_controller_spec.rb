@@ -4,16 +4,19 @@ describe WorksController do
   
   describe 'GET #show' do
     before :each do
-      @artist_999 = FactoryGirl.create(:artist_999)
+      @artist999 = FactoryGirl.create(:artist999)
+      @work = FactoryGirl.create(:work)
     end
 
-    # it 'creates an instance variable @work with the intended work' do
-    #   work = FactoryGirl.create(:work)
-    #   get :show, artist_id: 999, id: work
-    #   expect(assigns(:work)).to eq(work)
-    # end
+    it 'creates an instance variable @work with the intended work' do
+      get :show, {artist_id: 999, id: @work.id}
+      expect(assigns(:work)).to eq(@work)
+    end
 
-    it 'renders the :show view'
+    it 'renders the :show view' do
+      get :show, {artist_id: 999, id: @work.id}
+      expect(response).to render_template :show
+    end
 
   end
 

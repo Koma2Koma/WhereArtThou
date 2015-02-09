@@ -16,7 +16,7 @@ FactoryGirl.define do
     artist_id 999
   end
 
-  factory :artist_999 do
+  factory :artist999, class: Artist do
     id 999
   end
 end
