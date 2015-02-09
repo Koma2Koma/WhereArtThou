@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :works, except: :index
   end
 
-  resources :users, only: [:show, :index]
+  resources :users, only: :show
   resources :works, only: :index
 
   resources :venues, only: [:show, :index, :edit] do
