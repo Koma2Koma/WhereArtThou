@@ -39,6 +39,7 @@
               <div class="tile">
                 <%= image_tag tile.image.url(:small), class: "item" %>
                 <p class="caption" ><%= tile.title %></p>
+                <p class="caption" ><%= tile.title %><br/> By: <%= User.find(Artist.find(tile.artist_id).user_id).username.titleize %></p>
               </div>
             <% end %>
           <% end %>
