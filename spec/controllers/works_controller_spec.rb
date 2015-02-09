@@ -162,8 +162,22 @@ describe WorksController do
     end
   end
 
-  describe 'DELETE destroy'
-    it 'deletes the work'
-    it 'redirects to the artist page'
+  describe 'DELETE destroy' do
+    before :each do
+      @artist999 = FactoryGirl.create(:artist999)
+      @work = FactoryGirl.create(:work)
+      @request.env["devise.mapping"] = Devise.mappings[:user]
+      user = FactoryGirl.create(:user333)
+      sign_in user
+    end
 
+    it 'deletes the work' do
+      expect { delete :destroy, artist_id: @artist999.id, id: @work.id }.to change(Work,:count).by(-1)
+    end
+
+    it 'redirects to the artist page' do
+      delete :destroy, artist_id: @artist999.id, id: @work.id
+      expect(response).to redirect_to @artist999
+    end
+  end
 end
