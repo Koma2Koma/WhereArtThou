@@ -52,19 +52,6 @@ describe WorksController do
     end
   end
 
-  # describe 'GET #get_work_data' do
-  #   before :each do
-  #     @artwork = FactoryGirl.create(:work)
-  #   end
-
-  #   it 'executes get_work_data.js.erb' do
-  #     xhr :get, :get_work_data, data: {"work": @artwork.id} #{id: @artwork.id}
-  #     expect(response).to render_template :get_work_data
-  #   end
-  #   it 'creates an instace variable @work'
-  #   it 'creates an instace variable @artist'
-  # end
-
   describe 'GET #new' do
     before :each do
       @artist999 = FactoryGirl.create(:artist999)
@@ -148,14 +135,31 @@ describe WorksController do
       it 'redirects to the updated work' do
         put :update, artist_id: @artist999.id, id: @work.id, 
           work: FactoryGirl.attributes_for(:work, title: 'BumbleBee Tuna', image_file_name: 'images/bumb.jpg')
-        expect(response).to redirect_to @artist999 #, {artist_id: @artist999.id}
+        expect(response).to redirect_to @artist999
       end
     end
 
-    context 'with invalid input'
-      it 'located the requested @work'
-      it 'does not change @work attributes'
-      it 're-renders the edit page'
+    context 'with invalid input' do
+      it 'located the requested @work' do
+        put :update, artist_id: @artist999.id, id: @work.id, 
+          work: FactoryGirl.attributes_for(:invalid_work)
+        expect(assigns(:work)).to eq(@work)
+      end
+
+      it 'does not change @work attributes' do
+        put :update, artist_id: @artist999.id, id: @work.id, 
+          work: FactoryGirl.attributes_for(:invalid_work)
+        @work.reload
+        expect(@work.title).to eq('Mona Lisa') 
+        expect(@work.image_file_name).to eq('images/image.jpg')
+      end
+
+      it 're-renders the edit page' do
+        put :update, artist_id: @artist999.id, id: @work.id, 
+          work: FactoryGirl.attributes_for(:invalid_work)
+        expect(response).to render_template :edit
+      end
+    end
   end
 
   describe 'DELETE destroy'
