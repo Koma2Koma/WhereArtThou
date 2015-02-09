@@ -918,3 +918,17 @@ textarea {
 		margin-top: 10px;
 	}
 }
+
+@media screen and (max-width: 1200px) {
+	#mappy {
+		width: 450px;
+		max-width: 450px;
+	}
+}
+
+@media screen and (max-width: 625px) {
+	#mappy {
+		width: 300px;
+		max-width: 300px;
+	}
+}
