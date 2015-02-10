@@ -25,10 +25,10 @@ gem 'gmaps4rails'
 gem 'friendly_id', '~> 5.1.0'
 
 group :test do 
-  gem 'capybara'
-  gem 'guard-rspec'
+  gem 'capybara' 
   gem 'database_cleaner'
   gem 'faker'
+  gem 'guard-rspec'
 end
 
 group :test, :development do
@@ -36,6 +36,7 @@ group :test, :development do
   gem 'simplecov', :require => false
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
+  gem 'rb-fsevent'
 end
 
 group :development do
