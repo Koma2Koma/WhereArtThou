@@ -1,7 +1,6 @@
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
-end
 
 # Cucumber
 World(FactoryGirl::Syntax::Methods)
@@ -14,3 +13,4 @@ World(FactoryGirl::Syntax::Methods)
       DatabaseCleaner.clean
     end
   end
+end

@@ -1,7 +1,7 @@
 require 'rails_helper'
-include Devise::TestHelpers
 
 describe WorksController do
+  
   describe 'GET #show' do
     before :each do
       @artist999 = FactoryGirl.create(:artist999)

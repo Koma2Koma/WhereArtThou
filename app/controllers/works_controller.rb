@@ -7,7 +7,7 @@ class WorksController < ApplicationController
   end
 
   def show
-    @work = Work.friendly.find(params[:id])
+    @work = Work.find(params[:id])
   end
 
   def create
