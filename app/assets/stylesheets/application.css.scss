@@ -869,8 +869,13 @@ textarea {
 	font-size: 2.5em;
 }
 
-.founder-bios {
-	padding-top: 100px;
+.featurette {
+	margin-bottom: 50px;
+}
+
+.img-team {
+	width: 140px;
+	height: 140px;
 }
 
 /* ----------------------------
@@ -913,6 +918,7 @@ textarea {
 	}
 }
 
+
 @media screen and (max-width: 404px) {
 	.works-back-btn {
 		margin-top: 10px;
@@ -939,3 +945,4 @@ textarea {
 		margin-top: 10px;
 	}
 }
+
