@@ -1,7 +1,6 @@
 FactoryGirl.define do
   
   factory :venue, class: Venue do
-    id 42
     name 'Gallery'
     address '1000 e 1000 s'
     city 'Salt Lake City'

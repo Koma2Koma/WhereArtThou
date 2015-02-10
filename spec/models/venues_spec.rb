@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe Venue do
   before :each do
-    @venue = FactoryGirl.create(:venue)
     @user = FactoryGirl.create(:user333, is_venue: true)
   end
 
