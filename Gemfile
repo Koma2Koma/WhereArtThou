@@ -26,6 +26,9 @@ gem 'friendly_id', '~> 5.1.0'
 
 group :test do 
   gem 'capybara' 
+  gem 'rake'
+  gem 'capybara'
+  gem 'guard-rspec'
   gem 'database_cleaner'
   gem 'faker'
   gem 'guard-rspec'
