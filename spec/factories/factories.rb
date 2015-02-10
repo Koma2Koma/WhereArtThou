@@ -4,6 +4,7 @@ FactoryGirl.define do
     address '1000 e 1000 s'
     city 'Salt Lake City'
     state 'UT'
+    user_id 2999
   end
 
   factory :invalid_venue, parent: :venue do |f|
@@ -33,5 +34,6 @@ FactoryGirl.define do
     username 'Fake Fakerson'
     password 'password'
     id 2999
+    is_venue false
   end
 end
