@@ -1,14 +1,29 @@
 FactoryGirl.define do
-  factory :venue do
+  
+  factory :venue, class: Venue do
+    id 42
     name 'Gallery'
     address '1000 e 1000 s'
     city 'Salt Lake City'
     state 'UT'
     user_id 2999
   end
-
+    
   factory :invalid_venue, parent: :venue do |f|
     f.name nil
+  end
+
+  factory :event do
+    venue_id 42
+    id 25
+    name 'ArtEvent'
+    address '9350 South 150 East #575'
+    city 'Sandy'
+    state 'UT'
+  end
+
+  factory :invalid_event, parent: :event do
+    name nil
   end
 
   factory :work do

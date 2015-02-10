@@ -932,3 +932,10 @@ textarea {
 		max-width: 300px;
 	}
 }
+
+@media screen and (max-width: 537px) {
+	.artist-bio-btn {
+		float: none;
+		margin-top: 10px;
+	}
+}
