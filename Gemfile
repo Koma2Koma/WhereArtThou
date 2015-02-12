@@ -24,14 +24,12 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'gmaps4rails'
 gem 'friendly_id', '~> 5.1.0'
 
-group :test do 
-  gem 'capybara' 
+group :test do  
   gem 'rake'
   gem 'capybara'
   gem 'guard-rspec'
   gem 'database_cleaner'
   gem 'faker'
-  gem 'guard-rspec'
 end
 
 group :test, :development do
