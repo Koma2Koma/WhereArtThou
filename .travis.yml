@@ -2,7 +2,8 @@ language: ruby
 rvm:
   - 2.1.5
 before_script:
-  - psql -c 'create database WhereArtThou_test' -U WhereArtThou
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database WhereArtThou_test' -U postgres
 script: 
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
@@ -14,4 +15,3 @@ script:
 #     run:
 #     - "rake db:migrate"
 #     - "rake cleanup"
-
