@@ -1,10 +1,17 @@
 language: ruby
 rvm:
-  - "1.8.7"
-  - "1.9.2"
-  - "1.9.3"
-  - jruby-18mode # JRuby in 1.8 mode
-  - jruby-19mode # JRuby in 1.9 mode
-  - rbx
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+  - 2.1.5
+before_script:
+  - psql -c 'create database WhereArtThou_test' -U WhereArtThou
+script: 
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
+# deploy:
+#   provider: heroku
+#   api_key:
+#     secure: DEC/97nZt03vcAy++bSAWcMAnSOlTc8deA9nxzWgpKWknJtiDPNnV3jYnZzUyrFrZHHXbILo80k7LO3fqqSel2MpJ3DE/FYSBBroiNTihbxHdesJM0nCC0gGutr+CjM+CXoNTHo2Up4mShLlaMcGnOr6x2NAXi8781omgseniF4=
+#     run:
+#     - "rake db:migrate"
+#     - "rake cleanup"
+
